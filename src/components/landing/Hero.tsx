@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { HomeAnimation } from '@/components/landing/HomeAnimation';
 import { TrustMarquee } from '@/components/landing/TrustMarquee';
 
@@ -7,9 +7,9 @@ const H1_LINE_1 = ['House', 'hunting', 'without', 'the', 'horror', 'story.'];
 const H1_LINE_2 = ['Buy', 'properties', 'you', 'can', 'trust'];
 
 export const Hero = () => (
-  <section className="container mx-auto pt-6 sm:pt-12 lg:pt-16">
-    <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 items-center text-center lg:text-left">
-      {/* Left Column: Eyebrow, Headline & CTAs */}
+  <section className="container mx-auto pt-8 sm:pt-14 lg:pt-20">
+    <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 items-center text-center lg:text-left">
+      {/* Left Column: Eyebrow, Headline, Subtext & CTAs */}
       <div className="flex flex-col items-center lg:items-start">
         {/* Eyebrow badge */}
         <span className="eyebrow animate-fade-up">
@@ -19,7 +19,7 @@ export const Hero = () => (
 
         {/* Main Headline */}
         <h1
-          className="mt-5 w-full text-balance font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl lg:leading-[1.1]"
+          className="mt-5 w-full text-balance font-display text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl lg:leading-[1.08]"
           aria-label="House hunting without the horror story. Buy properties you can trust"
         >
           <span className="block">
@@ -40,6 +40,11 @@ export const Hero = () => (
           </span>
         </h1>
 
+        {/* Supporting subtext paragraph */}
+        <p className="mt-5 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg animate-fade-up" style={{ animationDelay: '680ms' }}>
+          Every property undergoes four multi-layer verification checks before it goes live. No stolen photos, no phantom landlords, zero scam risk.
+        </p>
+
         {/* CTA Buttons */}
         <div
           className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 w-full animate-fade-up"
@@ -56,18 +61,24 @@ export const Hero = () => (
             See how we verify
           </Link>
         </div>
+
+        {/* Trust micro-indicator */}
+        <p className="mt-3.5 flex items-center gap-1.5 text-xs text-muted-foreground font-medium animate-fade-up" style={{ animationDelay: '1100ms' }}>
+          <ShieldCheck className="size-4 text-foreground/60" />
+          Free to join • One email at launch • Zero spam guarantee
+        </p>
       </div>
 
-      {/* Right Column: Hero SVG Animation — scaled up slightly while maintaining side-by-side placement */}
+      {/* Right Column: Staged House SVG Animation Visual */}
       <div className="w-full animate-scale-in flex justify-center lg:justify-end" style={{ animationDelay: '550ms' }}>
-        <div className="w-full max-w-lg sm:max-w-xl lg:max-w-2xl">
+        <div className="relative w-full max-w-lg lg:max-w-xl xl:max-w-2xl rounded-3xl border border-border/40 bg-card/40 p-2 sm:p-4 shadow-xl shadow-black/5 backdrop-blur-sm">
           <HomeAnimation />
         </div>
       </div>
     </div>
 
-    {/* Moving Trust Marquee (right-to-left) directly under the hero section */}
-    <div className="mt-10 sm:mt-14 w-full animate-fade-up" style={{ animationDelay: '820ms' }}>
+    {/* Moving Trust Marquee (right-to-left) stretching full width under the hero section */}
+    <div className="mt-12 sm:mt-16 w-full animate-fade-up" style={{ animationDelay: '820ms' }}>
       <TrustMarquee />
     </div>
   </section>
