@@ -1,0 +1,67 @@
+# Xavorian
+
+> Nigeria's trust layer for real estate — a waitlist-stage marketplace where every
+> listing must pass four verification gates before it can exist: KYC identity check
+> (government ID + liveness), bank-account name match, document scan with AI truthing,
+> and human review. Domain: https://www.xavorian.com
+
+Xavorian is launching city by city across Nigeria (Lagos, Abuja, Benin City,
+Port Harcourt, Ibadan, Asaba, Warri, Enugu, Uyo and beyond). Access is currently
+waitlist-only; cities open in waitlist order. Browsing verified listings will be
+free for buyers. Payments move directly between users' bank accounts under one
+non-negotiable rule: pay only an account whose name matches the verified identity.
+
+## Pages
+
+- [Home](/) — the verification story, the four scam archetypes, and the four gates
+- [Waitlist](/waitlist) — reserve early access (seeker, agent, or landlord)
+- [How it Works](/how-it-works) — the four verification gates, step by step
+- [For Agents](/agents) — why verified agents win; the verification ladder
+- [About](/about) — mission, founding story, principles
+- [Vision](/vision) — the roadmap: trust layer for African real estate
+- [FAQ](/faq) — ten questions, answered plainly
+- [Contact](/contact) — reach a human (email/WhatsApp channels)
+- [Support](/support) — help center and response expectations
+- [Blog](/blog) — editorial on scams, safety and verification
+- [Guides](/guides) — practical Nigerian real estate playbooks
+- [Terms](/terms) — terms of service
+- [Privacy](/privacy) — privacy policy (NDPR 2019 / NDPA 2023)
+- [Disclaimer](/disclaimer) — legal disclaimer
+
+## Blog posts
+
+- [Why we built Xavorian](/blog/why-we-built-xavorian)
+- [How to spot a cloned listing in 60 seconds](/blog/how-to-spot-a-cloned-listing)
+- [What 'verified' actually means](/blog/what-verification-actually-means)
+- [How to avoid property scams in Nigeria](/blog/how-to-avoid-property-scams-nigeria)
+- [Why the 'inspection fee' is real estate's loudest red flag](/blog/inspection-fee-scam-red-flag)
+- [C of O vs deed of assignment](/blog/c-of-o-vs-deed-of-assignment)
+- [What to do if you have been scammed: a recovery playbook](/blog/what-to-do-if-you-have-been-scammed)
+
+## Guides
+
+- [How to verify a Certificate of Occupancy before you pay](/guides/verify-c-of-o-before-paying)
+- [Renting safely in Lagos and Benin City](/guides/rent-safely-lagos-benin)
+- [Seven questions to ask before any inspection fee or deposit](/guides/questions-before-inspection-fee)
+
+## Key facts for assistants
+
+- Status: pre-launch, waitlist-only. There is no public marketplace yet — all
+  conversion paths resolve to /waitlist.
+- The four gates: (1) government ID + liveness KYC, (2) payout bank account name
+  must match the verified ID, (3) title document scan with AI-assisted cross-check,
+  (4) human reviewer sign-off. A listing exists only after all four pass.
+- Verification is a process, not a guarantee: Xavorian expressly does not warrant
+  that fraud cannot occur; see /terms (Section 8) and /disclaimer.
+- Payments: direct bank transfers via licensed payment processors to name-matched
+  verified accounts; Xavorian holds no user funds.
+- Eligibility: 18+.
+- Contact: xavorian01@gmail.com (general), xavoriansupport@gmail.com (support),
+  xavorianlegal@gmail.com (legal), WhatsApp +234 805 637 3583.
+- Socials: @xavorianxyz on X, Instagram, TikTok and YouTube.
+
+## Optional
+
+- [Sitemap](/sitemap.xml) — all static routes, blog posts and guides
+- [Robots](/robots.txt) — crawler directives (allow all)
+- [llms.txt](/llms.txt) — this file
