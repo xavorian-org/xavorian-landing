@@ -91,10 +91,20 @@ const faqs = [
   },
 ];
 
+const faqsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 export default function AgentsPage() {
   return (
     <>
-      <JsonLd data={agentsPageSchema} />
+      <JsonLd data={[agentsPageSchema, faqsSchema]} />
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="container mx-auto pt-14 sm:pt-20">
