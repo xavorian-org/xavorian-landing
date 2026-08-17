@@ -57,7 +57,7 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: '5. Let a platform do it for you',
-        body: 'Xavorian runs this pipeline on every listing: document scan, AI-assisted cross-check against the listing claims, and a human reviewer before anything goes live. Verification becomes the default, not your homework.',
+        body: 'Xavorian runs this pipeline on every listing: document scan, AI-assisted cross-check against the listing claims, and an automated multi-layer verification audit before anything goes live. Verification becomes the default, not your homework.',
       },
     ],
     keyTakeaways: [
@@ -100,7 +100,7 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: '5. Or rent where verification is the baseline',
-        body: 'On Xavorian, agents are KYC-verified, listings are document-audited and human-reviewed before they go live, and the paying side always knows whose account receives the money.',
+        body: 'On Xavorian, agents are KYC-verified, listings are document-audited with AI truthing before they go live, and the paying side always knows whose account receives the money.',
       },
     ],
     keyTakeaways: [
@@ -151,7 +151,7 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: '7. Is this listing on a verified platform?',
-        body: 'Xavorian listings pass identity, bank-match, document and human-review gates before going live. When the answer is yes, most of the questions above are already answered for you.',
+        body: 'Xavorian listings pass identity, bank-match, document and automated-verification gates before going live. When the answer is yes, most of the questions above are already answered for you.',
       },
     ],
     keyTakeaways: [

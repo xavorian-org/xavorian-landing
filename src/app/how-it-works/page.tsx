@@ -46,7 +46,7 @@ const gateDetails: Record<string, GateDetail> = {
   human: {
     happens:
       'Our automated verification system cross-checks identity, bank account details, and document records systematically before publication.',
-    why: 'Automated verification eliminates oversight and guesswork. Every check is thorough, consistent, and objective.',
+    why: 'Automated verification removes the blind spots and the guesswork. Every check is thorough, consistent, and objective.',
     fail: 'The listing stays offline. Unverified listings never make it onto Xavorian.',
   },
 };
@@ -85,7 +85,7 @@ const howToSchema = {
   '@type': 'HowTo',
   name: 'How Xavorian verifies every listing',
   description:
-    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI truthing, and human review.',
+    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI truthing, and automated multi-layer verification.',
   totalTime: 'P3D',
   step: GATES.map((gate, i) => ({
     '@type': 'HowToStep',

@@ -52,7 +52,7 @@ const ladder = [
     icon: BadgeCheck,
     tier: 'Tier 1 · Every agent',
     title: 'The four gates',
-    body: 'ID and liveness check, bank-account name match, document audit per listing, human review sign-off. No badge without all four.',
+    body: 'ID and liveness check, bank-account name match, document audit per listing, automated multi-layer verification. No badge without all four.',
   },
   {
     icon: MapPinned,
@@ -79,10 +79,10 @@ const documents = [
 const faqs = [
   {
     q: 'How long does verification take?',
-    a: 'Waitlist agents are reviewed before their city opens. Complete documents and a matching bank account make it fast. Missing paperwork is the only real delay.',
+    a: 'Waitlist agents are verified before their city opens. Complete documents and a matching bank account make it fast. Missing paperwork is the only real delay.',
   },
   {
-    q: 'What if one of my documents fails review?',
+    q: 'What if one of my documents fails verification?',
     a: 'We tell you exactly what failed and why, and you can fix it and resubmit once. We reject bad documents, not honest agents.',
   },
   {
@@ -209,10 +209,10 @@ export default function AgentsPage() {
                 Come prepared
               </span>
               <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-                What to have ready when your review starts.
+                What to have ready when your verification starts.
               </h2>
               <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-                Gather these once and every future listing review moves faster. Incomplete
+                Gather these once and every future listing verification moves faster. Incomplete
                 files are the number one reason verification drags.
               </p>
             </div>
@@ -237,17 +237,17 @@ export default function AgentsPage() {
         </div>
       </section>
 
-      {/* ── Get reviewed before launch day ───────────────── */}
+      {/* ── Get verified before launch day ───────────────── */}
       <section className="container mx-auto mt-20 sm:mt-28">
         <Reveal>
           <div className="rounded-2xl border border-border bg-muted p-6 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
             <div className="max-w-xl">
               <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">
-                Get reviewed before launch day.
+                Get verified before launch day.
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Join the waitlist as an agent and your verification starts before your city
-                opens. When launch day comes, you are not queuing for review. You are
+                opens. When launch day comes, you are not queuing for verification. You are
                 already listed, with the badge on.
               </p>
             </div>
@@ -298,13 +298,13 @@ export default function AgentsPage() {
           <div className="rounded-3xl bg-foreground px-6 py-14 text-center text-white sm:px-12">
             <span className="eyebrow border-white/15 bg-white/10 text-white/70">
               <span className="eyebrow-dot" />
-              Waitlist agents reviewed first
+              Waitlist agents verified first
             </span>
             <h2 className="mx-auto mt-5 max-w-2xl text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               Be the agent buyers stop being afraid of.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              Free to join. Reviewed before launch. First in line when your city opens.
+              Free to join. Verified before launch. First in line when your city opens.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link

@@ -382,8 +382,8 @@ export default function TermsPage() {
           <div>
             <h3 className="text-sm font-bold text-foreground">4.4 The Limits of Verification</h3>
             <p className="mt-1">
-              You acknowledge that our Verification Processes are inherently fallible: AI systems and human
-              reviewers can err or be deceived; identity documents can be stolen or forged well enough to
+                You acknowledge that our Verification Processes are inherently fallible: AI systems
+                can err or be deceived; identity documents can be stolen or forged well enough to
               defeat screening; databases consulted may be incomplete or outdated; verification reflects a
               point in time only; and a person who passed screening can still commit fraud.
               Xavorian makes no representation that any Verification Process will detect any particular fraud,
@@ -649,7 +649,7 @@ export default function TermsPage() {
             <p className="mt-1">
               You confirm you have read Section 4 and expressly acknowledge that the KYC identity gates, the
               Bank-Name-Match Rule, the Document Audit, Human Review, and every Verified Badge are good-faith
-              screening processes only; that automated and human systems are fallible; and that no outcome of
+              screening processes only; that AI and automated systems are fallible; and that no outcome of
               any Verification Process is a warranty or assurance of identity, title, ownership, authenticity,
               legality, or value. You assume the entire risk of any failure of any Verification Process.
             </p>

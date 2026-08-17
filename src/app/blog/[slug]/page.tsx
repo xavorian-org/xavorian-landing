@@ -121,7 +121,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <div>
                 <p className="text-base font-bold tracking-tight">Read less, worry less.</p>
                 <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
-                  On Xavorian, every listing passes identity, bank-match, document and human-review
+                  On Xavorian, every listing passes identity, bank-match, document and automated-verification
                   gates before it can exist. Join the waitlist and browse with your guard down.
                 </p>
                 <Link

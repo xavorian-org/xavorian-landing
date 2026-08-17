@@ -158,7 +158,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
                 <p className="text-base font-bold tracking-tight">Read less, worry less.</p>
                 <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
                   On Xavorian, this entire checklist runs before a listing can exist — identity,
-                  bank-match, document and human-review gates. Join the waitlist and browse with
+                  bank-match, document and automated-verification gates. Join the waitlist and browse with
                   your guard down.
                 </p>
                 <Link

@@ -3,7 +3,7 @@
 > Nigeria's trust layer for real estate — a waitlist-stage marketplace where every
 > listing must pass four verification gates before it can exist: KYC identity check
 > (government ID + liveness), bank-account name match, document scan with AI truthing,
-> and human review. Domain: https://www.xavorian.com
+> and an automated multi-layer verification audit. Domain: https://www.xavorian.com
 
 Xavorian is launching city by city across Nigeria (Lagos, Abuja, Benin City,
 Port Harcourt, Ibadan, Asaba, Warri, Enugu, Uyo and beyond). Access is currently
@@ -56,7 +56,7 @@ non-negotiable rule: pay only an account whose name matches the verified identit
   conversion paths resolve to /waitlist.
 - The four gates: (1) government ID + liveness KYC, (2) payout bank account name
   must match the verified ID, (3) title document scan with AI-assisted cross-check,
-  (4) human reviewer sign-off. A listing exists only after all four pass.
+  (4) automated multi-layer verification audit. A listing exists only after all four pass.
 - Verification is a process, not a guarantee: Xavorian expressly does not warrant
   that fraud cannot occur; see /terms (Section 8) and /disclaimer.
 - Payments: direct bank transfers via licensed payment processors to name-matched

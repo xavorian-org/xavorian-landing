@@ -27,7 +27,7 @@ const ladder = [
     icon: BadgeCheck,
     tier: 'Now · Foundation',
     title: 'The four gates, for everyone',
-    body: 'Identity checks, bank-account matching, document audits and human review for every agent and every listing. This is the floor, and the floor never lowers.',
+    body: 'Identity checks, bank-account matching, document audits and automated multi-layer verification for every agent and every listing. This is the floor, and the floor never lowers.',
   },
   {
     icon: MapPinned,
@@ -60,8 +60,8 @@ export default function VisionPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             Xavorian starts in Nigeria because the wound is deepest here. But the playbook
-            travels well: verified people, matched accounts, audited documents, human
-            review. Here is where we are headed, and how we plan to get there.
+            travels well: verified people, matched accounts, audited documents,
+            automated oversight. Here is where we are headed, and how we plan to get there.
           </p>
         </Reveal>
       </section>
@@ -130,9 +130,10 @@ export default function VisionPage() {
                   evolve. So does the machine that reads them.
                 </p>
                 <p>
-                  The AI does not replace the human reviewer. It hands them a tighter file
-                  and sharper questions. Bad listings get caught earlier, good listings
-                  move faster, and the gap between fake and real keeps widening.
+                  The AI does not replace judgement; it sharpens it at impossible scale:
+                  every document read against every claim, every name against every
+                  account. Bad listings get caught earlier, good listings move faster,
+                  and the gap between fake and real keeps widening.
                 </p>
                 <p className="font-medium text-foreground">
                   The bar stays where it is. The climb over it gets harder for anyone
@@ -155,8 +156,8 @@ export default function VisionPage() {
             More cities, in the order you choose.
           </h2>
           <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-            Verification takes trained humans, and trained humans get hired where demand
-            already exists. Cities open in waitlist order, so every signup is a vote for
+            Verification needs deep city-level registry indexing, and that work lands
+            first where demand already exists. Cities open in waitlist order, so every signup is a vote for
             where Xavorian lands next.
           </p>
         </Reveal>

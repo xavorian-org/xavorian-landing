@@ -85,7 +85,7 @@ export const Footer = () => {
             </Link>
             <p className="max-w-xs text-xs leading-relaxed text-muted-foreground sm:text-sm">
               Nigeria&apos;s trust layer for real estate. Verified agents, audited documents,
-              human-reviewed listings.
+              automated multi-layer verification.
             </p>
             <address className="flex flex-col gap-2.5 text-xs not-italic text-muted-foreground">
               <a href={`mailto:${BRAND.email}`} className="flex items-center gap-2 transition-colors hover:text-foreground">

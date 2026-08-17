@@ -7,14 +7,14 @@ import { ShieldCheck, MapPin, BellRing } from 'lucide-react';
 export const metadata: Metadata = pageMetadata({
   title: 'Join the Waitlist — Verified Nigerian Real Estate',
   description:
-    'Reserve your place on Xavorian. Verified agents, document-audited listings and human review — opening city by city across Nigeria.',
+    'Reserve your place on Xavorian. Verified agents, document-audited listings and automated multi-layer verification — opening city by city across Nigeria.',
   path: '/waitlist',
 });
 
 const perks = [
   { icon: BellRing, title: 'First to know', body: 'One email when your city opens. You will never wonder if you missed it.' },
   { icon: MapPin, title: 'Your city moves up', body: 'Cities open in waitlist order. Every signup pushes yours forward.' },
-  { icon: ShieldCheck, title: 'Early agents get reviewed first', body: 'Agents who join now go through the verification gates before launch day.' },
+  { icon: ShieldCheck, title: 'Early agents get verified first', body: 'Agents who join now go through the verification gates before launch day.' },
 ];
 
 export default function WaitlistPage() {

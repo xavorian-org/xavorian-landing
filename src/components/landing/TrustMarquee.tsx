@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 const items = [
   { icon: ShieldCheck, label: 'Checked agents and owners' },
   { icon: FileCheck2, label: 'Checked property papers' },
-  { icon: UserCheck, label: 'Real people review everything first' },
+  { icon: UserCheck, label: 'Automated checks before anything goes live' },
   { icon: Landmark, label: 'Payments match the real ID name only' },
   { icon: BadgeCheck, label: 'Agents are checked before we launch' },
   { icon: Globe2, label: 'All of Nigeria, city by city' },
