@@ -1,5 +1,8 @@
+'use client';
+
 import { Ghost, Camera, FileX2, Users } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
+import { useAutoCarousel } from '@/lib/use-auto-carousel';
 
 const villains = [
   {
@@ -32,9 +35,12 @@ const villains = [
   },
 ];
 
-export const Problem = () => (
+export const Problem = () => {
+  const { ref, pauseHandlers } = useAutoCarousel<HTMLDivElement>(3000);
+
+  return (
   <section className="container mx-auto mt-20 sm:mt-28 lg:mt-32">
-    <div className="rounded-[2rem] bg-foreground px-6 py-14 text-white sm:px-12 sm:py-16">
+    <div className="rounded-[2rem] bg-[radial-gradient(130%_150%_at_10%_0%,#3a1280_0%,#2a1060_45%,#130722_100%)] px-6 py-14 text-white sm:px-12 sm:py-16">
       <Reveal variant="blur" className="mx-auto max-w-3xl text-center">
         <span className="eyebrow border-white/15 bg-white/10 text-white/70">
           <span className="eyebrow-dot" />
@@ -49,16 +55,21 @@ export const Problem = () => (
         </div>
       </Reveal>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="-mx-6 mt-12 px-6 sm:mx-0 sm:px-0">
+        <div
+          ref={ref}
+          {...pauseHandlers}
+          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:snap-none lg:gap-6 lg:overflow-visible lg:pb-0"
+        >
         {villains.map((v, i) => (
-          <Reveal key={v.name} delay={i * 90} variant="scale">
+          <Reveal key={v.name} delay={i * 90} variant="scale" className="h-full min-w-[82%] shrink-0 snap-center sm:min-w-[52%] lg:min-w-0 lg:shrink">
             <article className="group flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl hover:shadow-black/40 sm:p-7">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white/55">
                     {v.tag}
                   </span>
-                  <div className="flex size-10 items-center justify-center rounded-2xl bg-white text-foreground transition-transform group-hover:scale-105">
+                  <div className="flex size-10 items-center justify-center rounded-2xl bg-white text-violet-700 transition-transform group-hover:scale-105">
                     <v.icon className="size-5" strokeWidth={2} />
                   </div>
                 </div>
@@ -68,13 +79,14 @@ export const Problem = () => (
               </div>
 
               <div className="mt-6 border-t border-white/10 pt-4">
-                <p className="text-xs font-bold text-emerald-300">
+                <p className="text-xs font-bold text-violet-300">
                   {v.tell}
                 </p>
               </div>
             </article>
           </Reveal>
         ))}
+        </div>
       </div>
 
       <Reveal delay={120} className="mt-10 text-center">
@@ -85,4 +97,5 @@ export const Problem = () => (
       </Reveal>
     </div>
   </section>
-);
+  );
+};

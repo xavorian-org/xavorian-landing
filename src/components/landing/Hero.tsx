@@ -24,10 +24,10 @@ export const Hero = () => (
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30" />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto flex items-center pb-20 pt-24">
+      <div className="container relative z-10 mx-auto flex items-center pb-20 pt-28 sm:pt-32">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/85 backdrop-blur-sm animate-fade-up">
-            <span className="size-1.5 rounded-full bg-emerald-300" />
+            <span className="size-1.5 rounded-full bg-violet-300" />
             Nigeria&apos;s trust layer for real estate
           </span>
 
@@ -44,7 +44,7 @@ export const Hero = () => (
               ))}
             </span>
             <span
-              className="mt-5 block font-display text-5xl italic text-amber-100 animate-fade-blur sm:text-7xl lg:text-8xl lg:leading-none"
+              className="mt-5 block font-display text-5xl italic text-violet-300 animate-fade-blur sm:text-7xl lg:text-8xl lg:leading-none"
               style={{ animationDelay: '430ms' }}
               aria-hidden="true"
             >
@@ -102,8 +102,8 @@ export const Hero = () => (
       >
         <div className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md">
           <span className="relative flex size-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
-            <span className="relative inline-flex size-2.5 rounded-full bg-emerald-400" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-70" />
+            <span className="relative inline-flex size-2.5 rounded-full bg-violet-400" />
           </span>
           <p className="text-xs font-semibold text-white/90">Four gates. Every listing.</p>
         </div>

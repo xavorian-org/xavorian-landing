@@ -19,7 +19,7 @@ export const Locations = () => (
           <p>Your city will open faster if more people from there join the waitlist.</p>
         </div>
       </div>
-      <Link href="/waitlist" className="link-underline text-xs font-bold text-foreground sm:text-sm shrink-0">
+      <Link href="/waitlist" className="link-underline text-xs font-bold text-violet-600 sm:text-sm shrink-0">
         Not on the list? Tell us where you are
       </Link>
     </Reveal>

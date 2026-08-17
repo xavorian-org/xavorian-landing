@@ -27,6 +27,7 @@ export const Nav = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const overDark = pathname === '/' && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -58,18 +59,22 @@ export const Nav = () => {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 transition-all duration-300',
+        'z-50 transition-all duration-300',
         open
-          ? 'bg-background border-b border-border/80'
-          : scrolled
-          ? 'bg-background/80 backdrop-blur-lg border-b border-border/80 shadow-sm'
-          : 'bg-background/80 backdrop-blur-lg border-b border-transparent',
+          ? 'sticky top-0 border-b border-border/80 bg-background'
+          : pathname === '/'
+            ? scrolled
+              ? 'fixed inset-x-0 top-0 border-b border-border/80 bg-background/80 backdrop-blur-lg shadow-sm'
+              : 'fixed inset-x-0 top-0 bg-transparent'
+            : scrolled
+              ? 'sticky top-0 border-b border-border/80 bg-background/80 backdrop-blur-lg shadow-sm'
+              : 'sticky top-0 border-b border-transparent bg-background/80 backdrop-blur-lg',
       )}
     >
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 sm:h-20 sm:px-6" aria-label="Main navigation">
         <Link href="/" className="flex shrink-0 items-center transition-opacity hover:opacity-90" aria-label="Xavorian home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/xavorian-wordmark.svg" alt="Xavorian" className="h-7 w-auto sm:h-8" width="200" height="40" />
+          <img src="/xavorian-wordmark.svg" alt="Xavorian" className={cn('h-7 w-auto sm:h-8', overDark && 'brightness-0 invert')} width="200" height="40" />
         </Link>
 
         {/* Desktop navigation links */}
@@ -80,8 +85,9 @@ export const Nav = () => {
               href={l.to}
               prefetch={true}
               className={cn(
-                'text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground',
-                pathname === l.to && 'text-foreground font-bold',
+                'text-xs font-semibold uppercase tracking-wider transition-colors',
+                overDark ? 'text-white/75 hover:text-white' : 'text-muted-foreground hover:text-foreground',
+                pathname === l.to && (overDark ? 'text-white font-bold' : 'text-foreground font-bold'),
               )}
             >
               {l.label}
@@ -93,13 +99,23 @@ export const Nav = () => {
           <Link
             href="/waitlist"
             prefetch={true}
-            className="group hidden md:inline-flex h-11 items-center gap-2 rounded-full bg-primary px-6 text-sm font-bold text-primary-foreground shadow-sm transition-all hover:bg-neutral-900 hover:shadow-md active:scale-95"
+            className={cn(
+              'group hidden md:inline-flex h-11 items-center gap-2 rounded-full px-6 text-sm font-bold shadow-sm transition-all hover:shadow-md active:scale-95',
+              overDark
+                ? 'bg-white text-foreground hover:bg-white/90'
+                : 'bg-primary text-primary-foreground hover:bg-neutral-900',
+            )}
           >
             Join the waitlist
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" data-icon="inline-end" />
           </Link>
           <button
-            className="relative inline-flex size-10 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-sm transition-all hover:bg-muted active:scale-95 md:hidden"
+            className={cn(
+              'relative inline-flex size-10 items-center justify-center rounded-full border shadow-sm transition-all active:scale-95 md:hidden',
+              overDark
+                ? 'border-white/25 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20'
+                : 'border-border bg-card text-foreground hover:bg-muted',
+            )}
             onClick={() => setOpen(!open)}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
