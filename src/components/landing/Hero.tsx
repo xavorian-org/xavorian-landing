@@ -11,8 +11,8 @@ export const Hero = () => (
     <section className="relative isolate flex min-h-[85svh] w-full overflow-hidden bg-foreground">
       {/* Full-bleed estate photo */}
       <Image
-        src="/xavorian-hero-house.jpg"
-        alt="A modern, well-kept Nigerian home at dusk — the kind of verified property Xavorian buyers move into with confidence"
+        src="/xavorian-estate-street.jpg"
+        alt="Duplex homes lining a quiet street in a well-kept Nigerian residential estate — the kind of verified property Xavorian buyers move into with confidence"
         fill
         priority
         sizes="100vw"
