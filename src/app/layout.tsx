@@ -38,14 +38,21 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: 'en_NG',
     type: 'website',
-    // og:image is injected automatically from `app/opengraph-image.tsx`
-    // (generated serverlessly, always resolves to the live domain).
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Xavorian — Buy property in Nigeria. Without fear of scam.',
+        type: 'image/png',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@xavorianxyz',
     creator: '@xavorianxyz',
-    // twitter:image comes from `app/twitter-image.tsx`.
+    images: ['/og-image.png'],
   },
   other: {
     'mobile-web-app-capable': 'yes',

@@ -1,0 +1,13 @@
+# Memory Index
+
+- [landing_page_simplification.md](./landing_page_simplification.md): Simplified the landing page copy to be more humanized, readable for a 14-year-old, removed high grammar, and removed hyphens.
+- [hero_layout_gradient_removal_and_autonomous_verification.md](./hero_layout_gradient_removal_and_autonomous_verification.md): Updated Hero section to Modal-inspired centered layout with headline, subtext, and CTAs centered, animated right-to-left trust marquee, centered SVG animation asset, zero gradients, site-wide autonomous AI verification copy, fixed OG image URLs, optimized navigation speed, and right-aligned 100% solid mobile menu drawer.
+- [opencode_config_json_syntax_fix.md](./opencode_config_json_syntax_fix.md): Fixed JSON syntax error in opencode.jsonc where `modal-damien` was placed outside the `provider` object due to a premature closing brace after `modal-group`.
+- [git_remote_repo_change.md](./git_remote_repo_change.md): Updated git remote origin URL to https://github.com/xavorian01/xavorian-main.git.
+- [legal_traps_mitigation_and_copy_humanization.md](./legal_traps_mitigation_and_copy_humanization.md): Mitigated legal traps across marketing and legal documentation (FCCPA 2018, NDPA 2023, ARCON, CBN payment rules, venue jurisdictional updates) and humanized platform verification copy.
+- [hero_animation_speeds_and_margin_optimization.md](./hero_animation_speeds_and_margin_optimization.md): Reduced marquee speed by 2.7x, slowed hero SVG and sparkle animations by 30%, and expanded container max-widths to 1440px to eliminate wasted side margins.
+- [github_multi_repo_push.md](./github_multi_repo_push.md): Created and pushed 6 distinct GitHub repositories under xavorian01 account for each project folder, and updated root xavorian-main repository.
+- [hero_house_side_by_side_layout.md](./hero_house_side_by_side_layout.md): Repositioned house verification SVG animation side-by-side next to the headline text on desktop viewports with a refined max-width container.
+- [hero_house_size_increase.md](./hero_house_size_increase.md): Scaled up the house verification SVG animation size by ~20% (max-w-2xl) while preserving its exact side-by-side positioning next to the text on desktop.
+- [hero_side_by_side_layout_refinement.md](./hero_side_by_side_layout_refinement.md): Refined side-by-side Hero 2-column layout with supporting subtext, trust micro-badge, and framed stage container for the house visual.
+- [og_image_replacement_with_public_asset.md](./og_image_replacement_with_public_asset.md): Replaced dynamically generated Satori OG image with the static brand image from `public/og-image.png` across Next.js file conventions, OpenGraph, and Twitter card metadata.
