@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
-import { TrustMarquee } from '@/components/landing/TrustMarquee';
 
 const H1_LINE_1 = ['House', 'hunting', 'without'];
 
@@ -109,7 +108,5 @@ export const Hero = () => (
         </div>
       </div>
     </section>
-
-    <TrustMarquee />
   </>
 );
