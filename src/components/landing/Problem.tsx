@@ -62,8 +62,8 @@ export const Problem = () => {
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:snap-none lg:gap-6 lg:overflow-visible lg:pb-0"
         >
         {villains.map((v, i) => (
-          <Reveal key={v.name} delay={i * 90} variant="scale" className="h-full min-w-[34%] shrink-0 snap-center sm:min-w-[30%] lg:min-w-0 lg:shrink">
-            <article className="group flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl hover:shadow-black/40 sm:p-7">
+          <Reveal key={v.name} delay={i * 90} variant="scale" className="h-full w-[78%] shrink-0 snap-center sm:w-[46%] lg:w-auto lg:shrink">
+            <article className="group flex h-full w-full min-w-0 flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl hover:shadow-black/40 sm:p-7">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white/55">
