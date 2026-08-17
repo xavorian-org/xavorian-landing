@@ -11,7 +11,7 @@ export const Hero = () => (
       {/* Full-bleed mansion photo — softened focus so the grade reads intentional */}
       <Image
         src="/xavorian-estate-street.jpg"
-        alt="A mansion on an estate street at dusk — the kind of aspirational property Xavorian buyers search for"
+        alt="A residential real estate development — the kind of aspirational property Xavorian buyers search for"
         fill
         priority
         sizes="100vw"
