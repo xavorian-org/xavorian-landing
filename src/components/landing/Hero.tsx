@@ -3,25 +3,25 @@ import Image from 'next/image';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { TrustMarquee } from '@/components/landing/TrustMarquee';
 
-const H1_LINE_1 = ['House', 'hunting', 'without', 'the', 'horror', 'story.'];
-const H1_LINE_2 = ['Buy', 'properties', 'you', 'can', 'trust'];
+const H1_LINE_1 = ['House', 'hunting', 'without'];
 
 export const Hero = () => (
   <>
     <section className="relative isolate flex min-h-[85svh] w-full overflow-hidden bg-foreground">
-      {/* Full-bleed estate photo */}
+      {/* Full-bleed estate photo — softened focus so the grade reads intentional */}
       <Image
         src="/xavorian-estate-street.jpg"
         alt="Duplex homes lining a quiet street in a well-kept Nigerian residential estate — the kind of verified property Xavorian buyers move into with confidence"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="scale-110 object-cover object-[78%_center] blur-[1.8px]"
       />
 
       {/* Scrims: keep text legible across any photo crop */}
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/15" />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25" />
+      <div aria-hidden="true" className="absolute inset-[18%_45%_0_0] bg-black/25 blur-3xl" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30" />
 
       {/* Content */}
       <div className="container relative z-10 mx-auto flex items-center pb-20 pt-24">
@@ -32,24 +32,29 @@ export const Hero = () => (
           </span>
 
           <h1
-            className="mt-6 text-balance text-4xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-7xl lg:leading-[1.05]"
+            className="mt-7 text-4xl text-white sm:text-6xl lg:text-7xl"
             aria-label="House hunting without the horror story. Buy properties you can trust"
           >
-            <span className="block">
+            <span className="block font-extrabold tracking-tight">
               {H1_LINE_1.map((w, i) => (
-                <span key={w} className="animate-word-rise" style={{ animationDelay: `${70 + i * 60}ms` }} aria-hidden="true">
+                <span key={w} className="inline-block animate-word-rise" style={{ animationDelay: `${70 + i * 60}ms` }} aria-hidden="true">
                   {w}
                   {i < H1_LINE_1.length - 1 ? ' ' : ''}
                 </span>
               ))}
             </span>
-            <span className="mt-3 block text-2xl font-bold text-white/85 sm:text-3xl lg:text-4xl">
-              {H1_LINE_2.map((w, i) => (
-                <span key={w} className="animate-word-rise" style={{ animationDelay: `${420 + i * 60}ms` }} aria-hidden="true">
-                  {w}
-                  {i < H1_LINE_2.length - 1 ? ' ' : ''}
-                </span>
-              ))}
+            <span
+              className="mt-5 block font-display text-5xl italic text-amber-100 animate-fade-blur sm:text-7xl lg:text-8xl lg:leading-none"
+              style={{ animationDelay: '430ms' }}
+              aria-hidden="true"
+            >
+              the horror story.
+            </span>
+            <span
+              className="mt-6 block text-base font-bold text-white/85 animate-fade-up sm:text-lg lg:text-xl"
+              style={{ animationDelay: '560ms' }}
+            >
+              Buy properties you can trust
             </span>
           </h1>
 

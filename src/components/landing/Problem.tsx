@@ -34,53 +34,55 @@ const villains = [
 
 export const Problem = () => (
   <section className="container mx-auto mt-20 sm:mt-28 lg:mt-32">
-    <Reveal variant="blur" className="mx-auto max-w-3xl text-center">
-      <span className="eyebrow">
-        <span className="eyebrow-dot" />
-        Know the enemy
-      </span>
-      <h2 className="mt-4 text-balance font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-5xl">
-        The four main tricks behind almost every property scam in Nigeria.
-      </h2>
-      <div className="mt-4 flex flex-col gap-1.5 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-        <p>If you have looked for a place here, you have probably seen at least one of these.</p>
-        <p>They might look different, but they all use the same tricks and have the same weak spot.</p>
-      </div>
-    </Reveal>
+    <div className="rounded-[2rem] bg-foreground px-6 py-14 text-white sm:px-12 sm:py-16">
+      <Reveal variant="blur" className="mx-auto max-w-3xl text-center">
+        <span className="eyebrow border-white/15 bg-white/10 text-white/70">
+          <span className="eyebrow-dot" />
+          Know the enemy
+        </span>
+        <h2 className="mt-4 text-balance font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-5xl">
+          The four main tricks behind almost every property scam in Nigeria.
+        </h2>
+        <div className="mt-4 flex flex-col gap-1.5 text-pretty text-sm leading-relaxed text-white/65 sm:text-base">
+          <p>If you have looked for a place here, you have probably seen at least one of these.</p>
+          <p>They might look different, but they all use the same tricks and have the same weak spot.</p>
+        </div>
+      </Reveal>
 
-    <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {villains.map((v, i) => (
-        <Reveal key={v.name} delay={i * 90} variant="scale">
-          <article className="group flex h-full flex-col justify-between rounded-3xl border border-border bg-muted/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-card hover:shadow-xl hover:shadow-black/5 sm:p-7">
-            <div>
-              <div className="flex items-center justify-between">
-                <span className="inline-flex rounded-full bg-background px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground border border-border/80">
-                  {v.tag}
-                </span>
-                <div className="flex size-10 items-center justify-center rounded-2xl bg-foreground text-background transition-transform group-hover:scale-105">
-                  <v.icon className="size-5" strokeWidth={2} />
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {villains.map((v, i) => (
+          <Reveal key={v.name} delay={i * 90} variant="scale">
+            <article className="group flex h-full flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl hover:shadow-black/40 sm:p-7">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white/55">
+                    {v.tag}
+                  </span>
+                  <div className="flex size-10 items-center justify-center rounded-2xl bg-white text-foreground transition-transform group-hover:scale-105">
+                    <v.icon className="size-5" strokeWidth={2} />
+                  </div>
                 </div>
+
+                <h3 className="mt-5 text-lg font-bold tracking-tight text-white">{v.name}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-white/65 sm:text-sm">{v.story}</p>
               </div>
 
-              <h3 className="mt-5 text-lg font-bold tracking-tight text-foreground">{v.name}</h3>
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">{v.story}</p>
-            </div>
-
-            <div className="mt-6 border-t border-border/80 pt-4">
-              <p className="text-xs font-bold text-foreground">
-                {v.tell}
-              </p>
-            </div>
-          </article>
-        </Reveal>
-      ))}
-    </div>
-
-    <Reveal delay={120} className="mt-10 text-center">
-      <div className="mx-auto max-w-xl flex flex-col gap-1 text-sm font-semibold text-foreground">
-        <p>Every scam fails when you actually check the facts.</p>
-        <p className="text-muted-foreground font-normal">So we made checking the facts a must, not just an option.</p>
+              <div className="mt-6 border-t border-white/10 pt-4">
+                <p className="text-xs font-bold text-emerald-300">
+                  {v.tell}
+                </p>
+              </div>
+            </article>
+          </Reveal>
+        ))}
       </div>
-    </Reveal>
+
+      <Reveal delay={120} className="mt-10 text-center">
+        <div className="mx-auto max-w-xl flex flex-col gap-1 text-sm font-semibold text-white">
+          <p>Every scam fails when you actually check the facts.</p>
+          <p className="font-normal text-white/60">So we made checking the facts a must, not just an option.</p>
+        </div>
+      </Reveal>
+    </div>
   </section>
 );
