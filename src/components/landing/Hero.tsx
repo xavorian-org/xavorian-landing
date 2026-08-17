@@ -8,14 +8,14 @@ const H1_LINE_1 = ['House', 'hunting', 'without'];
 export const Hero = () => (
   <>
     <section className="relative isolate flex min-h-[85svh] w-full overflow-hidden bg-foreground">
-      {/* Full-bleed estate photo — softened focus so the grade reads intentional */}
+      {/* Full-bleed mansion photo — softened focus so the grade reads intentional */}
       <Image
-        src="/xavorian-estate-street.jpg"
-        alt="Duplex homes lining a quiet street in a well-kept Nigerian residential estate — the kind of verified property Xavorian buyers move into with confidence"
+        src="/images.jpg"
+        alt="A modern white Nigerian mansion under a violet dusk sky, with a landscaped driveway — the kind of aspirational property Xavorian buyers search for"
         fill
         priority
         sizes="100vw"
-        className="scale-110 object-cover object-[78%_center] blur-[1.8px]"
+        className="scale-110 object-cover object-center blur-[1.8px]"
       />
 
       {/* Scrims: keep text legible across any photo crop */}
