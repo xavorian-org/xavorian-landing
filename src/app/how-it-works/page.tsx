@@ -85,7 +85,7 @@ const howToSchema = {
   '@type': 'HowTo',
   name: 'How Xavorian verifies every listing',
   description:
-    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI truthing, and automated multi-layer audit.',
+    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI truthing, and human review.',
   totalTime: 'P3D',
   step: GATES.map((gate, i) => ({
     '@type': 'HowToStep',

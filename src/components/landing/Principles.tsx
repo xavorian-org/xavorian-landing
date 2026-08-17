@@ -71,9 +71,9 @@ const rows = [
     visualLabel: 'Documents stacking and being stamped verified',
   },
   {
-    value: 'Automated multi-layer verification',
-    body: 'Our automated system cross-checks property details, account names, and document records systematically before any listing reaches your screen.',
-    points: ['Records cross-checked', 'Consistent algorithmic screening', 'Every document audited'],
+    value: 'Machines check, people sign off',
+    body: 'Our system cross-checks property details, account names, and document records first. Then a trained reviewer reads the complete file before any listing reaches your screen.',
+    points: ['Records cross-checked', 'AI document audit', 'Human review before publish'],
     theme: 'gray' as const,
     visual: (
       <img

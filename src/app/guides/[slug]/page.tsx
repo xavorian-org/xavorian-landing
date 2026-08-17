@@ -113,6 +113,12 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
             {guide.intro}
           </p>
 
+          <p className="mt-6 max-w-2xl text-xs leading-relaxed text-muted-foreground">
+            This guide is general information, not legal advice. Property transfers in Nigeria involve
+            state-level land registry process — engage a qualified property lawyer for your specific
+            transaction.
+          </p>
+
           {/* sections */}
           <div className="mt-12 max-w-2xl space-y-10">
             {guide.sections.map((section) => (

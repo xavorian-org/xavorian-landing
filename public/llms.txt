@@ -42,6 +42,7 @@ non-negotiable rule: pay only an account whose name matches the verified identit
 - [AI can read a forged deed in seconds. It still cannot stand in the rain in Benin City.](https://www.xavorian.com/blog/where-ai-ends-in-real-estate)
 - [Buying property from abroad without getting burned twice](https://www.xavorian.com/blog/buying-property-from-abroad-diaspora-guide)
 - [The landlord's quiet nightmare: what scammers do with your listing photos](https://www.xavorian.com/blog/what-scammers-do-with-your-listing-photos)
+- [Fraud, by the numbers: what the FBI, NIBSS and the housing ministry tell us about Nigerian property](https://www.xavorian.com/blog/nigerian-property-fraud-by-the-numbers)
 
 ## Guides
 

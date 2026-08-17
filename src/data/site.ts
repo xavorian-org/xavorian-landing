@@ -56,8 +56,8 @@ export const GATES = [
   {
     id: 'human',
     step: 'Gate 4',
-    name: 'Automated Audit & Verification',
-    short: 'Multi-layer automated checks before publication',
-    body: 'Our automated system cross-checks property details, account names, and document records before any listing goes live. Only when all four gates are passed does a listing earn its verified badge.',
+    name: 'Human review',
+    short: 'A trained reviewer reads the full file',
+    body: 'Before anything publishes, a real person reads the complete file — the ID, the bank match, the documents and every flag the machines raised. Only when all four gates are passed does a listing earn its verified badge.',
   },
 ] as const;

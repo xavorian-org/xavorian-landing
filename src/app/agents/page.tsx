@@ -52,7 +52,7 @@ const ladder = [
     icon: BadgeCheck,
     tier: 'Tier 1 · Every agent',
     title: 'The four gates',
-    body: 'ID and liveness check, bank-account name match, document audit per listing, automated multi-layer verification. No badge without all four.',
+    body: 'ID and liveness check, bank-account name match, document audit per listing, human review sign-off. No badge without all four.',
   },
   {
     icon: MapPinned,

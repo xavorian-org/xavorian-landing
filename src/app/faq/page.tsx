@@ -47,7 +47,7 @@ const groups: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'What does verification actually include?',
-        a: 'Four gates: a government ID with a liveness check, a bank-account name match, a scanned document audit with AI truthing, and an automated multi-layer verification audit. A listing that fails any gate never goes live.',
+        a: 'Four gates: a government ID with a liveness check, a bank-account name match, a scanned document audit with AI truthing, and a human reviewer who reads the full file before anything goes live. A listing that fails any gate never goes live.',
         link: { href: '/how-it-works', label: 'See the gates in detail' },
       },
       {

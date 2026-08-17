@@ -42,7 +42,7 @@ export const Hero = () => (
 
         {/* Supporting subtext paragraph */}
         <p className="mt-5 max-w-xl text-balance text-sm leading-relaxed text-muted-foreground sm:text-base lg:text-lg animate-fade-up" style={{ animationDelay: '680ms' }}>
-          Every property undergoes four multi-layer verification checks before it goes live. No stolen photos, no phantom landlords, zero scam risk.
+          Every property undergoes four multi-layer verification checks before it goes live. No stolen photos, no phantom landlords — designed to cut scam risk off at the gate.
         </p>
 
         {/* CTA Buttons */}
@@ -65,7 +65,7 @@ export const Hero = () => (
         {/* Trust micro-indicator */}
         <p className="mt-3.5 flex items-center gap-1.5 text-xs text-muted-foreground font-medium animate-fade-up" style={{ animationDelay: '1100ms' }}>
           <ShieldCheck className="size-4 text-foreground/60" />
-          Free to join • One email at launch • Zero spam guarantee
+          Free to join • One email at launch • No spam, ever
         </p>
       </div>
 
