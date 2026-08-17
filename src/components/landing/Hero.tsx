@@ -10,12 +10,12 @@ export const Hero = () => (
     <section className="relative isolate flex min-h-[62svh] w-full overflow-hidden bg-foreground">
       {/* Full-bleed mansion photo — softened focus so the grade reads intentional */}
       <Image
-        src="/images.jpg"
-        alt="A modern white Nigerian mansion under a violet dusk sky, with a landscaped driveway — the kind of aspirational property Xavorian buyers search for"
+        src="/xavorian-estate-street.jpg"
+        alt="A mansion on an estate street at dusk — the kind of aspirational property Xavorian buyers search for"
         fill
         priority
         sizes="100vw"
-        className="scale-[0.66] object-cover object-center blur-[1.8px]"
+        className="object-cover object-center blur-[1.8px]"
       />
 
       {/* Scrims: keep text legible across any photo crop */}
