@@ -7,7 +7,7 @@ const H1_LINE_1 = ['House', 'hunting', 'without'];
 
 export const Hero = () => (
   <>
-    <section className="relative isolate flex min-h-[85svh] w-full overflow-hidden bg-foreground">
+    <section className="relative isolate flex min-h-[62svh] w-full overflow-hidden bg-foreground">
       {/* Full-bleed mansion photo — softened focus so the grade reads intentional */}
       <Image
         src="/images.jpg"
@@ -15,7 +15,7 @@ export const Hero = () => (
         fill
         priority
         sizes="100vw"
-        className="scale-110 object-cover object-center blur-[1.8px]"
+        className="object-cover object-center blur-[1.8px]"
       />
 
       {/* Scrims: keep text legible across any photo crop */}
@@ -24,7 +24,7 @@ export const Hero = () => (
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/30" />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto flex items-center pb-20 pt-28 sm:pt-32">
+      <div className="container relative z-10 mx-auto flex items-center pb-14 pt-24">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/85 backdrop-blur-sm animate-fade-up">
             <span className="size-1.5 rounded-full bg-violet-300" />
