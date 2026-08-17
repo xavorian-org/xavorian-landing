@@ -10,7 +10,7 @@ export const Hero = () => (
     <section className="relative isolate flex min-h-[62svh] w-full overflow-hidden bg-foreground">
       {/* Full-bleed mansion photo — softened focus so the grade reads intentional */}
       <Image
-        src="/xavorian-estate-street.jpg"
+        src="/types-of-real-estate-overview-scaled.jpg"
         alt="A residential real estate development — the kind of aspirational property Xavorian buyers search for"
         fill
         priority
