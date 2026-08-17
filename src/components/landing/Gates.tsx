@@ -70,8 +70,8 @@ export const Gates = () => {
           {GATES.map((gate, i) => {
             const Icon = icons[i];
             return (
-              <Reveal key={gate.id} delay={i * 110} className="min-w-[66%] shrink-0 snap-center sm:min-w-[46%] lg:min-w-0 lg:shrink">
-                <li className="group relative flex h-full gap-5 rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg sm:p-7">
+              <Reveal key={gate.id} delay={i * 110} className="min-w-[34%] shrink-0 snap-center sm:min-w-[30%] lg:min-w-0 lg:shrink">
+                <li className="group relative flex h-full flex-col gap-3 rounded-3xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg sm:flex-row sm:gap-5 sm:p-7">
                   <div className="z-10 flex size-12 shrink-0 flex-col items-center justify-center rounded-2xl bg-foreground text-background transition-transform group-hover:scale-105">
                     <Icon className="size-5" strokeWidth={2} />
                     <span className="mt-0.5 text-[9px] font-extrabold uppercase tracking-wider opacity-80">{gate.step}</span>
@@ -85,7 +85,7 @@ export const Gates = () => {
               </Reveal>
             );
           })}
-          <Reveal delay={460} variant="scale" className="min-w-[66%] shrink-0 snap-center sm:min-w-[46%] lg:min-w-0 lg:shrink">
+          <Reveal delay={460} variant="scale" className="min-w-[34%] shrink-0 snap-center sm:min-w-[30%] lg:min-w-0 lg:shrink">
             <li className="relative flex h-full items-center gap-4 rounded-3xl border border-dashed border-border bg-muted/40 p-5 sm:p-6">
               <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background">
                 <BadgeCheck className="size-5" strokeWidth={2} />
