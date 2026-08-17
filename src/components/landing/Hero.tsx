@@ -15,7 +15,7 @@ export const Hero = () => (
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center blur-[1.8px]"
+        className="scale-[0.66] object-cover object-center blur-[1.8px]"
       />
 
       {/* Scrims: keep text legible across any photo crop */}
