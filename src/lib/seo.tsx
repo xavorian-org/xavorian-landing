@@ -4,6 +4,8 @@ export const SITE_NAME = 'Xavorian';
 export const BASE_URL = 'https://www.xavorian.com';
 export const DEFAULT_DESCRIPTION =
   "Xavorian is Nigeria's trust layer for real estate. Every listing is ID-checked and document-audited before going live.";
+const OG_IMAGE_ALT =
+  'Xavorian — House hunting without the horror story. Buy properties you can trust.';
 
 /** Builds the per-page Metadata object for App Router pages. */
 export function pageMetadata({
@@ -28,7 +30,14 @@ export function pageMetadata({
       siteName: SITE_NAME,
       locale: 'en_NG',
       type: 'website',
-      // Images inherit from the root opengraph-image/twitter-image files.
+      images: [
+        {
+          url: `${BASE_URL}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: OG_IMAGE_ALT,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -36,6 +45,7 @@ export function pageMetadata({
       creator: '@xavorianxyz',
       title: `${title} | ${SITE_NAME}`,
       description,
+      images: [`${BASE_URL}/twitter-image`],
     },
     robots: { index: true, follow: true },
   };
