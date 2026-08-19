@@ -1,12 +1,30 @@
+# dependencies
 node_modules/
+/.pnpm
+/.yarn
+
+# build outputs
 .next/
-dist/
-build/
 out/
+build/
+dist/
+*.tsbuildinfo
+
+# logs
+*.log
+dev-server.log
+dev-server-err.log
+
+# environment variables
 .env
 .env.*
 !.env.example
-*.log
-*.tsbuildinfo
+.env*.local
+.env.production
+.env.development
+
+# IDE & OS
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db

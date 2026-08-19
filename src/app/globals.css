@@ -108,6 +108,21 @@ body {
 }
 .animate-pulse-ring { animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 
+/* ------- trust marquee ------- */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-x 80s linear infinite;
+}
+.animate-marquee-rev {
+  animation: marquee-x 80s linear infinite reverse;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
 /* ------- hero stage: drifting sparkles around the svg ------- */
 .hero-stage {
   position: relative;
