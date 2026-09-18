@@ -317,7 +317,7 @@ export default function TermsPage() {
               You are solely responsible for your login credentials and one-time passwords (OTPs) and for all
               activity under your account. Xavorian will never telephone, email, or message you to ask for
               your password, OTP, PIN, BVN, or NIN — any such request is impersonation; report it immediately
-              to xavoriansupport@gmail.com. Notify us without delay at xavoriansupport@gmail.com or
+              to support@xavorian.com. Notify us without delay at support@xavorian.com or
               +234 805 637 3583 of any unauthorised account use; you remain responsible for account activity
               until we receive that notice and have reasonable opportunity to act.
             </p>
@@ -509,7 +509,7 @@ export default function TermsPage() {
               <li>Pay only through Platform payment flows, and only to accounts passing the Bank-Name-Match Rule.</li>
               <li>Keep negotiations and communications on the Platform so a record exists.</li>
               <li>Keep complete evidence of every Transaction — receipts, messages, account-name confirmations, signed agreements.</li>
-              <li>Report suspected fraud or pressure tactics to xavoriansupport@gmail.com immediately.</li>
+              <li>Report suspected fraud or pressure tactics to support@xavorian.com immediately.</li>
               <li>Protect your credentials, OTPs, and identity documents.</li>
             </ul>
           </div>
@@ -688,7 +688,7 @@ export default function TermsPage() {
             <h3 className="text-sm font-bold text-foreground">9.1 Reporting</h3>
             <p className="mt-1">
               Report suspected fraud, impersonation, or criminal conduct in connection with Platform activity
-              immediately to xavoriansupport@gmail.com, with all available evidence. You should also report
+              immediately to support@xavorian.com, with all available evidence. You should also report
               crime directly to the Nigeria Police Force or the EFCC.
             </p>
           </div>
@@ -1013,7 +1013,7 @@ export default function TermsPage() {
           <div>
             <h3 className="text-sm font-bold text-foreground">14.2 By You</h3>
             <p className="mt-1">
-              You may close your account at any time via xavoriansupport@gmail.com. Closure takes effect once
+              You may close your account at any time via support@xavorian.com. Closure takes effect once
               any outstanding Transactions, payment obligations, disputes, or investigations affecting your
               account have been resolved.
             </p>
@@ -1050,7 +1050,7 @@ export default function TermsPage() {
             <h3 className="text-sm font-bold text-foreground">15.1 Good-Faith Negotiation (30 Days)</h3>
             <p className="mt-1">
               Before any formal proceeding, the complaining party must send a written dispute notice (for
-              Xavorian, to xavorianlegal@gmail.com) describing the dispute and the relief sought, and the
+              Xavorian, to legal@xavorian.com) describing the dispute and the relief sought, and the
               parties shall attempt in good faith to resolve the dispute by negotiation for thirty (30) days
               from receipt.
             </p>
@@ -1160,7 +1160,7 @@ export default function TermsPage() {
           <div>
             <h3 className="text-sm font-bold text-foreground">15.12 Notices</h3>
             <p className="mt-1">
-              Legal notices to Xavorian: xavorianlegal@gmail.com. Support: xavoriansupport@gmail.com. Urgent
+              Legal notices to Xavorian: legal@xavorian.com. Support: support@xavorian.com. Urgent
               matters: +234 805 637 3583. Notices to you go to your registered email or by Platform posting.
               An email notice is deemed received twenty-four (24) hours after sending, absent a delivery
               failure notification.
@@ -1196,10 +1196,10 @@ export default function TermsPage() {
           <div className="max-w-md space-y-2 rounded-2xl border border-border bg-muted p-6 text-sm text-muted-foreground">
             <p className="font-bold text-foreground">Xavorian Technology Company</p>
             <p>
-              Legal notices: <span className="font-semibold text-foreground">xavorianlegal@gmail.com</span>
+              Legal notices: <span className="font-semibold text-foreground">legal@xavorian.com</span>
             </p>
             <p>
-              Support: <span className="font-semibold text-foreground">xavoriansupport@gmail.com</span>
+              Support: <span className="font-semibold text-foreground">support@xavorian.com</span>
             </p>
             <p>
               Phone: <span className="font-semibold text-foreground">+234 805 637 3583</span>

@@ -1,9 +1,9 @@
 export const BRAND = {
   name: 'Xavorian',
   tagline: "Nigeria's trust layer for real estate",
-  email: 'xavorian01@gmail.com',
-  supportEmail: 'xavoriansupport@gmail.com',
-  legalEmail: 'xavorianlegal@gmail.com',
+  email: 'hello@xavorian.com',
+  supportEmail: 'support@xavorian.com',
+  legalEmail: 'legal@xavorian.com',
   phoneDisplay: '+234 805 637 3583',
   phoneHref: '+2348056373583',
   whatsapp: 'https://wa.me/2348056373583',

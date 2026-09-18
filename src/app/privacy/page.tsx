@@ -694,10 +694,10 @@ export default function PrivacyPage() {
           <div className="max-w-md space-y-2 rounded-2xl border border-border bg-muted p-6 text-sm text-muted-foreground">
             <p className="font-bold text-foreground">Xavorian Technology Company — Data Protection Office</p>
             <p>
-              Email: <span className="font-semibold text-foreground">xavorianlegal@gmail.com</span>
+              Email: <span className="font-semibold text-foreground">legal@xavorian.com</span>
             </p>
             <p>
-              Support: <span className="font-semibold text-foreground">xavoriansupport@gmail.com</span>
+              Support: <span className="font-semibold text-foreground">support@xavorian.com</span>
             </p>
             <p>
               Phone: <span className="font-semibold text-foreground">+234 805 637 3583</span>

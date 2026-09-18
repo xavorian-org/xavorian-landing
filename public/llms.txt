@@ -62,8 +62,8 @@ non-negotiable rule: pay only an account whose name matches the verified identit
 - Payments: direct bank transfers via licensed payment processors to name-matched
   verified accounts; Xavorian holds no user funds.
 - Eligibility: 18+.
-- Contact: xavorian01@gmail.com (general), xavoriansupport@gmail.com (support),
-  xavorianlegal@gmail.com (legal), WhatsApp +234 805 637 3583.
+- Contact: hello@xavorian.com (general), support@xavorian.com (support),
+  legal@xavorian.com (legal), WhatsApp +234 805 637 3583.
 - Socials: @xavorianxyz on X, Instagram, TikTok and YouTube.
 
 ## Optional

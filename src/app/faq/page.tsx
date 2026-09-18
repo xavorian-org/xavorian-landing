@@ -80,7 +80,7 @@ const groups: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: 'How do I reach support at Xavorian?',
-        a: 'Email xavoriansupport@gmail.com for help, xavorian01@gmail.com for anything general, or message us on WhatsApp. We reply within one working day, usually much faster.',
+        a: 'Email support@xavorian.com for help, hello@xavorian.com for anything general, or message us on WhatsApp. We reply within one working day, usually much faster.',
         link: { href: '/contact', label: 'All contact options' },
       },
     ],
