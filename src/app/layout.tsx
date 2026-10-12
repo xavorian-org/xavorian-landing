@@ -26,11 +26,15 @@ export const metadata: Metadata = {
   description: DEFAULT_DESCRIPTION,
   applicationName: SITE_NAME,
   icons: {
-    icon: '/favicon.ico',
-    apple: '/icon-192.png',
+    icon: [
+      { url: '/favicon.ico?v=20261010' },
+      { url: '/favicon-32x32.png?v=20261010', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png?v=20261010', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/icon-192.png?v=20261010',
     other: {
       rel: 'manifest',
-      url: '/manifest.webmanifest',
+      url: '/manifest.webmanifest?v=20261010',
     },
   },
   manifest: '/manifest.webmanifest',

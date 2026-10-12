@@ -1,5 +1,5 @@
 {
-  "name": "Xavorian — Verified Nigerian Real Estate",
+  "name": "Xavorian",
   "short_name": "Xavorian",
   "description": "Nigeria's trust layer for real estate. Verified agents, audited documents, human-reviewed listings. Join the waitlist.",
   "start_url": "/",
@@ -7,7 +7,11 @@
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "orientation": "portrait-primary",
-  "categories": ["business", "lifestyle", "finance"],
+  "categories": [
+    "business",
+    "lifestyle",
+    "finance"
+  ],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -38,14 +42,24 @@
       "short_name": "Waitlist",
       "description": "Reserve early access to verified Nigerian real estate",
       "url": "/waitlist",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "How It Works",
       "short_name": "How It Works",
       "description": "Learn about the four verification gates",
       "url": "/how-it-works",
-      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

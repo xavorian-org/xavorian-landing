@@ -74,7 +74,7 @@ export const Nav = () => {
       <nav className="container mx-auto flex h-16 items-center justify-between px-4 sm:h-20 sm:px-6" aria-label="Main navigation">
         <Link href="/" className="flex shrink-0 items-center transition-opacity hover:opacity-90" aria-label="Xavorian home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/xavorian-wordmark.svg" alt="Xavorian" className={cn('h-7 w-auto sm:h-8', overDark && 'brightness-0 invert')} width="200" height="40" />
+          <img src="/xavorian-wordmark.svg" alt="Xavorian" className={cn('h-5 w-auto sm:h-5.5', overDark && 'brightness-0 invert')} width="160" height="30" />
         </Link>
 
         {/* Desktop navigation links */}
