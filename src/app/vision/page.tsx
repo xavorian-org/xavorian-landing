@@ -1,6 +1,15 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { BadgeCheck, Building2, MapPinned, BrainCircuit, ArrowRight } from 'lucide-react';
+import {
+  BadgeCheck,
+  Building2,
+  MapPinned,
+  ShieldCheck,
+  FileCheck2,
+  Cpu,
+  ArrowRight,
+  Quote,
+} from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
 import { CITIES } from '@/data/site';
@@ -22,24 +31,61 @@ const visionPageSchema = {
   isPartOf: { '@id': `${BASE_URL}/#website` },
 };
 
+const principles = [
+  {
+    title: 'Proof Before Promises',
+    body: 'If we cannot verify a claim against official records and audited documents, we do not present it as verified. Confidence is earned through checks, not adjectives or marketing hype.',
+  },
+  {
+    title: 'Names on Everything',
+    body: 'On listings, on verified bank accounts, on reviews, and on contracts. Anonymous environments are where scams breed, so anonymity is not permitted for transacting on Xavorian.',
+  },
+  {
+    title: 'Boring, on Purpose',
+    body: 'Verification should feel rigorous and unyielding. The day it feels casual, convenient, or rushed, we have failed our users.',
+  },
+  {
+    title: 'Built for Nigeria First',
+    body: 'Engineered for local land tenure reality: State Lands Bureaus, C of O verification, Gazette records, Governor’s Consent, survey beacon matching, and reducing inspection-fee scams.',
+  },
+];
+
+const pillars = [
+  {
+    icon: ShieldCheck,
+    title: 'Pillar 1: We Verify the Person',
+    body: 'Every agent and landlord completes mandatory government ID and biometric liveness checks, then links a verified bank account in the identical legal name. Accountability is the default.',
+  },
+  {
+    icon: FileCheck2,
+    title: 'Pillar 2: We Audit the Paperwork',
+    body: 'Title documents are scanned and cross-checked against listing claims. OCR and AI assist compare registration numbers and survey beacons to help expose forgeries.',
+  },
+  {
+    icon: Cpu,
+    title: 'Pillar 3: Automated Verification Engine',
+    body: 'Our multi-layer verification system cross-checks and screens listings before publication, reducing human bias and fatigue, with human review of flagged cases.',
+  },
+];
+
 const ladder = [
   {
     icon: BadgeCheck,
-    tier: 'Now · Foundation',
+    tier: 'Tier 1 · Foundation (At launch)',
     title: 'The four gates, for everyone',
-    body: 'Identity checks, bank-account matching, document audits and automated multi-layer verification for every agent and every listing. This is the floor, and the floor never lowers.',
+    body: 'The four gates for everyone: government KYC, bank-account name matching, document audits, and automated verification before publication. This is the baseline floor.',
   },
   {
     icon: MapPinned,
-    tier: 'Next · Established',
-    title: 'Address verification climbs the ladder',
-    body: 'As an agent’s deal volume grows, so does their proof. Higher tiers add on-the-ground address verification, so buyers can see the office is a real place. Volume without proof stops being possible.',
+    tier: 'Tier 2 · Established (Planned)',
+    title: 'Physical ground address verification',
+    body: 'As an agent’s transaction volume grows, independent field verification confirms their physical office location.',
   },
   {
     icon: Building2,
-    tier: 'Then · Corporate',
-    title: 'Verified agencies, not just agents',
-    body: 'Large brokerages move under a company umbrella: CAC registration, verified directors, company bank accounts. The badge will say exactly who stands behind the agency.',
+    tier: 'Tier 3 · Corporate (Future plan)',
+    title: 'Verified corporate agencies',
+    body: 'Verified corporate agencies: CAC company incorporation, verified board directors, corporate bank accounts, and institutional bonding.',
   },
 ];
 
@@ -53,33 +99,132 @@ export default function VisionPage() {
         <Reveal>
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            The road ahead
+            Executive Corporate Briefing
           </span>
           <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
             A trust layer for every property market in Africa.
           </h1>
-          <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Xavorian starts in Nigeria because the wound is deepest here. But the playbook
-            travels well: verified people, matched accounts, audited documents,
-            automated oversight. Here is where we are headed, and how we plan to get there.
+          <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+            <span>Founder &amp; CEO: Ezeani Chukwuebuka</span>
+            <span>&bull;</span>
+            <span>Jurisdiction: Federal Republic of Nigeria</span>
+            <span>&bull;</span>
+            <span>Edition: Pre-Launch 2026</span>
           </p>
+
+          <div className="mt-8 max-w-3xl rounded-2xl border border-border bg-muted p-6 text-sm leading-relaxed text-muted-foreground space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-foreground">Mission Statement</p>
+            <p>
+              <strong className="font-semibold text-foreground">The Problem:</strong> Property scams have become
+              normalised in Nigerian real estate. Fake listing photos, forged documents, phantom caretakers, and
+              untraceable bank accounts force seekers to search with one hand permanently guarding their wallet.
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">The Purpose:</strong> Xavorian exists so the next
+              generation searches with both hands free. We are building the foundational trust layer for Nigerian real
+              estate, where verification is not an optional paid upgrade. It is the baseline every listing is held to.
+            </p>
+          </div>
         </Reveal>
       </section>
 
-      {/* ── The verification ladder ──────────────────────── */}
+      {/* ── 1. A Note from the Founder ───────────────────── */}
+      <section className="container mx-auto mt-16 sm:mt-24">
+        <Reveal className="max-w-3xl">
+          <div className="relative rounded-2xl border border-border bg-card p-6 sm:p-8">
+            <Quote className="h-8 w-8 text-primary/40 mb-3" />
+            <h2 className="text-xs font-bold uppercase tracking-wider text-foreground mb-4">
+              1. A Note from the Founder
+            </h2>
+            <div className="space-y-4 text-[15px] leading-relaxed text-foreground/90 italic">
+              <p>
+                &ldquo;Ask anyone who has hunted for a flat in Lagos, a shop in Onitsha or land in Enugu. The fear is
+                part of the process: fake photos, forged documents, agents who stop picking calls the moment your alert
+                drops. Nigerians have learned to search for homes with one hand permanently guarding their wallet.
+              </p>
+              <p>
+                Xavorian was conceived out of the conviction that trust must be built into the market’s plumbing. If a
+                seller cannot prove who they are, where the money goes, and what the registry says about the title, their
+                listing will not be published on Xavorian. We would rather reject ten listings than publish one we could
+                not verify.&rdquo;
+              </p>
+            </div>
+            <div className="mt-6 border-t border-border pt-4 text-xs not-italic text-muted-foreground">
+              <span className="font-semibold text-foreground">Ezeani Chukwuebuka (Damien)</span> &mdash; Founder &amp;
+              Chief Executive Officer
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── 2. Core Operating Principles ─────────────────── */}
       <section className="container mx-auto mt-20 sm:mt-28">
         <Reveal className="max-w-2xl">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            The verification ladder
+            2. Core Operating Principles
           </span>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Verification that deepens as the stakes do.
+            The rules we refuse to compromise on.
+          </h2>
+        </Reveal>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {principles.map((p, idx) => (
+            <Reveal key={p.title} delay={idx * 70}>
+              <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
+                <h3 className="text-base font-bold tracking-tight text-foreground">{p.title}</h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{p.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 3. The Three Structural Pillars ──────────────── */}
+      <section className="container mx-auto mt-20 sm:mt-28">
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">
+            <span className="eyebrow-dot" />
+            3. The Three Structural Pillars
+          </span>
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Engineered for accountability at every step.
+          </h2>
+        </Reveal>
+
+        <div className="mt-10 grid gap-4 lg:grid-cols-3">
+          {pillars.map((pillar, idx) => {
+            const Icon = pillar.icon;
+            return (
+              <Reveal key={pillar.title} delay={idx * 90}>
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
+                    <Icon className="h-5 w-5 text-foreground" />
+                  </div>
+                  <h3 className="mt-4 text-base font-bold tracking-tight">{pillar.title}</h3>
+                  <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{pillar.body}</p>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* ── 4. The Pan-African Vision & Verification Ladder ─ */}
+      <section className="container mx-auto mt-20 sm:mt-28">
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">
+            <span className="eyebrow-dot" />
+            4. The Verification Ladder
+          </span>
+          <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
+            A progressive accreditation ladder.
           </h2>
           <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-            One flat yearly check would be easy. It would also be weak. Our roadmap raises
-            the proof required as agents handle more deals and agencies handle more of the
-            market.
+            Xavorian begins in Nigeria because the trust deficit is deepest here. The verification infrastructure is
+            intended to scale across African urban centres. As the platform matures, we plan to deepen verification
+            through a progressive accreditation ladder. Later tiers are plans, not promises of timing.
           </p>
         </Reveal>
 
@@ -101,48 +246,13 @@ export default function VisionPage() {
             </Reveal>
           ))}
         </ol>
-      </section>
 
-      {/* ── AI truthing ──────────────────────────────────── */}
-      <section className="container mx-auto mt-20 sm:mt-28">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
-          <Reveal>
-            <div className="lg:sticky lg:top-28">
-              <span className="eyebrow">
-                <span className="eyebrow-dot" />
-                Sharper every month
-              </span>
-              <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-                The document truthing never stops learning.
-              </h2>
-            </div>
-          </Reveal>
-
-          <Reveal delay={90}>
-            <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted">
-                <BrainCircuit className="h-5 w-5 text-foreground" />
-              </div>
-              <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground">
-                <p>
-                  Every C of O we audit, every deed we cross-check, every mismatch we flag
-                  teaches the system what forgery looks like this month. Fake documents
-                  evolve. So does the machine that reads them.
-                </p>
-                <p>
-                  The AI does not replace judgement; it sharpens it at impossible scale:
-                  every document read against every claim, every name against every
-                  account. Bad listings get caught earlier, good listings move faster,
-                  and the gap between fake and real keeps widening.
-                </p>
-                <p className="font-medium text-foreground">
-                  The bar stays where it is. The climb over it gets harder for anyone
-                  carrying forged paper.
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal delay={120}>
+          <div className="mt-8 rounded-2xl border border-border bg-muted/60 p-5 max-w-2xl text-xs text-muted-foreground">
+            This document describes goals and plans. Xavorian is a marketplace and screening tool, and verification is
+            a process, not an assurance. See the Terms of Service.
+          </div>
+        </Reveal>
       </section>
 
       {/* ── More cities ──────────────────────────────────── */}
@@ -150,15 +260,14 @@ export default function VisionPage() {
         <Reveal className="max-w-2xl">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            Where next
+            Launch Focus
           </span>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            More cities, in the order you choose.
+            More cities, in waitlist demand order.
           </h2>
           <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-            Verification needs deep city-level registry indexing, and that work lands
-            first where demand already exists. Cities open in waitlist order, so every signup is a vote for
-            where Xavorian lands next.
+            Verification needs deep city-level registry indexing, and that work lands first where demand already
+            exists. Cities open in waitlist order, so every signup is a vote for where Xavorian lands next.
           </p>
         </Reveal>
 
@@ -182,6 +291,41 @@ export default function VisionPage() {
         </Reveal>
       </section>
 
+      {/* ── Official Directory ───────────────────────────── */}
+      <section className="container mx-auto mt-16 sm:mt-20">
+        <Reveal>
+          <div className="rounded-2xl border border-border bg-muted p-6 text-sm text-muted-foreground space-y-2">
+            <h3 className="font-bold text-foreground">Official Contact &amp; Notices Directory</h3>
+            <p>
+              <strong className="font-semibold text-foreground">Entity:</strong> Xavorian Technology Company
+              (RC-9912416), incorporated in the Federal Republic of Nigeria
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Founder:</strong> Ezeani Chukwuebuka
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Legal &amp; Privacy Notices:</strong>{' '}
+              <span className="font-semibold text-foreground">legal@xavorian.com</span> |{' '}
+              <strong className="font-semibold text-foreground">Support:</strong>{' '}
+              <span className="font-semibold text-foreground">support@xavorian.com</span>
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Telephone / WhatsApp:</strong>{' '}
+              <span className="font-semibold text-foreground">+234 805 637 3583</span> |{' '}
+              <strong className="font-semibold text-foreground">Website:</strong>{' '}
+              <span className="font-semibold text-foreground">https://xavorian.com</span>
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
+              Benin City, Port Harcourt, and expanding across Nigeria.
+            </p>
+            <p className="pt-2 text-xs font-semibold text-foreground">
+              Trust is not a feature. It is the product.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ── Manifesto + CTA ──────────────────────────────── */}
       <section className="container mx-auto mt-20 sm:mt-28">
         <Reveal>
@@ -195,10 +339,9 @@ export default function VisionPage() {
                 One day, nobody in Africa will need courage to buy a home.
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-                We are not building another place to scroll through houses. We are building
-                the layer underneath the market itself, so that “is it real?” becomes a
-                question nobody has to ask. The waitlist decides where that layer lands
-                first.
+                We are not building another place to scroll through houses. We are building the layer underneath the
+                market itself, so that &ldquo;is it real?&rdquo; becomes a question nobody has to ask. The waitlist
+                decides where that layer lands first.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Link
