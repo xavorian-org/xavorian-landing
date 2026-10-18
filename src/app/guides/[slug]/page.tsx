@@ -114,9 +114,7 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
           </p>
 
           <p className="mt-6 max-w-2xl text-xs leading-relaxed text-muted-foreground">
-            This guide is general information, not legal advice. Property transfers in Nigeria involve
-            state-level land registry process — engage a qualified property lawyer for your specific
-            transaction.
+            General information only, not legal advice. Use a qualified property lawyer and licensed surveyor for your own transaction.
           </p>
 
           {/* sections */}

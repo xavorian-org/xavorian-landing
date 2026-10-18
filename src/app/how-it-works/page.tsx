@@ -7,7 +7,11 @@ import {
   Cpu,
   ArrowRight,
   CircleCheck,
-  CircleX,
+  ShieldCheck,
+  UserX,
+  CreditCard,
+  FileWarning,
+  CopyX,
 } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
@@ -16,7 +20,7 @@ import { GATES } from '@/data/site';
 export const metadata: Metadata = pageMetadata({
   title: 'How It Works — Four Gates Between You and a Scam',
   description:
-    'Every Xavorian listing passes identity verification, bank-account matching, a document audit and autonomous AI verification before it goes live. Here is the full process, gate by gate.',
+    'Every Xavorian listing passes identity verification, bank-account matching, a document audit with AI assist and automated multi-layer verification before it goes live. Here is the full process, gate by gate.',
   path: '/how-it-works',
 });
 
@@ -27,57 +31,73 @@ type GateDetail = { happens: string; why: string; fail: string };
 const gateDetails: Record<string, GateDetail> = {
   identity: {
     happens:
-      'The seller uploads a government-issued ID and completes a liveness check. The name, the face and the document must all belong to one real, reachable person.',
-    why: 'Almost every property scam begins with an untraceable stranger. When identity is the price of admission, the vanishing agent has nowhere to vanish to.',
-    fail: 'The account stays locked. No identity, no listing. No exceptions, for anyone.',
+      'The seller or agent uploads a government-issued ID (NIN card, international passport, driver’s licence, or voter’s card) and completes a real-time biometric liveness check. The legal name, the live face, and the document must belong to one real, reachable person.',
+    why: 'Many property scams in Nigeria begin with an untraceable stranger using a burner SIM card. When verified identity is required to list, it is much harder for bad actors to disappear.',
+    fail: 'The account cannot publish listings until identity is verified. A person who fails can request human review.',
   },
   bank: {
     happens:
-      'The seller links the bank account that will receive payment. The account name must match the verified ID, letter for letter.',
-    why: 'The market’s oldest trick is asking you to pay “the oga” or “the secretary” into a differently named account. Name-matching closes that door for good.',
-    fail: 'The listing stays offline. Money on Xavorian has exactly one honest destination.',
+      'The seller or agent links the bank account that will receive payments. The account name verified by NIBSS / CBN-licensed processors must match the verified ID.',
+    why: 'A common property scam is asking seekers to pay “the oga”, “the family head”, or “the caretaker” into a third-party account. The Bank-Name-Match Rule blocks this for payments made through Xavorian.',
+    fail: 'The listing stays offline until the account matches. Payments made through Xavorian go only to the account name matching the verified identity on the title or authorised mandate.',
   },
   document: {
     happens:
-      'C of O, deeds of assignment, survey plans and receipts are scanned and audited. Our AI truthing assist reads the documents, compares them with every claim on the listing and flags each mismatch.',
-    why: 'Forged paper looks perfect on a phone screen. Cross-checks catch the lies a quick document glance will always miss.',
-    fail: 'The listing is paused until the claim is corrected or removed. Accounts that keep submitting false documents are closed.',
+      'Certificates of Occupancy (C of O), Deeds of Assignment, Governor’s Consent, Survey Plans, and purchase receipts are scanned and audited. Our AI assist reads registration numbers, beacon coordinates, and survey stamps, and compares them with the claims on the listing.',
+    why: 'Forged documents can look convincing on a mobile phone screen. Automated cross-checks help catch discrepancies, false beacon numbers, and unsupported claims that a quick glance can miss.',
+    fail: 'The listing is paused until the discrepancy is cleared or removed. Accounts that repeatedly submit fraudulent documents may be banned and referred to the authorities.',
   },
   human: {
     happens:
-      'Our automated verification system cross-checks identity, bank account details, and document records systematically before publication.',
-    why: 'Automated verification removes the blind spots and the guesswork. Every check is thorough, consistent, and objective.',
-    fail: 'The listing stays offline. Unverified listings never make it onto Xavorian.',
+      'Our automated verification system cross-checks identity, bank account details, and document records before publication, and flags anything inconsistent for human review.',
+    why: 'Automated checks reduce blind spots and inconsistency. They are not perfect, which is why flagged cases go to a person.',
+    fail: 'The listing stays offline until the issue is cleared.',
   },
 };
 
 const seekerPath = [
-  'Browse listings that have already passed all four gates',
-  'Inspect homes without rehearsing your guard on the way there',
-  'Pay only into an account whose name matches the verified identity',
+  'Browse property listings that have passed all four verification gates before publication',
+  'Inspections: verified listings reduce risk, but you should still inspect in person with a witness',
+  'Direct Account Match: payments made through Xavorian go only to a verified account matching the verified seller or agent',
+  'No Buyer Fees: browsing and enquiring on verified listings is free for property seekers',
 ];
 
 const agentPath = [
-  'Complete KYC: a government ID plus a liveness check',
-  'Link the bank account held in your legal name',
-  'Submit the title documents for each listing you want live',
-  'Pass multi-layer automated verification to earn your badge',
+  'KYC Onboarding: complete mandatory government ID and live biometric liveness verification',
+  'Bank Verification: link the corporate or individual bank account registered in the exact same legal name',
+  'Document Submission: upload legitimate title documents, survey plans, and mandates for each property',
+  'Verified Badge: pass the multi-layer audit to earn the verified badge and stand out in the marketplace',
 ];
 
-const weCheck = [
-  'A government ID matched to a live face',
-  'The payout account name matched to the verified ID',
-  'Title documents scanned and cross-checked against the listing',
-  'Registry-level inconsistencies audited and flagged by automated checks',
-  'Multi-layer verification audit on every single listing',
-];
-
-const neverAgain = [
-  'Anonymous sellers hiding behind a phone number',
-  'Urgent requests to pay an unrelated third-party account',
-  'Perfect-looking documents nobody has ever audited',
-  'Listings that disappear the morning after payment',
-  'Being told to “just send the inspection fee first”',
+const scamMitigations = [
+  {
+    icon: UserX,
+    title: 'The Vanishing Agent',
+    scam: 'An anonymous caller takes an inspection fee or deposit and shuts off the phone line.',
+    solution:
+      'Gate 1 (KYC) and Gate 2 (Bank-Name Match) make agents identifiable and traceable. Agents are verified against official identity references and verifiable bank records.',
+  },
+  {
+    icon: CreditCard,
+    title: 'The Account Switch',
+    scam: 'The agent shows a genuine property but instructs payment into "my secretary\'s" or "the developer\'s personal" account.',
+    solution:
+      'The Bank-Name-Match Rule reduces this risk. Payments made through Paystack go only to verified accounts matching the title or legal mandate. Never pay a differently named account.',
+  },
+  {
+    icon: FileWarning,
+    title: 'The Beautiful Forgery',
+    scam: 'A perfectly printed C of O or Deed of Assignment with fabricated registration numbers or false survey coordinates.',
+    solution:
+      'Gate 3 uses AI assist and registry checks to compare registration numbers, beacon bearings, and survey stamps with the listing claims. No automated check is perfect, so have a property lawyer search the registry before you pay.',
+  },
+  {
+    icon: CopyX,
+    title: 'The Cloned Listing',
+    scam: 'A scammer copies photos and descriptions of another agent\'s genuine listing and posts them at a discounted price.',
+    solution:
+      'Gates 3 and 4 require verified title ownership documents before publication, which makes photo cloning much harder.',
+  },
 ];
 
 const howToSchema = {
@@ -85,7 +105,7 @@ const howToSchema = {
   '@type': 'HowTo',
   name: 'How Xavorian verifies every listing',
   description:
-    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI truthing, and automated multi-layer verification.',
+    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI assist, and automated multi-layer verification.',
   totalTime: 'P3D',
   step: GATES.map((gate, i) => ({
     '@type': 'HowToStep',
@@ -106,15 +126,40 @@ export default function HowItWorksPage() {
         <Reveal>
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            How it works
+            Operational Architecture
           </span>
           <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-            Four gates stand between a scam and your money.
+            Four gates that help keep scams off the platform.
           </h1>
-          <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            On Xavorian, a listing is not posted. It is earned. Every property passes the
-            same four checks before it goes live, and our multi-layer verification system performs thorough screening before publication. Here is exactly what happens at each gate, and why.
+          <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+            <span>Edition: Pre-Launch Blueprint</span>
+            <span>&bull;</span>
+            <span>Territory: Nigeria</span>
           </p>
+
+          <div className="mt-6 max-w-2xl rounded-2xl border border-border bg-muted p-6 text-sm leading-relaxed text-muted-foreground space-y-3">
+            <p className="font-bold text-foreground uppercase tracking-wider text-xs">
+              Platform Operational Manifesto
+            </p>
+            <p>
+              Every Xavorian listing must pass identity verification, bank-account matching, a document audit with AI
+              assistance, and an automated multi-layer check before it goes live.
+            </p>
+            <p>
+              In a market where forged paper and untraceable strangers are common, Xavorian builds structured, automated
+              accountability: payments made through the platform are routed only to verified account holders, and listings
+              that fail verification are not published.
+            </p>
+            <p className="font-semibold text-foreground">
+              Verification is not an optional premium feature. It is the baseline for every listing and user on the
+              platform.
+            </p>
+            <p className="text-xs pt-1 border-t border-border/60">
+              Verification is a process, not an assurance. It reduces risk but cannot remove it, so you must still do your
+              own due diligence (see Terms of Service, Sections 4 and 8).
+            </p>
+          </div>
+
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/waitlist"
@@ -135,7 +180,7 @@ export default function HowItWorksPage() {
         <Reveal className="max-w-2xl">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            The gates, gate by gate
+            1. The Four Verification Gates
           </span>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
             What actually happens before a listing earns its page.
@@ -178,7 +223,7 @@ export default function HowItWorksPage() {
                         </div>
                         <div className="rounded-xl bg-muted p-4">
                           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-foreground">
-                            Why it matters to you
+                            Why it matters
                           </p>
                           <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
                             {detail.why}
@@ -186,7 +231,7 @@ export default function HowItWorksPage() {
                         </div>
                         <div className="rounded-xl bg-muted p-4">
                           <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-foreground">
-                            If it fails
+                            Failure protocol
                           </p>
                           <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
                             {detail.fail}
@@ -203,46 +248,52 @@ export default function HowItWorksPage() {
 
         <Reveal delay={120}>
           <p className="mt-6 max-w-2xl text-sm font-medium text-foreground">
-            Pass all four and the listing goes live, carrying its verified mark.
+            Pass all four and the listing earns its verified badge and elevated placement.
             <span className="text-muted-foreground">
               {' '}
-              Fail one, and the property simply does not exist on Xavorian.
+              Fail one, and the listing stays offline until the issue is cleared.
             </span>
           </p>
         </Reveal>
 
         <Reveal delay={140}>
           <div className="mt-8 rounded-2xl border border-border bg-muted/60 p-6 max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-foreground">A Note on Verification & Your Due Diligence</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-foreground">
+              A Note on Verification &amp; Due Diligence
+            </p>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-              Our four verification gates screen accounts, check IDs, match bank account names, and scan documents to filter out scams before a listing goes live. However, Xavorian is a neutral technology platform — not a property owner, estate broker, bank, or insurer. Verification is a screening filter, not a legal guarantee or replacement for your own physical inspection and lands registry search. Under our Terms of Service, Xavorian is not liable for third-party criminal conduct, forgeries, or scams committed by independent users.
+              Xavorian is a marketplace and screening tool. It is not an insurer or a guarantor of any user, listing,
+              document, or transaction. Verification is a process, not an assurance. It reduces risk but cannot remove it,
+              so you must still do your own independent physical inspection and lands registry searches. Under our Terms
+              of Service, Xavorian is not liable for losses caused solely by the independent fraud or criminal conduct of
+              other users or third parties that are not attributable to Xavorian&apos;s own fault.
             </p>
           </div>
         </Reveal>
       </section>
 
-      {/* ── Two paths through the same gates ─────────────── */}
+      {/* ── 2. User Operational Paths ────────────────────── */}
       <section className="container mx-auto mt-20 sm:mt-28">
         <Reveal className="max-w-2xl">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            Two paths, one standard
+            2. User Operational Paths
           </span>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            The same gates protect different people differently.
+            Clear standards for both sides of the transaction.
           </h2>
         </Reveal>
 
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
           <Reveal>
             <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 sm:p-7">
-              <h3 className="text-base font-bold tracking-tight">For property seekers</h3>
+              <h3 className="text-base font-bold tracking-tight">2.1 The Seeker &amp; Buyer Journey</h3>
               <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                You do none of the checking. We did it before the listing reached your screen.
+                Verified listings reduce risk, but you should still inspect in person with a witness.
               </p>
               <ul className="mt-5 flex-1 space-y-3">
-                {seekerPath.map((step) => (
-                  <li key={step} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                {seekerPath.map((step, idx) => (
+                  <li key={idx} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
                     <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                     {step}
                   </li>
@@ -260,19 +311,22 @@ export default function HowItWorksPage() {
 
           <Reveal delay={90}>
             <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 sm:p-7">
-              <h3 className="text-base font-bold tracking-tight">For agents and landlords</h3>
+              <h3 className="text-base font-bold tracking-tight">2.2 The Agent &amp; Landlord Accreditation Journey</h3>
               <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                You walk the gates once per listing. Buyers see the badge; you skip the suspicion.
+                Pass the multi-layer audit to earn the verified badge and stand out in the marketplace.
               </p>
               <ul className="mt-5 flex-1 space-y-3">
-                {agentPath.map((step) => (
-                  <li key={step} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                {agentPath.map((step, idx) => (
+                  <li key={idx} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
                     <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
                     {step}
                   </li>
                 ))}
               </ul>
-              <Link href="/agents" className="link-underline mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold">
+              <Link
+                href="/agents"
+                className="link-underline mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold"
+              >
                 The agent playbook
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -281,50 +335,78 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* ── What we check vs what you never see again ────── */}
+      {/* ── 3. How Xavorian Addresses Common Scams ────────── */}
       <section className="container mx-auto mt-20 sm:mt-28">
         <Reveal className="max-w-2xl">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            The trade
+            3. Common Scams &amp; Mitigations
           </span>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            We do the boring work. You lose the familiar dread.
+            How Xavorian addresses the market&apos;s oldest tricks.
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid gap-4 lg:grid-cols-2">
-          <Reveal>
-            <div className="h-full rounded-2xl border border-border bg-card p-6">
-              <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-foreground">
-                What we check
-              </h3>
-              <ul className="mt-5 space-y-3.5">
-                {weCheck.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                    <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
-          <Reveal delay={90}>
-            <div className="h-full rounded-2xl border border-border bg-card p-6">
-              <h3 className="text-sm font-bold uppercase tracking-[0.12em] text-foreground">
-                What you will never see again
-              </h3>
-              <ul className="mt-5 space-y-3.5">
-                {neverAgain.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                    <CircleX className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {scamMitigations.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <Reveal key={item.title} delay={idx * 70}>
+                <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-muted text-foreground">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-base font-bold tracking-tight">{item.title}</h3>
+                  </div>
+                  <div className="mt-4 space-y-3 text-sm leading-relaxed">
+                    <p className="text-muted-foreground">
+                      <strong className="font-semibold text-foreground">The Scam:</strong> {item.scam}
+                    </p>
+                    <p className="text-muted-foreground">
+                      <strong className="font-semibold text-foreground">How Xavorian helps:</strong> {item.solution}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
+      </section>
+
+      {/* ── Official Directory ───────────────────────────── */}
+      <section className="container mx-auto mt-16 sm:mt-20">
+        <Reveal>
+          <div className="rounded-2xl border border-border bg-muted p-6 text-sm text-muted-foreground space-y-2">
+            <h3 className="font-bold text-foreground">Official Contact &amp; Notices Directory</h3>
+            <p>
+              <strong className="font-semibold text-foreground">Entity:</strong> Xavorian Technology Company
+              (RC-9912416), incorporated in the Federal Republic of Nigeria
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Founder:</strong> Ezeani Chukwuebuka
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Legal &amp; Privacy Notices:</strong>{' '}
+              <span className="font-semibold text-foreground">legal@xavorian.com</span> |{' '}
+              <strong className="font-semibold text-foreground">Support:</strong>{' '}
+              <span className="font-semibold text-foreground">support@xavorian.com</span>
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Telephone / WhatsApp:</strong>{' '}
+              <span className="font-semibold text-foreground">+234 805 637 3583</span> |{' '}
+              <strong className="font-semibold text-foreground">Website:</strong>{' '}
+              <span className="font-semibold text-foreground">https://xavorian.com</span>
+            </p>
+            <p>
+              <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
+              Benin City, Port Harcourt, and expanding across Nigeria.
+            </p>
+            <p className="pt-2 text-xs font-semibold text-foreground">
+              Trust is not a feature. It is the product.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       {/* ── CTA band ─────────────────────────────────────── */}
@@ -339,8 +421,8 @@ export default function HowItWorksPage() {
               The next listing you fall for will have earned your attention.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              Xavorian opens city by city, in waitlist order. Reserve your place and be first
-              through the gates we just walked you through.
+              Xavorian opens city by city, in waitlist order. Reserve your place and be first through the gates we just
+              walked you through.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
@@ -350,7 +432,9 @@ export default function HowItWorksPage() {
                 Join the waitlist
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
-              <span className="text-[11px] text-white/50">Free. One email at launch. Nothing else.</span>
+              <span className="text-[11px] text-white/50">
+                Free. Launch notification and occasional waitlist updates. Unsubscribe anytime.
+              </span>
             </div>
           </div>
         </Reveal>
