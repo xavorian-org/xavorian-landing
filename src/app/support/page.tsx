@@ -8,7 +8,7 @@ import { BRAND } from '@/data/site';
 export const metadata: Metadata = pageMetadata({
   title: 'Support Center — Fast & Direct Assistance',
   description:
-    'Get help with Xavorian: waitlist, verification and account questions answered promptly over email and WhatsApp, usually within one working day.',
+    'Get help with Xavorian: property listings, verification and account questions answered promptly over email and WhatsApp, usually within one working day.',
   path: '/support',
 });
 
@@ -36,7 +36,7 @@ const channels = [
   {
     icon: Mail,
     title: 'Support',
-    detail: 'Waitlist, verification and account questions. The right mailbox for most problems.',
+    detail: 'Listings, verification and account questions. The right mailbox for most problems.',
     href: `mailto:${BRAND.supportEmail}`,
     label: BRAND.supportEmail,
   },

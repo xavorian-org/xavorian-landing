@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Mail, MessageCircle, Scale, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { JsonLd, pageMetadata, organizationSchema, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
-import { BRAND } from '@/data/site';
+import { BRAND, MARKETPLACE_URL } from '@/data/site';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Contact Us — Get in Touch',
@@ -36,7 +36,7 @@ const channels = [
   {
     icon: Mail,
     title: 'Support',
-    detail: 'Waitlist, verification and account questions.',
+    detail: 'Marketplace, verification and account questions.',
     href: `mailto:${BRAND.supportEmail}`,
     label: BRAND.supportEmail,
     note: 'Replies within one working day — see Support Center',
@@ -75,8 +75,8 @@ export default function ContactPage() {
             Fast &amp; direct team support.
           </h1>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Xavorian is in waitlist stage, so there is no marketplace dashboard yet. Email
-            is the fastest way to reach us, and we respond promptly.
+            The marketplace is live. For account and verification help, email is the
+            fastest way to reach us, and we respond promptly.
           </p>
           <p className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4 shrink-0 text-foreground" />
@@ -133,20 +133,20 @@ export default function ContactPage() {
           <div className="rounded-3xl bg-foreground px-6 py-14 text-center text-white sm:px-12">
             <span className="eyebrow border-white/15 bg-white/10 text-white/70">
               <span className="eyebrow-dot" />
-              Here to join?
+              Ready to search?
             </span>
             <h2 className="mx-auto mt-5 max-w-2xl text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
-              The waitlist is faster than any inbox.
+              Start with verified property listings.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              One form, one minute, and you are first in line when your city opens.
+              Browse homes, land and commercial property across Nigeria, then filter for what fits.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
-                href="/waitlist"
+                href={MARKETPLACE_URL}
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
-                Join the waitlist
+                Browse properties
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link

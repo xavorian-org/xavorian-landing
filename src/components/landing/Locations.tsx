@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
-import { CITIES } from '@/data/site';
+import { CITIES, MARKETPLACE_URL } from '@/data/site';
 
 export const Locations = () => (
   <section id="locations" className="container mx-auto mt-20 scroll-mt-28 sm:mt-28 lg:mt-32">
@@ -9,18 +9,18 @@ export const Locations = () => (
       <div className="max-w-2xl">
         <span className="eyebrow">
           <span className="eyebrow-dot" />
-          Where we launch
+          Search across Nigeria
         </span>
         <h2 className="mt-4 text-balance font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-          All of Nigeria, city by city, check by check.
+          Find verified property in the places that matter to you.
         </h2>
         <div className="mt-4 flex flex-col gap-1.5 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-          <p>Xavorian is opening one city at a time, and the waitlist decides who is next.</p>
-          <p>Your city will open faster if more people from there join the waitlist.</p>
+          <p>Browse homes, land and commercial property, then narrow your search by location, property type and budget.</p>
+          <p>Start with a city below or explore every listing on the marketplace.</p>
         </div>
       </div>
-      <Link href="/waitlist" className="link-underline text-xs font-bold text-violet-600 sm:text-sm shrink-0">
-        Not on the list? Tell us where you are
+      <Link href={MARKETPLACE_URL} className="link-underline text-xs font-bold text-violet-600 sm:text-sm shrink-0">
+        Explore all properties
       </Link>
     </Reveal>
 
@@ -28,7 +28,7 @@ export const Locations = () => (
       {CITIES.map((c, i) => (
         <Reveal key={c.slug} delay={i * 60}>
           <Link
-            href={`/waitlist?city=${c.slug}`}
+            href={`${MARKETPLACE_URL}/properties?search=${encodeURIComponent(c.name)}`}
             className="group flex items-center justify-between rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/40 hover:shadow-md sm:p-5"
           >
             <div className="flex items-center gap-3">

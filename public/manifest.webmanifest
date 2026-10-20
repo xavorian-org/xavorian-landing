@@ -1,7 +1,7 @@
 {
   "name": "Xavorian",
   "short_name": "Xavorian",
-  "description": "Nigeria's trust layer for real estate. Verified agents, audited documents, human-reviewed listings. Join the waitlist.",
+  "description": "Nigeria's trust layer for real estate. Browse verified homes, land and commercial property.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -38,10 +38,10 @@
   ],
   "shortcuts": [
     {
-      "name": "Join Waitlist",
-      "short_name": "Waitlist",
-      "description": "Reserve early access to verified Nigerian real estate",
-      "url": "/waitlist",
+      "name": "Browse properties",
+      "short_name": "Browse",
+      "description": "Browse verified Nigerian real estate",
+      "url": "https://marketplace.xavorian.com/properties",
       "icons": [
         {
           "src": "/icon-192.png",

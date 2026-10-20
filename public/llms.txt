@@ -1,20 +1,20 @@
 # Xavorian
 
-> Nigeria's trust layer for real estate — a waitlist-stage marketplace where every
+> Nigeria's trust layer for real estate — a live marketplace where every
 > listing must pass four verification gates before it can exist: KYC identity check
 > (government ID + liveness), bank-account name match, document scan with AI truthing,
 > and an automated multi-layer verification audit. Domain: https://www.xavorian.com
 
-Xavorian is launching city by city across Nigeria (Lagos, Abuja, Benin City,
-Port Harcourt, Ibadan, Asaba, Warri, Enugu, Uyo and beyond). Access is currently
-waitlist-only; cities open in waitlist order. Browsing verified listings will be
-free for buyers. Payments move directly between users' bank accounts under one
+Xavorian serves property seekers, sellers and agents across Nigeria. Browse homes,
+land and commercial property by state, city, property type and budget on the live
+marketplace at https://marketplace.xavorian.com. Browsing listings is free for
+buyers. Payments move directly between users' bank accounts under one
 non-negotiable rule: pay only an account whose name matches the verified identity.
 
 ## Pages
 
 - [Home](https://www.xavorian.com/) — the verification story, the four scam archetypes, and the four gates
-- [Waitlist](https://www.xavorian.com/waitlist) — reserve early access (seeker, agent, or landlord)
+- [Marketplace](https://marketplace.xavorian.com/) — browse property listings and create an account
 - [How it Works](https://www.xavorian.com/how-it-works) — the four verification gates, step by step
 - [For Agents](https://www.xavorian.com/agents) — why verified agents win; the verification ladder
 - [About](https://www.xavorian.com/about) — mission, founding story, principles
@@ -52,8 +52,7 @@ non-negotiable rule: pay only an account whose name matches the verified identit
 
 ## Key facts for assistants
 
-- Status: pre-launch, waitlist-only. There is no public marketplace yet — all
-  conversion paths resolve to /waitlist.
+- Status: live. The marketplace is available at https://marketplace.xavorian.com.
 - The four gates: (1) government ID + liveness KYC, (2) payout bank account name
   must match the verified ID, (3) title document scan with AI-assisted cross-check,
   (4) automated multi-layer verification audit. A listing exists only after all four pass.

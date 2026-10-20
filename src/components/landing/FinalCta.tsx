@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
+import { MARKETPLACE_URL } from '@/data/site';
 
 export const FinalCta = () => (
   <section className="container mx-auto mt-16 sm:mt-24">
@@ -16,21 +17,21 @@ export const FinalCta = () => (
         </h2>
 
         <div className="relative mx-auto mt-3 max-w-lg flex flex-col gap-1 text-pretty text-xs leading-relaxed text-white/80 sm:text-sm">
-          <p>Xavorian is opening one city at a time across Nigeria.</p>
-          <p>The waitlist is the first step for each city, and joining takes less than a minute.</p>
+          <p>Explore verified homes, land and commercial property across Nigeria.</p>
+          <p>Use filters to focus on the location, property type and budget that work for you.</p>
         </div>
 
         <div className="relative mt-7 flex flex-col items-center justify-center gap-3.5 sm:flex-row">
           <Link
-            href="/waitlist"
+            href={MARKETPLACE_URL}
             className="pressable group inline-flex h-11 w-full items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-extrabold text-foreground shadow-md transition-all hover:bg-neutral-100 hover:shadow-xl active:scale-95 sm:w-auto"
           >
-            Join the waitlist
+            Browse properties
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" data-icon="inline-end" />
           </Link>
           <span className="inline-flex items-center gap-2 text-xs font-semibold text-white/70">
             <ShieldCheck className="size-4 text-white" strokeWidth={2} />
-            Free. One email at launch. Nothing else.
+            Browse listings free of charge.
           </span>
         </div>
       </div>

@@ -11,8 +11,23 @@ import { FinalCta } from '@/components/landing/FinalCta';
 import { JsonLd, organizationSchema, BASE_URL, DEFAULT_DESCRIPTION } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Xavorian — Buy Property in Nigeria Without the Fear',
-  description: DEFAULT_DESCRIPTION,
+  title: 'Verified Properties for Sale & Rent in Nigeria | Xavorian',
+  description:
+    'Browse verified homes, land and commercial property for sale or rent across Nigeria. Document-verified listings, escrow protection, and trusted real estate in Lagos, Abuja, Benin City, Port Harcourt, and all 36 states.',
+  keywords: [
+    'Verified Properties for Sale & Rent in Nigeria',
+    'Nigeria real estate',
+    'houses for sale in Nigeria',
+    'houses for rent in Nigeria',
+    'land for sale in Nigeria',
+    'buy house in Lagos',
+    'rent apartment Abuja',
+    'property in Port Harcourt',
+    'real estate Benin City',
+    'verified C of O Nigeria',
+    'scam-free real estate Nigeria',
+    'escrow property Nigeria',
+  ],
   alternates: { canonical: BASE_URL },
 };
 
