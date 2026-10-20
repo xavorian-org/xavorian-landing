@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Home } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
+import { MARKETPLACE_URL } from '@/data/site';
 
 export default function NotFound() {
   return (
@@ -27,10 +28,10 @@ export default function NotFound() {
             Go home
           </Link>
           <Link
-            href="/waitlist"
+            href={MARKETPLACE_URL}
             className="group inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
           >
-            Join the waitlist
+            Browse properties
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
         </div>

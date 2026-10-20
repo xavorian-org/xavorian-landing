@@ -3,12 +3,12 @@ import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd, pageMetadata } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
-import { BRAND } from '@/data/site';
+import { BRAND, MARKETPLACE_URL } from '@/data/site';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Frequently Asked Questions',
   description:
-    'Plain answers about Xavorian: the waitlist, the four verification gates, payments, agent onboarding, data privacy and how to reach support.',
+    'Plain answers about the Xavorian marketplace: verification checks, payments, agent onboarding, data privacy and support.',
   path: '/faq',
 });
 
@@ -20,20 +20,20 @@ interface FaqItem {
 
 const groups: { title: string; items: FaqItem[] }[] = [
   {
-    title: '1. Using Xavorian & Waitlist Mechanics',
+    title: '1. Using the Xavorian Marketplace',
     items: [
       {
         q: 'Is Xavorian live yet?',
-        a: 'Not yet. Xavorian opens city by city, and each city starts from its waitlist. Joining takes under a minute, and we will email you when your city opens. No launch date is promised.',
-        link: { href: '/waitlist', label: 'Join the waitlist' },
+        a: 'Yes. You can browse homes, land and commercial property on the marketplace, then filter by location, property type and budget.',
+        link: { href: MARKETPLACE_URL, label: 'Browse properties' },
       },
       {
-        q: 'How does the waitlist work?',
-        a: 'You leave your name, email, city and whether you are searching or selling. We email you when your city opens and may send occasional waitlist updates. You can unsubscribe at any time. Agents on the waitlist are verified before their city opens.',
+        q: 'How do I start searching?',
+        a: 'Open the marketplace, search by state, city or area, and refine results by property type, price and bedrooms. Create an account when you are ready to enquire, save a listing or list a property.',
       },
       {
-        q: 'Why do cities open in waitlist order?',
-        a: 'Verification needs deep city-by-city registry indexing. The waitlist shows us where demand is deepest, which helps decide where we launch first, alongside how ready each city’s verification is.',
+        q: 'Does Xavorian cover every state in Nigeria?',
+        a: 'Xavorian is built for property search across Nigeria. Available inventory changes by location, so use marketplace filters to see the live listings in your state or city.',
       },
       {
         q: 'What does Xavorian cost for buyers?',
@@ -65,7 +65,7 @@ const groups: { title: string; items: FaqItem[] }[] = [
       },
       {
         q: 'What happens to my documents and personal data?',
-        a: 'Verification documents are used for verification and to meet legal and fraud-prevention duties. They are not sold and not published publicly, and only authorised systems and staff can access them. Waitlist emails are used for launch updates and waitlist communications. You can ask us to delete your data at any time, subject to any retention the law requires. See our Privacy Policy.',
+        a: 'Verification documents are used for verification and to meet legal and fraud-prevention duties. They are not sold and not published publicly, and only authorised systems and staff can access them. You can ask us to delete your data at any time, subject to any retention the law requires. See our Privacy Policy.',
         link: { href: '/privacy', label: 'Read Privacy Policy' },
       },
     ],
@@ -75,7 +75,7 @@ const groups: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'I am an agent. How do I join, and what does it cost?',
-        a: 'Join the waitlist as an agent and we will verify you before your city opens: ID and liveness check, bank match, document review, and multi-layer verification audit. The waitlist is free. Agent pricing will be published before launch, with no hidden onboarding fees.',
+        a: 'Create an account on the marketplace to start agent onboarding. Verification includes ID and liveness checks, bank matching, document review and automated screening before listings can go live. Review the marketplace for current agent requirements and pricing.',
         link: { href: '/agents', label: 'The agent playbook' },
       },
       {

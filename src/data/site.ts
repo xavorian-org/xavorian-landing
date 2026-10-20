@@ -15,6 +15,9 @@ export const BRAND = {
   ],
 } as const;
 
+/** The live property marketplace. Keep every cross-site CTA on this canonical host. */
+export const MARKETPLACE_URL = 'https://marketplace.xavorian.com';
+
 export const CITIES = [
   { slug: 'lagos', name: 'Lagos', state: 'Lagos State' },
   { slug: 'abuja', name: 'Abuja', state: 'FCT' },

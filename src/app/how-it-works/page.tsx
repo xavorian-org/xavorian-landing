@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
-import { GATES } from '@/data/site';
+import { GATES, MARKETPLACE_URL } from '@/data/site';
 
 export const metadata: Metadata = pageMetadata({
   title: 'How It Works — Four Gates Between You and a Scam',
@@ -162,10 +162,10 @@ export default function HowItWorksPage() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="/waitlist"
+              href={MARKETPLACE_URL}
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-px active:translate-y-0"
             >
-              Join the waitlist
+              Browse verified properties
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/faq" className="link-underline text-sm font-semibold">
@@ -300,10 +300,10 @@ export default function HowItWorksPage() {
                 ))}
               </ul>
               <Link
-                href="/waitlist"
+                href={MARKETPLACE_URL}
                 className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-px active:translate-y-0"
               >
-                Join as a seeker
+                Browse verified properties
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </article>
@@ -399,8 +399,8 @@ export default function HowItWorksPage() {
               <span className="font-semibold text-foreground">https://xavorian.com</span>
             </p>
             <p>
-              <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
-              Benin City, Port Harcourt, and expanding across Nigeria.
+              <strong className="font-semibold text-foreground">Launch Coverage:</strong> Active nationwide across
+              all 36 states and the Federal Capital Territory (FCT), Nigeria.
             </p>
             <p className="pt-2 text-xs font-semibold text-foreground">
               Trust is not a feature. It is the product.
@@ -415,25 +415,25 @@ export default function HowItWorksPage() {
           <div className="rounded-3xl bg-foreground px-6 py-14 text-center text-white sm:px-12">
             <span className="eyebrow border-white/15 bg-white/10 text-white/70">
               <span className="eyebrow-dot" />
-              Verification starts soon
+              Officially Live Nationwide
             </span>
             <h2 className="mx-auto mt-5 max-w-2xl text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               The next listing you fall for will have earned your attention.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              Xavorian opens city by city, in waitlist order. Reserve your place and be first through the gates we just
-              walked you through.
+              Xavorian is officially live across Nigeria. Explore verified homes, land and commercial properties
+              with fraud-proof verification and escrow protection.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
-                href="/waitlist"
+                href={MARKETPLACE_URL}
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
-                Join the waitlist
+                Explore marketplace
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <span className="text-[11px] text-white/50">
-                Free. Launch notification and occasional waitlist updates. Unsubscribe anytime.
+                100% verified listings. Multi-layer verification. Escrow-protected transactions.
               </span>
             </div>
           </div>

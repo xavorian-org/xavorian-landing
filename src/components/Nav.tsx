@@ -8,6 +8,7 @@ import {
   BadgeCheck, Newspaper, Mail, LifeBuoy, ShieldCheck,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { MARKETPLACE_URL } from '@/data/site';
 
 const NAV_LINKS = [
   { to: '/how-it-works', label: 'How it works', desc: 'The four checks', icon: Route },
@@ -97,7 +98,7 @@ export const Nav = () => {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/waitlist"
+            href={MARKETPLACE_URL}
             prefetch={true}
             className={cn(
               'group hidden md:inline-flex h-11 items-center gap-2 rounded-full px-6 text-sm font-bold shadow-sm transition-all hover:shadow-md active:scale-95',
@@ -106,7 +107,7 @@ export const Nav = () => {
                 : 'bg-primary text-primary-foreground hover:bg-neutral-900',
             )}
           >
-            Join the waitlist
+            Browse properties
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" data-icon="inline-end" />
           </Link>
           <button
@@ -207,16 +208,16 @@ export const Nav = () => {
                   style={{ animationDelay: `${130 + NAV_LINKS.length * 60}ms` }}
                 >
                   <Link
-                    href="/waitlist"
+                    href={MARKETPLACE_URL}
                     prefetch={true}
                     className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-primary text-sm font-extrabold text-primary-foreground shadow-md transition-all hover:bg-neutral-900 active:scale-95"
                   >
-                    Join the waitlist
+                    Browse properties
                     <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                   <p className="mt-2.5 flex items-center justify-center gap-1.5 text-center text-[11px] font-medium text-muted-foreground">
                     <ShieldCheck className="size-3.5 text-foreground/60" strokeWidth={2} />
-                    Free. One email at launch. Nothing else.
+                    Browse verified homes, land and commercial property.
                   </p>
                 </div>
               </nav>

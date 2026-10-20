@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
+import { MARKETPLACE_URL } from '@/data/site';
 
 const steps = [
   { big: 'You should not need a lawyer, a detective, and a prayer', small: 'just to rent an apartment in your own city.' },
@@ -50,8 +51,8 @@ export const LowerGuard = () => (
               so the only thing left for you to feel about your next property
               is excitement.
             </p>
-            <Link href="/waitlist" className="pressable group mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-foreground px-7 text-sm font-extrabold text-background shadow-md transition-all hover:bg-neutral-800 hover:shadow-xl active:scale-95">
-              Join the waitlist
+            <Link href={MARKETPLACE_URL} className="pressable group mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-foreground px-7 text-sm font-extrabold text-background shadow-md transition-all hover:bg-neutral-800 hover:shadow-xl active:scale-95">
+              Browse verified properties
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" data-icon="inline-end" />
             </Link>
           </Reveal>
@@ -68,7 +69,7 @@ export const LowerGuard = () => (
                 <i className="block size-2.5 rounded-full bg-foreground/15" />
               </span>
               <span className="mx-auto inline-flex items-center rounded-full bg-muted px-4 py-1 text-[11px] font-semibold text-muted-foreground border border-border/80">
-                app.xavorian.com/dashboard
+                marketplace.xavorian.com/dashboard
               </span>
               <span className="w-12" aria-hidden="true" />
             </div>

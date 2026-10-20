@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { MARKETPLACE_URL } from '@/data/site';
 
 const H1_LINE_1 = ['House', 'hunting', 'without'];
 
@@ -70,10 +71,10 @@ export const Hero = () => (
             style={{ animationDelay: '960ms' }}
           >
             <Link
-              href="/waitlist"
+              href={MARKETPLACE_URL}
               className="pressable group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-foreground shadow-xl shadow-black/25 transition-all hover:-translate-y-0.5 hover:shadow-2xl active:scale-95"
             >
-              Join the waitlist
+              Browse the marketplace
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" data-icon="inline-end" />
             </Link>
             <Link
@@ -89,7 +90,7 @@ export const Hero = () => (
             style={{ animationDelay: '1100ms' }}
           >
             <ShieldCheck className="size-4" />
-            Free to join • One email at launch • No spam, ever
+            Explore verified listings across Nigeria
           </p>
         </div>
       </div>

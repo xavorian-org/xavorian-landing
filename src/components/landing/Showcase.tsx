@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { Reveal } from '@/components/Reveal';
+import { MARKETPLACE_URL } from '@/data/site';
 
 /**
  * Showcase — the product-in-action moment: the Xavorian app homepage
@@ -33,7 +34,7 @@ export const Showcase = () => (
           </span>
           <span className="mx-auto inline-flex items-center gap-1.5 rounded-full bg-background px-4 py-1 text-[11px] font-semibold text-muted-foreground border border-border/80">
             <ShieldCheck className="size-3 text-success" strokeWidth={2.5} />
-            app.xavorian.com
+            {MARKETPLACE_URL.replace('https://', '')}
           </span>
           <span className="w-12" aria-hidden="true" />
         </div>

@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     { path: '/' },
-    { path: '/waitlist' },
     { path: '/how-it-works' },
     { path: '/about' },
     { path: '/vision' },

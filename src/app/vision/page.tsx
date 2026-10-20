@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
-import { CITIES } from '@/data/site';
+import { CITIES, MARKETPLACE_URL } from '@/data/site';
 
 export const metadata: Metadata = pageMetadata({
   title: 'The Vision — A Trust Layer for African Real Estate',
@@ -260,14 +260,14 @@ export default function VisionPage() {
         <Reveal className="max-w-2xl">
           <span className="eyebrow">
             <span className="eyebrow-dot" />
-            Launch Focus
+            Nationwide Reach
           </span>
           <h2 className="mt-4 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-            More cities, in waitlist demand order.
+            Active across every state in Nigeria.
           </h2>
           <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-            Verification needs deep city-level registry indexing, and that work lands first where demand already
-            exists. Cities open in waitlist order, so every signup is a vote for where Xavorian lands next.
+            Verification needs deep registry indexing, and we are actively operating nationwide across Lagos, Abuja,
+            Benin City, Port Harcourt, and all 36 states and the FCT.
           </p>
         </Reveal>
 
@@ -282,10 +282,10 @@ export default function VisionPage() {
               </span>
             ))}
             <Link
-              href="/waitlist"
+              href={MARKETPLACE_URL}
               className="rounded-full border border-dashed border-border bg-muted px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:text-foreground"
             >
-              + your city, if the waitlist speaks
+              + all 36 states on the marketplace
             </Link>
           </div>
         </Reveal>
@@ -340,15 +340,14 @@ export default function VisionPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
                 We are not building another place to scroll through houses. We are building the layer underneath the
-                market itself, so that &ldquo;is it real?&rdquo; becomes a question nobody has to ask. The waitlist
-                decides where that layer lands first.
+                market itself, so that &ldquo;is it real?&rdquo; becomes a question nobody has to ask.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Link
-                  href="/waitlist"
+                  href={MARKETPLACE_URL}
                   className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
                 >
-                  Join the waitlist
+                  Browse properties
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link

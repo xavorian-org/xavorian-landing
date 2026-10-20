@@ -5,7 +5,7 @@ import { Reveal } from '@/components/Reveal';
 const teasers = [
   {
     q: 'Is Xavorian live yet?',
-    a: 'We are onboarding our first cities through the waitlist. Joining means you are told first — and in many cities, listed first.',
+    a: 'Yes. You can browse listings on the marketplace and filter by location, property type and budget.',
   },
   {
     q: 'What does verification cost me as a buyer?',
@@ -23,7 +23,7 @@ export const FAQ_ITEMS = [
     name: 'Is Xavorian live yet?',
     acceptedAnswer: {
       '@type': 'Answer',
-      text: 'Xavorian is onboarding its first cities through the waitlist. Joining means you are told first when your city opens — and in many cities, listed first.',
+      text: 'Yes. You can browse property listings on the Xavorian marketplace and filter by location, property type and budget.',
     },
   },
   {

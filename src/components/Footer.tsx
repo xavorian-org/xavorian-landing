@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Instagram, Youtube, Mail, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 import { SiTiktok, SiX } from 'react-icons/si';
-import { BRAND } from '@/data/site';
+import { BRAND, MARKETPLACE_URL } from '@/data/site';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -19,11 +19,11 @@ const footerSections = [
   {
     title: 'Locations',
     links: [
-      { label: 'Waitlist for Lagos', to: '/waitlist?city=lagos' },
-      { label: 'Waitlist for Abuja', to: '/waitlist?city=abuja' },
-      { label: 'Waitlist for Benin City', to: '/waitlist?city=benin-city' },
-      { label: 'Waitlist for Port Harcourt', to: '/waitlist?city=port-harcourt' },
-      { label: 'Join from your city', to: '/waitlist' },
+      { label: 'Property in Lagos', to: `${MARKETPLACE_URL}/properties?search=Lagos` },
+      { label: 'Property in Abuja', to: `${MARKETPLACE_URL}/properties?search=Abuja` },
+      { label: 'Property in Benin City', to: `${MARKETPLACE_URL}/properties?search=Benin%20City` },
+      { label: 'Property in Port Harcourt', to: `${MARKETPLACE_URL}/properties?search=Port%20Harcourt` },
+      { label: 'Browse all properties', to: MARKETPLACE_URL },
     ],
   },
   {
@@ -59,16 +59,16 @@ export const Footer = () => {
       <div className="border-b border-border/80 bg-background/50 py-8">
         <div className="container mx-auto flex flex-col items-center justify-between gap-5 px-6 md:flex-row">
           <div className="text-center md:text-left">
-            <h2 className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">Be first in line</h2>
+            <h2 className="font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">Find your next property</h2>
             <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
-              Verified Nigerian real estate is almost here. Reserve your place.
+              Browse verified homes, land and commercial property across Nigeria.
             </p>
           </div>
           <Link
-            href="/waitlist"
+            href={MARKETPLACE_URL}
             className="group inline-flex h-10 items-center gap-2 rounded-full bg-primary px-6 text-xs font-bold text-primary-foreground shadow-sm transition-all hover:bg-neutral-900 hover:shadow-md active:scale-95 sm:h-11 sm:text-sm"
           >
-            Join the waitlist
+            Browse properties
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" data-icon="inline-end" />
           </Link>
         </div>
