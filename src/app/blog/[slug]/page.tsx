@@ -6,6 +6,9 @@ import { JsonLd, pageMetadata, BASE_URL, SITE_NAME } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
 import { BLOG_POSTS, type BlogPost } from '@/data/blog';
 
+// Unknown slugs get a real HTTP 404 instead of a 200 "soft 404"
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
