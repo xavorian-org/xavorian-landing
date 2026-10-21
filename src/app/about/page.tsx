@@ -1,3 +1,4 @@
+import { MARKETPLACE_URL } from '@/data/site';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ScanFace, FileSearch, Cpu, ArrowRight, ArrowUpRight } from 'lucide-react';
@@ -211,20 +212,20 @@ export default function AboutPage() {
           <div className="rounded-3xl bg-foreground px-6 py-14 text-center text-white sm:px-12">
             <span className="eyebrow border-white/15 bg-white/10 text-white/70">
               <span className="eyebrow-dot" />
-              Join us early
+              Live now
             </span>
             <h2 className="mx-auto mt-5 max-w-2xl text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               A verified market is not a dream. It is a decision.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              We made ours. When your city opens, you can make yours with one email.
+              We made ours. Xavorian is live — browse verified listings or list your own today.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
-                href="/waitlist"
+                href={`${MARKETPLACE_URL}/properties`}
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
-                Join the waitlist
+                Browse verified properties
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
