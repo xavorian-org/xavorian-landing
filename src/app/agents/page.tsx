@@ -1,3 +1,4 @@
+import { MARKETPLACE_URL } from '@/data/site';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import {
@@ -13,9 +14,9 @@ import { JsonLd, pageMetadata, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'For Agents — Get Verified Before Launch Day',
+  title: 'For Agents — Get Verified and List on Xavorian',
   description:
-    'Join Xavorian as a verified agent. Pass identity, bank and document checks before your city opens, and let buyers choose you with confidence.',
+    'Join Xavorian as a verified agent. Pass identity, bank and document checks, list verified properties, and let buyers choose you with confidence.',
   path: '/agents',
 });
 
@@ -79,7 +80,7 @@ const documents = [
 const faqs = [
   {
     q: 'How long does verification take?',
-    a: 'Waitlist agents are verified before their city opens. Complete documents and a matching bank account make it fast. Missing paperwork is the only real delay.',
+    a: 'Most agents are verified quickly once they sign up. Complete documents and a matching bank account make it fast. Missing paperwork is the only real delay.',
   },
   {
     q: 'What if one of my documents fails verification?',
@@ -123,10 +124,10 @@ export default function AgentsPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
-              href="/waitlist"
+              href={`${MARKETPLACE_URL}/signup`}
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-px active:translate-y-0"
             >
-              Join the waitlist as an agent
+              Sign up as an agent
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link href="/how-it-works" className="link-underline text-sm font-semibold">
@@ -237,22 +238,21 @@ export default function AgentsPage() {
         </div>
       </section>
 
-      {/* ── Get verified before launch day ───────────────── */}
+      {/* ── Get verified and start listing ───────────────── */}
       <section className="container mx-auto mt-20 sm:mt-28">
         <Reveal>
           <div className="rounded-2xl border border-border bg-muted p-6 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
             <div className="max-w-xl">
               <h2 className="text-xl font-extrabold tracking-tight sm:text-2xl">
-                Get verified before launch day.
+                Get verified and start listing today.
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Join the waitlist as an agent and your verification starts before your city
-                opens. When launch day comes, you are not queuing for verification. You are
-                already listed, with the badge on.
+                Create your agent account and start verification right away. Once your checks
+                clear, your listings go live with the verified badge on.
               </p>
             </div>
             <Link
-              href="/waitlist"
+              href={`${MARKETPLACE_URL}/signup`}
               className="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-px active:translate-y-0 sm:mt-0"
             >
               Start as an agent
@@ -298,20 +298,20 @@ export default function AgentsPage() {
           <div className="rounded-3xl bg-foreground px-6 py-14 text-center text-white sm:px-12">
             <span className="eyebrow border-white/15 bg-white/10 text-white/70">
               <span className="eyebrow-dot" />
-              Waitlist agents verified first
+              Now onboarding agents
             </span>
             <h2 className="mx-auto mt-5 max-w-2xl text-balance text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
               Be the agent buyers stop being afraid of.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              Free to join. Verified before launch. First in line when your city opens.
+              Free to join. Get verified, list your properties, and win buyers’ trust.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
-                href="/waitlist"
+                href={`${MARKETPLACE_URL}/signup`}
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
-                Join the waitlist
+                Sign up as an agent
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
             </div>

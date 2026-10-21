@@ -128,14 +128,14 @@ export default function FaqPage() {
             Frequently Asked Questions.
           </h1>
           <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-            <span>Edition: Pre-Launch 2026</span>
+            <span>Edition: October 2026</span>
             <span>&bull;</span>
-            <span>Scope: Waitlist, Verification Gates, Paystack Payments, Legal Liability &amp; Support</span>
+            <span>Scope: Marketplace, Verification Gates, Paystack Payments, Legal Liability &amp; Support</span>
           </p>
           <div className="mt-6 max-w-2xl rounded-2xl border border-border bg-muted p-5 text-sm leading-relaxed text-muted-foreground">
             <p className="font-semibold text-foreground">About this reference document</p>
             <p className="mt-1">
-              This document gives plain answers about Xavorian&apos;s waitlist, the four verification gates, payment flows via
+              This document gives plain answers about Xavorian&apos;s live marketplace, the four verification gates, payment flows via
               CBN-licensed processors, agent onboarding, and user legal rights. It is general information. Where it
               conflicts with the Terms of Service, the Terms of Service prevail.
             </p>
@@ -210,7 +210,7 @@ export default function FaqPage() {
               <span className="font-semibold text-foreground">https://xavorian.com</span>
             </p>
             <p>
-              <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
+              <strong className="font-semibold text-foreground">Active markets:</strong> Lagos, Abuja,
               Benin City, Port Harcourt, and expanding across Nigeria.
             </p>
             <p className="pt-2 text-xs font-semibold text-foreground">
@@ -232,14 +232,14 @@ export default function FaqPage() {
               Careful people are exactly who we are building for.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-sm leading-relaxed text-white/70 sm:text-base">
-              Reserve your place and we will tell you the moment your city opens.
+              Xavorian is live. Browse verified listings across Nigeria today.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link
-                href="/waitlist"
+                href={`${MARKETPLACE_URL}/properties`}
                 className="group inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
               >
-                Join the waitlist
+                Browse verified properties
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link

@@ -1,3 +1,4 @@
+import { MARKETPLACE_URL } from '@/data/site';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -114,7 +115,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         </article>
 
-        {/* waitlist CTA */}
+        {/* marketplace CTA */}
         <Reveal>
           <div className="mt-14 max-w-2xl rounded-2xl border border-border bg-card p-5 sm:p-6">
             <div className="flex items-start gap-4">
@@ -125,13 +126,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <p className="text-base font-bold tracking-tight">Read less, worry less.</p>
                 <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
                   On Xavorian, every listing passes identity, bank-match, document and automated-verification
-                  gates before it can exist. Join the waitlist and browse with your guard down.
+                  gates before it can exist. Browse the live marketplace with your guard down.
                 </p>
                 <Link
-                  href="/waitlist"
+                  href={`${MARKETPLACE_URL}/properties`}
                   className="group mt-4 inline-flex h-11 items-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
                 >
-                  Join the waitlist
+                  Browse verified properties
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </div>

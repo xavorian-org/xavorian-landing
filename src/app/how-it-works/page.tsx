@@ -132,7 +132,7 @@ export default function HowItWorksPage() {
             Four gates that help keep scams off the platform.
           </h1>
           <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
-            <span>Edition: Pre-Launch Blueprint</span>
+            <span>Edition: Live Marketplace Blueprint</span>
             <span>&bull;</span>
             <span>Territory: Nigeria</span>
           </p>

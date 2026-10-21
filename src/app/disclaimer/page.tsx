@@ -324,7 +324,7 @@ export default function DisclaimerPage() {
                 <span className="font-semibold text-foreground">https://xavorian.com</span>
               </p>
               <p>
-                <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
+                <strong className="font-semibold text-foreground">Active markets:</strong> Lagos, Abuja,
                 Benin City, Port Harcourt, and expanding across Nigeria.
               </p>
               <p className="pt-1 text-xs">

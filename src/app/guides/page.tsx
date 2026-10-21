@@ -47,7 +47,7 @@ export default function GuidesIndexPage() {
             <span>&bull;</span>
             <span>Jurisdiction: Nigeria</span>
             <span>&bull;</span>
-            <span>Edition: Pre-Launch 2026</span>
+            <span>Edition: October 2026</span>
           </p>
           <div className="mt-6 max-w-2xl rounded-2xl border border-border bg-muted p-5 text-sm leading-relaxed text-muted-foreground">
             <p className="font-semibold text-foreground">About this compilation</p>
@@ -115,7 +115,7 @@ export default function GuidesIndexPage() {
               <span className="font-semibold text-foreground">https://xavorian.com</span>
             </p>
             <p>
-              <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
+              <strong className="font-semibold text-foreground">Active markets:</strong> Lagos, Abuja,
               Benin City, Port Harcourt, and expanding across Nigeria.
             </p>
             <p className="pt-2 text-xs font-semibold text-foreground">

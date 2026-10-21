@@ -71,7 +71,7 @@ const pillars = [
 const ladder = [
   {
     icon: BadgeCheck,
-    tier: 'Tier 1 · Foundation (At launch)',
+    tier: 'Tier 1 · Foundation (Live now)',
     title: 'The four gates, for everyone',
     body: 'The four gates for everyone: government KYC, bank-account name matching, document audits, and automated verification before publication. This is the baseline floor.',
   },
@@ -109,7 +109,7 @@ export default function VisionPage() {
             <span>&bull;</span>
             <span>Jurisdiction: Federal Republic of Nigeria</span>
             <span>&bull;</span>
-            <span>Edition: Pre-Launch 2026</span>
+            <span>Edition: October 2026</span>
           </p>
 
           <div className="mt-8 max-w-3xl rounded-2xl border border-border bg-muted p-6 text-sm leading-relaxed text-muted-foreground space-y-3">
@@ -316,7 +316,7 @@ export default function VisionPage() {
               <span className="font-semibold text-foreground">https://xavorian.com</span>
             </p>
             <p>
-              <strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja,
+              <strong className="font-semibold text-foreground">Active markets:</strong> Lagos, Abuja,
               Benin City, Port Harcourt, and expanding across Nigeria.
             </p>
             <p className="pt-2 text-xs font-semibold text-foreground">
