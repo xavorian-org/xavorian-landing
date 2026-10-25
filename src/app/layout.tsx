@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Nav } from '@/components/Nav';
 import { Footer } from '@/components/Footer';
+import { MarketplaceUtm } from '@/components/MarketplaceUtm';
 import { DEFAULT_DESCRIPTION, SITE_NAME } from '@/lib/seo';
 import './globals.css';
 
@@ -102,6 +103,7 @@ gtag('config', 'AW-18524454114');`,
           </main>
           <Footer />
         </div>
+        <MarketplaceUtm />
       </body>
     </html>
   );
