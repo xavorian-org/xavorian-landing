@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { ArrowLeft, ArrowRight, ShieldCheck, UserCircle } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL, SITE_NAME } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
+import { PropertyMatchForm } from '@/components/PropertyMatchForm';
 import { BLOG_POSTS, type BlogPost } from '@/data/blog';
 
 // Unknown slugs get a real HTTP 404 instead of a 200 "soft 404"
@@ -137,6 +138,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </Link>
               </div>
             </div>
+          </div>
+        </Reveal>
+
+        {/* opt-in property matches */}
+        <Reveal>
+          <div className="mt-6 max-w-2xl rounded-2xl border border-border bg-card p-5 sm:p-6">
+            <p className="text-base font-bold tracking-tight">Get properties matched to you</p>
+            <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
+              Tell us where and what you want. We email the one listing that fits best, twice a week at most.
+            </p>
+            <PropertyMatchForm source={`landing_blog_${post.slug}`.slice(0, 40)} variant="compact" className="mt-5" />
           </div>
         </Reveal>
 

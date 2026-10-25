@@ -6,6 +6,7 @@ import { Gates } from '@/components/landing/Gates';
 import { LowerGuard } from '@/components/landing/LowerGuard';
 import { Principles } from '@/components/landing/Principles';
 import { Locations } from '@/components/landing/Locations';
+import { PropertyMatches } from '@/components/landing/PropertyMatches';
 import { FaqTeaser, FAQ_ITEMS } from '@/components/landing/FaqTeaser';
 import { FinalCta } from '@/components/landing/FinalCta';
 import { JsonLd, organizationSchema, BASE_URL, DEFAULT_DESCRIPTION } from '@/lib/seo';
@@ -57,6 +58,7 @@ export default function LandingPage() {
       <LowerGuard />
       <Principles />
       <Locations />
+      <PropertyMatches />
       <FaqTeaser />
       <FinalCta />
     </>
