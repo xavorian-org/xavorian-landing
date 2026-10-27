@@ -26,10 +26,16 @@ export const Hero = () => (
       {/* Content */}
       <div className="container relative z-10 mx-auto flex items-center pb-14 pt-24">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/85 backdrop-blur-sm animate-fade-up">
-            <span className="size-1.5 rounded-full bg-violet-300" />
-            Nigeria&apos;s trust layer for real estate
-          </span>
+          <Link
+            href={MARKETPLACE_URL}
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-white/90 backdrop-blur-sm transition-colors hover:bg-white/15 animate-fade-up"
+          >
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
+            </span>
+            We&apos;re live · Accepting buyers, renters &amp; agents now
+          </Link>
 
           <h1
             className="mt-7 text-4xl text-white sm:text-6xl lg:text-7xl"

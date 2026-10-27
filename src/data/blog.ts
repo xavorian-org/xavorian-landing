@@ -1,3 +1,15 @@
+import { BLOG_HOMES } from './blogHomes';
+import { POSTS_LAGOS_OGUN } from './blog/lagosOgun';
+import { POSTS_ABUJA_NORTH } from './blog/abujaNorth';
+import { POSTS_EAST_SOUTH } from './blog/eastSouth';
+import { POSTS_GUIDES } from './blog/guides';
+
+/**
+ * A body block: a paragraph (plain string), a section heading, or a showcase of a live listing
+ * from src/data/blogHomes.ts (photos, playable video, price and a link to the marketplace page).
+ */
+export type BlogBlock = string | { h2: string } | { home: string };
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -5,7 +17,9 @@ export interface BlogPost {
   date: string; // ISO
   readingTime: string;
   category: string;
-  body: string[]; // paragraphs
+  body: BlogBlock[];
+  /** Optional hero/OG image URL; house posts default to their first showcased home's photo. */
+  cover?: string;
   author?: {
     name: string;
     role: string;
@@ -17,7 +31,7 @@ export interface BlogPost {
  * Blog registry — add an entry here and /blog/:slug renders + sitemaps
  * automatically. This is how the site scales to 40–50 pages.
  */
-export const BLOG_POSTS: BlogPost[] = [
+const CORE_POSTS: BlogPost[] = [
   {
     slug: 'why-we-built-xavorian',
     title: 'Why we built Xavorian',
@@ -373,3 +387,24 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 ];
+
+/** Every post, newest first. */
+export const BLOG_POSTS: BlogPost[] = [
+  ...POSTS_LAGOS_OGUN,
+  ...POSTS_ABUJA_NORTH,
+  ...POSTS_EAST_SOUTH,
+  ...POSTS_GUIDES,
+  ...CORE_POSTS,
+].sort((a, b) => b.date.localeCompare(a.date));
+
+/** Plain text of a post, for excerpts and word counts. */
+export const postText = (post: BlogPost): string =>
+  post.body.map((b) => (typeof b === 'string' ? b : 'h2' in b ? b.h2 : '')).join(' ');
+
+/** Homes showcased in a post that exist in the listing snapshot, in order of appearance. */
+export const postHomes = (post: BlogPost) =>
+  post.body.flatMap((b) => (typeof b === 'object' && 'home' in b && BLOG_HOMES[b.home] ? [BLOG_HOMES[b.home]] : []));
+
+/** Cover image: explicit cover, else the first showcased home's first photo. */
+export const postCover = (post: BlogPost): string | undefined =>
+  post.cover ?? postHomes(post).find((h) => h.images[0])?.images[0];
