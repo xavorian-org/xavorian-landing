@@ -14,7 +14,7 @@ import { JsonLd, organizationSchema, BASE_URL, DEFAULT_DESCRIPTION } from '@/lib
 export const metadata: Metadata = {
   title: 'Verified Properties for Sale & Rent in Nigeria | Xavorian',
   description:
-    'Browse verified homes, land and commercial property for sale or rent across Nigeria. Document-verified listings, escrow protection, and trusted real estate in Lagos, Abuja, Benin City, Port Harcourt, and all 36 states.',
+    'Xavorian is live. Browse verified homes, land and commercial property for sale or rent across Nigeria, with document-verified listings in Lagos, Abuja, Asaba, Owerri, Ogun and beyond. Sign up free today.',
   keywords: [
     'Verified Properties for Sale & Rent in Nigeria',
     'Nigeria real estate',

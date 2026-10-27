@@ -6,7 +6,9 @@ import { ArrowLeft, ArrowRight, ShieldCheck, UserCircle } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL, SITE_NAME } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
 import { PropertyMatchForm } from '@/components/PropertyMatchForm';
-import { BLOG_POSTS, type BlogPost } from '@/data/blog';
+import { BLOG_POSTS, postCover as coverOf, postHomes as homesIn, type BlogPost } from '@/data/blog';
+import { BLOG_HOMES } from '@/data/blogHomes';
+import { HomeShowcase } from '@/components/HomeShowcase';
 
 // Unknown slugs get a real HTTP 404 instead of a 200 "soft 404"
 export const dynamicParams = false;
@@ -32,7 +34,7 @@ const formatDate = (date: string) =>
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = getPost(params.slug);
   if (!post) notFound();
-  return pageMetadata({ title: post.title, description: post.excerpt, path: `/blog/${post.slug}` });
+  return pageMetadata({ title: post.title, description: post.excerpt, path: `/blog/${post.slug}`, image: coverOf(post), type: 'article' });
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -41,6 +43,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   const url = `${BASE_URL}/blog/${post.slug}`;
   const readNext = getReadNext(post.slug);
+  const homes = homesIn(post);
+  const cover = coverOf(post);
 
   const authorName = post.author?.name ?? 'Xavorian Team';
   const authorRole = post.author?.role;
@@ -56,6 +60,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             headline: post.title,
             description: post.excerpt,
             datePublished: post.date,
+            dateModified: post.date,
+            ...(cover && { image: [cover] }),
             author: {
               '@type': 'Person',
               name: authorName,
@@ -110,11 +116,49 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </Reveal>
 
           <div className="mt-10 max-w-2xl space-y-6 text-[15px] leading-8 text-foreground/80 sm:text-base">
-            {post.body.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+            {post.body.map((block, i) => {
+              if (typeof block === 'string') return <p key={i}>{block}</p>;
+              if ('h2' in block) {
+                return (
+                  <h2 key={i} className="!mt-12 text-xl font-extrabold leading-snug tracking-tight text-foreground sm:text-2xl">
+                    {block.h2}
+                  </h2>
+                );
+              }
+              const home = BLOG_HOMES[block.home];
+              return home ? <HomeShowcase key={i} home={home} /> : null;
+            })}
           </div>
         </article>
+
+        {/* homes recap */}
+        {homes.length > 1 && (
+          <Reveal>
+            <div className="mt-14 max-w-2xl rounded-2xl border border-border bg-card p-5 sm:p-6">
+              <p className="text-base font-bold tracking-tight">Homes in this post</p>
+              <ul className="mt-3 divide-y divide-border">
+                {homes.map((h) => (
+                  <li key={h.slug}>
+                    <Link
+                      href={`${MARKETPLACE_URL}/property/${h.slug}`}
+                      target="_blank"
+                      className="group flex items-center justify-between gap-4 py-3 text-sm"
+                    >
+                      <span>
+                        <span className="font-semibold text-foreground">{h.title}</span>
+                        <span className="block text-[13px] text-muted-foreground">{[h.city, h.state].filter(Boolean).join(', ')}</span>
+                      </span>
+                      <span className="flex shrink-0 items-center gap-1.5 font-bold text-foreground">
+                        ₦{h.price.toLocaleString('en-NG')}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        )}
 
         {/* marketplace CTA */}
         <Reveal>

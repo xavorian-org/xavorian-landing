@@ -5,7 +5,7 @@ import { LegalToc } from '@/components/LegalToc';
 export const metadata: Metadata = pageMetadata({
   title: 'Terms of Service – Xavorian Nigeria',
   description:
-    'The Terms of Service governing the waitlist and pre-launch use of the Xavorian property marketplace in Nigeria, including verification limits, risk allocation, payments, liability limits, and dispute resolution.',
+    'The Terms of Service governing use of the live Xavorian property marketplace in Nigeria, including verification limits, risk allocation, payments, liability limits, and dispute resolution.',
   path: '/terms',
 });
 
@@ -42,7 +42,7 @@ export default function TermsPage() {
         <p className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
           <span>Effective Date: August 2026</span>
           <span>&bull;</span>
-          <span>Version 2.1 &mdash; Pre-Launch Edition (Revised October 2026)</span>
+          <span>Version 2.2 &mdash; Live Edition (Revised October 2026)</span>
           <span>&bull;</span>
           <span>Jurisdiction: Federal Republic of Nigeria</span>
         </p>
@@ -105,12 +105,12 @@ export default function TermsPage() {
         <div className="mt-4 border-t border-border/60 pt-4 text-xs leading-relaxed text-muted-foreground space-y-2">
           <p>
             These Terms of Service (these &quot;Terms&quot;) govern your access to and use of the Xavorian platform,
-            including the waitlist, and all services of Xavorian Technology Company. By joining the waitlist, creating
+            and all services of Xavorian Technology Company. By creating
             an account, or using any part of the Platform, you confirm that you have read, understood, and agree to be
             legally bound by these Terms, our Privacy Policy, and our Disclaimer, each incorporated here by reference.
           </p>
           <p className="font-semibold text-foreground">
-            If you do not agree to these Terms, you must not join the waitlist, register, or use the Platform.
+            If you do not agree to these Terms, you must not register or use the Platform.
           </p>
         </div>
       </div>
@@ -128,15 +128,14 @@ export default function TermsPage() {
           <p>In these Terms, unless the context requires otherwise:</p>
           <ul className="list-disc space-y-2 pl-5">
             <li>“Xavorian”, “the Company”, “we”, “us”, “our” means Xavorian Technology Company (RC-9912416), a private limited liability company incorporated in the Federal Republic of Nigeria, founded by Ezeani Chukwuebuka, operating xavorian.com.</li>
-            <li>“Platform” means the Xavorian website, applications, waitlist pages, APIs, tools, and features, and “Services” means the marketplace, listing, communication, verification, and payment-facilitation features provided through it.</li>
-            <li>“User”, “you”, “your” means any person who accesses, joins the waitlist of, registers on, or uses the Platform, including a “Buyer” (seeking to purchase or rent property), a “Seller” (listing property for sale, rent, or lease), and an “Agent” (listing or marketing property on behalf of a Seller).</li>
+            <li>“Platform” means the Xavorian website, applications, APIs, tools, and features, and “Services” means the marketplace, listing, communication, verification, and payment-facilitation features provided through it.</li>
+            <li>“User”, “you”, “your” means any person who accesses, registers on, or uses the Platform, including a “Buyer” (seeking to purchase or rent property), a “Seller” (listing property for sale, rent, or lease), and an “Agent” (listing or marketing property on behalf of a Seller).</li>
             <li>“Listing” means any property advertisement published on the Platform by a Seller or Agent, and “Offer” means an expression of intent to purchase, rent, or lease made through the Platform, which binds no one unless the Users concerned execute separate written contractual documentation.</li>
             <li>“Transaction” means any negotiation, offer, agreement, payment, or dealing between Users in connection with a Listing, whether conducted on or off the Platform.</li>
             <li>“User Content” means any text, images, documents, listings, messages, reviews, or other material submitted to or through the Platform by a User.</li>
             <li>“Verification Processes” means Xavorian’s good-faith, risk-based screening procedures: (a) KYC identity gates checked against government-issued identity references; (b) the Bank-Name-Match Rule, under which payments are directed only to bank accounts whose account name matches the payee’s verified identity; (c) AI-assisted Document Audit; and (d) Human Review of flagged accounts, listings, and documents.</li>
             <li>“Verified Badge” means any “verified” status indicator on the Platform, which records only that a Verification Process was completed on a particular date. It is not a warranty of any kind.</li>
             <li>“Payment Processor” means Paystack and any other Central Bank of Nigeria licensed third-party payment provider through whom User payments are routed.</li>
-            <li>“Waitlist” and “Pre-Launch Period” mean the early-access stage of the Platform described in Section 2.4.</li>
             <li>“Authorities” means the Nigeria Police Force, the Economic and Financial Crimes Commission (EFCC), the Independent Corrupt Practices Commission (ICPC), the courts, and any other competent Nigerian regulatory, investigative, or law-enforcement body.</li>
             <li>“Privacy Policy” and “Disclaimer” mean those documents as published on the Platform, and “Nigerian Law” means the laws of the Federal Republic of Nigeria, including the Federal Competition and Consumer Protection Act 2018, the Arbitration and Mediation Act 2023, the Nigeria Data Protection Act 2023, and the NDPR 2019.</li>
           </ul>
@@ -170,9 +169,9 @@ export default function TermsPage() {
           </div>
           <p>Nothing on the Platform is real estate, legal, financial, or other professional advice. We do not independently verify ownership, condition, boundaries, title, encumbrances, zoning compliance, or pricing. Publication of a Listing and display of a Verified Badge are not endorsements of any User, property, or document.</p>
           <div>
-            <h3 className="text-sm font-bold text-foreground">2.4 Pre-Launch and Waitlist Status</h3>
+            <h3 className="text-sm font-bold text-foreground">2.4 Platform Status</h3>
           </div>
-          <p>The Platform is offered in an early-access, waitlist, pre-launch stage. You acknowledge and agree that: (a) joining the Waitlist creates no entitlement to an account, access, any feature, launch date, or level of service; (b) features may be added, changed, suspended, or withdrawn at any time, with or without notice, without liability; (c) the Platform may be unavailable, interrupted, or contain errors, and data may be lost or reset during the Pre-Launch Period; and (d) no representation is made that the Platform will proceed to general availability. You accept the heightened risks of using a pre-launch service.</p>
+          <p>The Platform is live and open to Buyers, Sellers and Agents. As a growing service, you acknowledge and agree that: (a) features may be added, changed, suspended, or withdrawn at any time, with or without notice, without liability; (b) the Platform may occasionally be unavailable, interrupted, or contain errors; and (c) coverage, listing volume and available features may differ between cities and states as the Platform expands across Nigeria.</p>
         </section>
 
         {/* Section 3 */}
@@ -579,9 +578,9 @@ export default function TermsPage() {
           </div>
           <p>These Terms benefit you and Xavorian only. Except for Xavorian’s officers, employees, agents and contractors, who may rely on Sections 12 and 13 to the extent stated there, no third party has any right to enforce any provision of these Terms.</p>
           <div>
-            <h3 className="text-sm font-bold text-foreground">15.15 Pre-Launch Acknowledgement</h3>
+            <h3 className="text-sm font-bold text-foreground">15.15 Evolving Service Acknowledgement</h3>
           </div>
-          <p>You acknowledge that the Platform is in an early-access, waitlist stage and that features may be added, changed, or withdrawn at any time without liability, as set out in Section 2.4.</p>
+          <p>You acknowledge that the Platform is an evolving service and that features may be added, changed, or withdrawn at any time without liability, as set out in Section 2.4.</p>
         </section>
 
         {/* Section 16 */}
@@ -592,10 +591,10 @@ export default function TermsPage() {
             <p><strong className="font-semibold text-foreground">Founder:</strong> Ezeani Chukwuebuka</p>
             <p><strong className="font-semibold text-foreground">Legal &amp; Privacy Notices:</strong> <span className="font-semibold text-foreground">legal@xavorian.com</span> | <strong className="font-semibold text-foreground">Support:</strong> <span className="font-semibold text-foreground">support@xavorian.com</span></p>
             <p><strong className="font-semibold text-foreground">Telephone / WhatsApp:</strong> <span className="font-semibold text-foreground">+234 805 637 3583</span> | <strong className="font-semibold text-foreground">Website:</strong> <span className="font-semibold text-foreground">https://xavorian.com</span></p>
-            <p><strong className="font-semibold text-foreground">Launch Focus (pre-launch):</strong> Lagos, Abuja, Benin City, Port Harcourt, and expanding across Nigeria.</p>
+            <p><strong className="font-semibold text-foreground">Coverage:</strong> Live across Nigeria, with listings in Lagos, Abuja, Ogun, Delta, Imo and more states every week.</p>
           </div>
           <div className="rounded-2xl border border-border bg-muted p-6 text-center text-sm font-medium text-foreground">
-            <p>By joining the waitlist, registering an account, submitting documents, or using the Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+            <p>By registering an account, submitting documents, or using the Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
           </div>
         </section>
         </div>

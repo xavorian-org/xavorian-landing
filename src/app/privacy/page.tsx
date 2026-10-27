@@ -93,15 +93,14 @@ export default function PrivacyPage() {
           <section className="space-y-4">
             <p>
               Xavorian Technology Company is committed to protecting the privacy of every person who visits
-              xavorian.com, joins the Xavorian waitlist, or uses the Xavorian marketplace when it launches. This
+              xavorian.com or uses the Xavorian marketplace at marketplace.xavorian.com. This
               Privacy Policy explains, in plain language, what personal data we collect, why we collect it, the
               legal bases on which we process it, who we share it with, how long we keep it, how we protect it,
               and the statutory rights you have under the Nigeria Data Protection Regulation 2019 (NDPR) and the
               Nigeria Data Protection Act 2023 (NDPA).
             </p>
             <p>
-              Please read this Policy carefully. If you do not agree with any part of it, you should not submit
-              the waitlist form or otherwise provide us with your personal data.
+              Please read this Policy carefully. If you do not agree with any part of it, you should not create an account, submit our forms, or otherwise provide us with your personal data.
             </p>
           </section>
 
@@ -128,15 +127,13 @@ export default function PrivacyPage() {
             <p>
               1.1. Xavorian Technology Company (RC-9912416), a private limited liability company incorporated under
               the laws of the Federal Republic of Nigeria, is the data controller responsible for personal data
-              collected through xavorian.com, through the Xavorian waitlist, and through the Xavorian marketplace
-              when it launches. As data controller, we determine the purposes and means of processing your
+              collected through xavorian.com, through the Xavorian marketplace, and through any Xavorian forms or communications. As data controller, we determine the purposes and means of processing your
               personal data and we are accountable to you and to the supervisory authority for that processing.
             </p>
             <p>
-              1.2. Xavorian is currently in its pre-launch waitlist stage. References in this Policy to marketplace
-              features, identity verification, listings, offers, and payments describe processing that will take
-              place only when the marketplace launches, and they are included now so that you can understand our
-              full intended data practices before you decide to join the waitlist.
+              1.2. The Xavorian marketplace is live. This Policy describes the processing that takes place when you
+              browse, create an account, verify your identity, list property, chat, make offers, or pay through the
+              Platform. People who joined our earlier waitlist are covered by the same Policy.
             </p>
             <p>1.3. Our Data Protection Office can be reached at any time through the channels listed above.</p>
           </section>
@@ -147,24 +144,22 @@ export default function PrivacyPage() {
               2. SCOPE OF THIS POLICY AND YOUR CONSENT
             </h2>
             <p>
-              2.1. This Policy applies to (a) the Xavorian website at xavorian.com, (b) the Xavorian waitlist and
-              any forms, surveys, or communications connected with it, and (c) the Xavorian marketplace, when it
-              launches, including its accounts, listings, chat, offers, and payment features. It applies to all
-              persons whose data we process, including site visitors, waitlist subscribers, and future users
-              registering as property seekers, agents, or landlords.
+              2.1. This Policy applies to (a) the Xavorian website at xavorian.com, (b) any Xavorian forms, surveys, or
+              communications, including our earlier waitlist and property-match emails, and (c) the Xavorian
+              marketplace, including its accounts, listings, chat, offers, and payment features. It applies to all
+              persons whose data we process, including site visitors, email subscribers, and users registered as property seekers, agents, or landlords.
             </p>
             <p>
-              2.2. When you submit the waitlist form, you give your express consent, by a clear affirmative
+              2.2. When you create an account or submit one of our forms, you give your express consent, by a clear affirmative
               action, to our processing of the personal data you submit for the purposes described in this
               Policy. Consent is not bundled with unrelated purposes: we ask only for the data described in
-              Section 3.1 and we use it only for the purposes described in Section 5.
+              Section 3 and we use it only for the purposes described in Section 5.
             </p>
             <p>
               2.3. You may withdraw your consent at any time, free of charge, by emailing{' '}
               <span className="font-semibold text-foreground">legal@xavorian.com</span> or by using the unsubscribe
               link in any of our emails. Withdrawal of consent does not affect the lawfulness of processing carried
-              out before the withdrawal. If you withdraw consent to waitlist processing, we will remove you from
-              the waitlist within thirty days. Where a different legal basis applies to a specific item of data,
+              out before the withdrawal. If you withdraw consent to email or waitlist processing, we will remove you from that list within thirty days. Where a different legal basis applies to a specific item of data,
               for example a legal retention obligation, withdrawal of consent ends the consent-based processing but
               not the processing the law requires.
             </p>
@@ -181,10 +176,9 @@ export default function PrivacyPage() {
             </h2>
 
             <div>
-              <h3 className="text-sm font-bold text-foreground">3.1 Data You Give Us Now (Waitlist Stage)</h3>
+              <h3 className="text-sm font-bold text-foreground">3.1 Data From Forms and Emails</h3>
               <p className="mt-1">
-                When you join the Xavorian waitlist we collect only the following fields, exactly as they appear on
-                the form: your full name, your email address, your phone number (optional), your role (whether you
+                When you join one of our email lists (including our earlier waitlist) we collect only the fields shown on that form, such as your full name, your email address, your phone number (optional), your role (whether you
                 join as a property seeker, an agent, or a landlord), your city, and an optional free-text note you
                 choose to add. If you contact us by email or phone, we also collect the content of that
                 correspondence and the contact details you use.
@@ -193,12 +187,11 @@ export default function PrivacyPage() {
 
             <div>
               <h3 className="text-sm font-bold text-foreground">
-                3.2 Data We Will Collect When the Marketplace Launches
+                3.2 Data We Collect When You Use the Marketplace
               </h3>
               <p className="mt-1">
-                The following categories are not collected at the waitlist stage. They will be collected only when
-                the marketplace launches and only from users who choose to register and transact. This future-stage
-                data will include: account credentials and profile information; a government-issued identity
+                The following categories are collected only from users who choose to register and transact on the
+                marketplace. This data includes: account credentials and profile information; a government-issued identity
                 document such as a national identity card, driver&apos;s licence, or international passport; a
                 liveness check or selfie capture used to confirm that the person presenting the document is its
                 genuine holder; your National Identification Number (NIN) or Bank Verification Number (BVN), which
@@ -217,16 +210,15 @@ export default function PrivacyPage() {
                 When you visit xavorian.com or use the Platform, we automatically collect technical data including
                 your IP address and the coarse, city-level location derived from it; your device type, operating
                 system, and browser type and version; pages visited, links clicked, and time spent; the website or
-                campaign that referred you to us; and cookie or similar identifiers described in Section 7. At the
-                waitlist stage this data is used in aggregate to understand demand and to keep the site secure. We
-                do not collect precise GPS location at the waitlist stage.
+                campaign that referred you to us; and cookie or similar identifiers described in Section 7. This data is used to understand demand, measure our marketing and keep the
+                Platform secure. We do not collect precise GPS location.
               </p>
             </div>
 
             <div>
               <h3 className="text-sm font-bold text-foreground">3.4 Data We Receive From Third Parties</h3>
               <p className="mt-1">
-                When marketplace verification launches, our independent KYC verification providers will confirm
+                When you verify your identity, our independent KYC verification providers confirm
                 identity data against official records and return to us only a verification result and a risk or
                 match score. We do not receive a copy of your full NIN or BVN record back from these providers. Our
                 payment partner, Paystack, returns payment confirmation data such as transaction references,
@@ -240,8 +232,7 @@ export default function PrivacyPage() {
                 3.5 Special and Sensitive Categories of Data
               </h3>
               <p className="mt-1">
-                Identity documents and liveness captures are treated as sensitive, biometric-adjacent data. When
-                the marketplace launches we will process them only with your explicit consent and on the additional
+                Identity documents and liveness captures are treated as sensitive, biometric-adjacent data. We process them only with your explicit consent and on the additional
                 basis of our legal obligations to verify identity and prevent fraud. We apply stricter access controls
                 and shorter retention periods to this data, as described in Section 6 and Section 10. We do not sell
                 personal data of any kind to any third party, and we do not use sensitive data to build advertising
@@ -264,8 +255,7 @@ export default function PrivacyPage() {
                 <strong className="font-semibold text-foreground">
                   Performance of a contract or steps before a contract:
                 </strong>{' '}
-                processing needed to provide the services you request, such as managing your waitlist registration
-                and, at launch, operating your account, listings, offers, and transactions.
+                processing needed to provide the services you request, such as operating your account, listings, offers, and transactions.
               </li>
               <li>
                 <strong className="font-semibold text-foreground">Legal obligation:</strong> processing required to
@@ -275,15 +265,14 @@ export default function PrivacyPage() {
               <li>
                 <strong className="font-semibold text-foreground">Legitimate interests:</strong> processing
                 necessary for our legitimate business interests, such as keeping the Platform secure, preventing
-                fraud, planning our city launch order from aggregated waitlist data, and improving the Platform.
+                fraud, planning our expansion from aggregated demand data, and improving the Platform.
                 Before relying on this basis we balance our interests against your rights and freedoms, and we
                 proceed only where your interests do not override ours. You may object to processing based on
                 legitimate interests as described in Section 13.
               </li>
               <li>
                 <strong className="font-semibold text-foreground">Consent:</strong> processing we carry out only
-                because you asked us to or agreed that we could, including waitlist communications and, at launch,
-                identity and biometric-adjacent verification data. You may withdraw consent at any time under
+                because you asked us to or agreed that we could, including marketing emails and identity and biometric-adjacent verification data. You may withdraw consent at any time under
                 Section 2.3.
               </li>
             </ul>
@@ -300,24 +289,23 @@ export default function PrivacyPage() {
             <p>5.1. We use personal data only for the purposes below, each tied to the legal basis shown:</p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                To register and manage your position on the waitlist, including confirming your role and city
-                (consent; steps before a contract).
+                To manage the email lists you join, including property-match emails for your chosen city and budget
+                (consent).
               </li>
               <li>
-                To send you waitlist updates, launch announcements, and product information you signed up to receive
+                To send you property matches, updates, and product information you signed up to receive
                 (consent, withdrawable at any time).
               </li>
               <li>
-                To determine the order in which we launch cities and to plan capacity, using aggregated or
-                de-identified waitlist data rather than identifiable profiles (legitimate interest).
+                To decide where we expand and to plan capacity, using aggregated or de-identified data rather than identifiable profiles (legitimate interest).
               </li>
               <li>To respond to your enquiries and provide support (legitimate interest; contract).</li>
               <li>
-                At launch, to create and administer your account, publish and manage listings, process offers and
+                To create and administer your account, publish and manage listings, process offers and
                 transactions, and facilitate payments with Paystack (contract).
               </li>
               <li>
-                At launch, to verify the identity of users through our verification partners before they transact,
+                To verify the identity of users through our verification partners before they transact,
                 and to screen listings, documents, and conduct for fraud (legal obligation; legitimate interest in
                 platform safety).
               </li>
@@ -362,8 +350,7 @@ export default function PrivacyPage() {
               </p>
             </div>
             <p>
-              6.1. This section applies when the marketplace launches and you choose to complete identity
-              verification. Verification is a mandatory gate for transacting users; it is not automatic, and it
+              6.1. This section applies when you choose to complete identity verification on the marketplace. Verification is a mandatory gate for transacting users; it is not automatic, and it
               happens only after you initiate it.
             </p>
             <p>
@@ -400,7 +387,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               7.3. You can control or delete cookies through your browser settings. Blocking strictly necessary
-              cookies may prevent parts of the site, including the waitlist form, from working correctly.
+              cookies may prevent parts of the site, including sign-in and our forms, from working correctly.
             </p>
           </section>
 
@@ -476,9 +463,9 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                <strong className="font-semibold text-foreground">Waitlist data:</strong> retained until the
-                marketplace launches, at which point you may register an account or ask us to delete your entry, or
-                until you ask us to delete it sooner, whichever comes first.
+                <strong className="font-semibold text-foreground">Waitlist and email-list data:</strong> retained until you
+                unsubscribe or ask us to delete it. If you register an account, your account data is handled as
+                described below.
               </li>
               <li>
                 <strong className="font-semibold text-foreground">Account data:</strong> retained for the life of

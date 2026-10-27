@@ -3,17 +3,22 @@ import type { Metadata } from 'next';
 export const SITE_NAME = 'Xavorian';
 export const BASE_URL = 'https://www.xavorian.com';
 export const DEFAULT_DESCRIPTION =
-  "Browse verified property listings across Nigeria. Xavorian helps buyers, renters, sellers and agents find homes, land and commercial property with transparent verification checks.";
+  "Xavorian is live: browse verified property listings across Nigeria. Buyers, renters, sellers and agents find homes, land and commercial property with transparent verification checks.";
 
 /** Builds the per-page Metadata object for App Router pages. */
 export function pageMetadata({
   title,
   description = DEFAULT_DESCRIPTION,
   path = '/',
+  image,
+  type = 'website',
 }: {
   title: string;
   description?: string;
   path?: string;
+  /** Absolute image URL for social cards; defaults to the site OG image. */
+  image?: string;
+  type?: 'website' | 'article';
 }): Metadata {
   const url = `${BASE_URL}${path}`;
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
@@ -28,16 +33,18 @@ export function pageMetadata({
       url,
       siteName: SITE_NAME,
       locale: 'en_NG',
-      type: 'website',
-      images: [
-        {
-          url: '/og-image.png',
-          width: 1200,
-          height: 630,
-          alt: fullTitle,
-          type: 'image/png',
-        },
-      ],
+      type,
+      images: image
+        ? [{ url: image, alt: fullTitle }]
+        : [
+            {
+              url: '/og-image.png',
+              width: 1200,
+              height: 630,
+              alt: fullTitle,
+              type: 'image/png',
+            },
+          ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -45,7 +52,7 @@ export function pageMetadata({
       creator: '@xavorianxyz',
       title: fullTitle,
       description,
-      images: ['/og-image.png'],
+      images: [image ?? '/og-image.png'],
     },
     robots: { index: true, follow: true },
   };

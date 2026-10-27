@@ -3,12 +3,12 @@ import type { Metadata } from 'next';
 import { ArrowRight } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
-import { BLOG_POSTS } from '@/data/blog';
+import { BLOG_POSTS, postCover } from '@/data/blog';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Blog — Trust, safety and verification in Nigerian real estate',
+  title: 'Blog: Houses, land and area guides across Nigeria',
   description:
-    'Short reads from the team building Xavorian: how property scams work, what verified should actually mean, and how to keep your money safe in the Nigerian property market.',
+    'Verified houses and land for sale in Lagos, Abuja, Ogun, Asaba and Owerri, plus area guides, buying tips and scam-proof advice from the Xavorian property desk.',
   path: '/blog',
 });
 
@@ -23,7 +23,7 @@ export default function BlogIndexPage() {
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           name: 'Xavorian Blog',
-          description: 'Articles on trust, safety and verification in Nigerian real estate.',
+          description: 'Verified homes, area guides and buying advice for Nigerian real estate.',
           itemListElement: BLOG_POSTS.map((post, i) => ({
             '@type': 'ListItem',
             position: i + 1,
@@ -40,23 +40,34 @@ export default function BlogIndexPage() {
             The Xavorian journal
           </span>
           <h1 className="mt-5 max-w-2xl text-balance text-3xl font-extrabold leading-[1.08] tracking-tight sm:text-4xl">
-            Notes on trust, scams and property in Nigeria.
+            Houses, land and honest property talk across Nigeria.
           </h1>
           <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-            Short reads from the team building the verification-first marketplace — how scams
-            work, what &ldquo;verified&rdquo; should mean, and how to keep your money safe in the
-            meantime.
+            Live, verified homes from the Xavorian marketplace, area guides from Lagos to Owerri,
+            and straight talk on buying, renting and staying scam-free.
           </p>
         </Reveal>
 
         {/* cards */}
         <div className="mt-10 grid gap-5 sm:mt-14 md:grid-cols-2">
-          {BLOG_POSTS.map((post, i) => (
-            <Reveal key={post.slug} delay={i * 90} className="h-full">
+          {BLOG_POSTS.map((post, i) => {
+            const cover = postCover(post);
+            return (
+            <Reveal key={post.slug} delay={Math.min(i, 3) * 90} className="h-full">
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md sm:p-6"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-md"
               >
+                {cover && (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={cover}
+                    alt=""
+                    loading={i < 4 ? 'eager' : 'lazy'}
+                    className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                )}
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <span className="inline-flex w-fit rounded-full bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                   {post.category}
                 </span>
@@ -71,9 +82,11 @@ export default function BlogIndexPage() {
                   Read article
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
+                </div>
               </Link>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>
