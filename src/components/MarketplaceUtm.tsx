@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { MARKETPLACE_URL } from '@/data/site';
 
 const STORAGE_KEY = 'xavorian_landing_utm';
-const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'oppref'] as const;
 
 /**
  * Carries campaign attribution from the landing site to the marketplace.
