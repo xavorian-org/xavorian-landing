@@ -45,51 +45,40 @@ export const FAQ_ITEMS = [
 ];
 
 export const FaqTeaser = () => (
-  <section className="w-full border-y border-border/70 bg-muted/45 py-16 sm:py-24">
-    <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
-        <Reveal className="lg:col-span-5">
-          <span className="eyebrow">
-            <span className="eyebrow-dot" />
-            Questions
-          </span>
-          <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-            Asked often, answered plainly.
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Clear answers about verification, buyer costs, and how Xavorian differs from open
-            classifieds.
-          </p>
-          <Link
-            href="/faq"
-            className="pressable group mt-6 inline-flex h-11 items-center gap-2 rounded-full border border-border bg-card px-6 text-sm font-bold text-foreground shadow-sm transition-all hover:border-foreground/40 hover:bg-background"
-          >
-            Read all questions
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </Reveal>
+  <section className="container mx-auto mt-20 sm:mt-28 lg:mt-32">
+    <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+      <Reveal>
+        <span className="eyebrow">
+          <span className="eyebrow-dot" />
+          Questions
+        </span>
+        <h2 className="mt-4 text-balance font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+          Asked often, answered plainly.
+        </h2>
+        <Link href="/faq" className="pressable link-underline mt-6 inline-flex items-center gap-2 text-sm font-bold text-foreground">
+          All questions
+          <ArrowRight className="size-4" data-icon="inline-end" />
+        </Link>
+      </Reveal>
 
-        <Reveal delay={80} className="lg:col-span-7">
-          <div className="divide-y divide-border/80 rounded-2xl border border-border/80 bg-card px-6 shadow-sm sm:rounded-3xl sm:px-8">
-            {teasers.map((t) => (
-              <details key={t.q} className="faq-item group">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-base font-bold tracking-tight text-foreground transition-colors hover:text-violet-700 sm:py-6 sm:text-lg [&::-webkit-details-marker]:hidden">
-                  <span>{t.q}</span>
-                  <span className="faq-icon flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-muted/50 text-lg font-light leading-none text-foreground">
-                    +
-                  </span>
-                </summary>
-                <div className="smooth-details-body">
-                  <div>
-                    <p className="faq-answer max-w-2xl pb-6 text-sm leading-relaxed text-muted-foreground">
-                      {t.a}
-                    </p>
-                  </div>
+      <div className="flex flex-col">
+        {teasers.map((t, i) => (
+          <Reveal key={t.q} delay={i * 90}>
+            <details className="faq-item group border-b border-border/80 first:border-t">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-base font-bold tracking-tight text-foreground transition-all duration-300 hover:pl-1.5 hover:text-foreground sm:py-6 sm:text-lg [&::-webkit-details-marker]:hidden">
+                {t.q}
+                <span className="faq-icon flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-card text-lg font-light leading-none text-muted-foreground shadow-sm">
+                  +
+                </span>
+              </summary>
+              <div className="smooth-details-body">
+                <div>
+                  <p className="faq-answer max-w-2xl pb-6 text-xs leading-relaxed text-muted-foreground sm:text-sm">{t.a}</p>
                 </div>
-              </details>
-            ))}
-          </div>
-        </Reveal>
+              </div>
+            </details>
+          </Reveal>
+        ))}
       </div>
     </div>
   </section>

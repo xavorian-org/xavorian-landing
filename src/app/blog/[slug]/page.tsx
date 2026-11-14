@@ -26,6 +26,7 @@ import {
   BLOG_POSTS,
   getReleasedBlogPosts,
   getReleasedPostBySlug,
+  isHousePhotoCover,
   postCover as coverOf,
   postHomes as homesIn,
   type BlogPost,
@@ -141,7 +142,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const inlineHomes = homesIn(post);
   const sidebarHomes = getSidebarHomes(post, inlineHomes);
   const cover = coverOf(post);
-  const isCoverIllustration = Boolean(cover && cover.endsWith('.svg'));
+  const isHousePhoto = isHousePhotoCover(cover);
 
   const authorName = post.author?.name ?? 'Xavorian Property Desk';
   const authorRole = post.author?.role ?? 'Editorial & Verification Research';
@@ -307,18 +308,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
             {cover && (
               <div className="lg:col-span-5">
-                <div className="relative overflow-hidden rounded-2xl border border-border bg-muted shadow-sm">
+                <div className="relative overflow-hidden rounded-2xl border border-border bg-[#FAF9F4] shadow-sm">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={cover}
-                    alt={isCoverIllustration ? `${post.title} — Editorial illustration` : post.title}
+                    alt={isHousePhoto ? post.title : `${post.title} — Xavorian Journal Cover`}
                     className="aspect-[16/10] w-full object-cover"
                   />
-                  {isCoverIllustration && (
-                    <span className="absolute right-3 top-3 rounded-full bg-amber-100/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-900 shadow-sm">
-                      Illustration — Not a real property photo
-                    </span>
-                  )}
                 </div>
               </div>
             )}
@@ -446,7 +442,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-600" />
-                  <span><strong className="text-foreground">Gate 4:</strong> Escrow protection until physical inspection</span>
+                  <span><strong className="text-foreground">Gate 4:</strong> Multi-layer automated release verification</span>
                 </li>
               </ul>
               <Link
@@ -538,16 +534,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   }
                   if ('figure' in block) {
                     const fig = block.figure;
+                    if (fig.src.includes('/blog-illustrations/')) return null;
                     return (
                       <figure key={i} className="my-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
                         <div className="relative bg-muted/40">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={fig.src} alt={fig.alt} loading="lazy" className="w-full object-cover" />
-                          {fig.isIllustration && (
-                            <span className="absolute right-3 top-3 rounded-full bg-amber-100/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-900 shadow-sm">
-                              Illustration — Not a real property photo
-                            </span>
-                          )}
                         </div>
                         <figcaption className="border-t border-border bg-muted/30 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
                           {fig.caption}
@@ -830,7 +822,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {recommendedMore.map((rec) => {
                   const recCover = coverOf(rec);
-                  const isRecIllus = Boolean(recCover && recCover.endsWith('.svg'));
+                  const isRecHouse = isHousePhotoCover(recCover);
                   return (
                     <article
                       key={rec.slug}
@@ -838,17 +830,19 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     >
                       <Link href={`/blog/${rec.slug}`} className="flex h-full flex-col">
                         {recCover && (
-                          <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted">
+                          <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#FAF9F4]">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={recCover}
-                              alt={isRecIllus ? `${rec.title} — Editorial illustration` : rec.title}
+                              alt={isRecHouse ? rec.title : `${rec.title} — Xavorian Journal Cover`}
                               loading="lazy"
                               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                             />
-                            <span className="absolute left-3 top-3 rounded-full bg-background/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-sm">
-                              {rec.category}
-                            </span>
+                            {isRecHouse && (
+                              <span className="absolute left-3 top-3 rounded-full bg-background/95 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-foreground shadow-sm">
+                                {rec.category}
+                              </span>
+                            )}
                           </div>
                         )}
                         <div className="flex flex-1 flex-col p-5">

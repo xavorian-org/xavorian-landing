@@ -472,11 +472,21 @@ export const postText = (post: BlogPost): string =>
 export const postHomes = (post: BlogPost) =>
   post.body.flatMap((b) => (typeof b === 'object' && 'home' in b && BLOG_HOMES[b.home] ? [BLOG_HOMES[b.home]] : []));
 
-/** Cover image: explicit cover/coverImage, else first figure image, else first showcased home's photo. */
-export const postCover = (post: BlogPost): string | undefined => {
-  if (post.cover) return post.cover;
-  if (post.coverImage) return post.coverImage;
+/** True when `src` is a real property photo rather than an editorial diagram/letterhead cover. */
+export const isHousePhotoCover = (src?: string): boolean =>
+  Boolean(src && !src.includes('/blog-illustrations/') && !src.includes('/api/blog-cover'));
+
+/** Builds the letterhead-style Xavorian editorial cover image URL with top-left logo, RC number, miniature homes, and title. */
+export const buildBlogCoverUrl = (post: Pick<BlogPost, 'title' | 'category'>): string =>
+  `/api/blog-cover?title=${encodeURIComponent(post.title)}&category=${encodeURIComponent(post.category)}`;
+
+/** Cover image: real home photo for listing posts, or Xavorian letterhead title cover for editorial posts. */
+export const postCover = (post: BlogPost): string => {
+  const homeImg = postHomes(post).find((h) => h.images[0])?.images[0];
+  if (homeImg) return homeImg;
+  if (isHousePhotoCover(post.cover)) return post.cover as string;
+  if (isHousePhotoCover(post.coverImage)) return post.coverImage as string;
   const fig = post.body.find((b): b is { figure: BlogFigure } => typeof b === 'object' && 'figure' in b);
-  if (fig?.figure?.src) return fig.figure.src;
-  return postHomes(post).find((h) => h.images[0])?.images[0];
+  if (isHousePhotoCover(fig?.figure?.src)) return fig!.figure.src;
+  return buildBlogCoverUrl(post);
 };

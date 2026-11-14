@@ -260,6 +260,50 @@
       </div>
     </nav>
 
+    <section class="controls" aria-label="Filter and search articles" style="margin-top:0;margin-bottom:20px;position:sticky;top:12px;z-index:20;">
+      <div class="controls-top" style="gap:12px;">
+        <input type="search" id="blogSearch" class="search-input" style="max-width:520px;border-radius:999px;" placeholder="Search Lekki, C of O, Abuja, rent, building cost..." oninput="filterBySearch(this.value)" />
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <select aria-label="Filter by topic" onchange="filterByCategory(this.value, this)" style="height:42px;border-radius:999px;border:1px solid var(--border);background:var(--bg);padding:0 16px;font-size:0.82rem;font-weight:700;cursor:pointer;">
+            <option value="All">All Topics</option>
+            <option value="Homes in Lagos">Homes in Lagos</option>
+            <option value="Investing">Investing</option>
+            <option value="Market Insights">Market Insights</option>
+            <option value="For Agents">For Agents</option>
+            <option value="Homes in FCT">Homes in FCT</option>
+            <option value="Legal &amp; Compliance">Legal &amp; Compliance</option>
+            <option value="Renting">Renting</option>
+            <option value="Safety &amp; Escrow">Safety &amp; Escrow</option>
+            <option value="Building">Building</option>
+            <option value="Diaspora">Diaspora</option>
+            <option value="Announcement">Announcement</option>
+            <option value="Area guide">Area guide</option>
+            <option value="Money">Money</option>
+            <option value="Homes in Owerri">Homes in Owerri</option>
+            <option value="Land in Ogun">Land in Ogun</option>
+            <option value="Buying guide">Buying guide</option>
+            <option value="Land in Abuja">Land in Abuja</option>
+            <option value="Income property">Income property</option>
+            <option value="Homes in Abuja">Homes in Abuja</option>
+            <option value="Distress sales">Distress sales</option>
+            <option value="Land">Land</option>
+            <option value="Homes in Asaba">Homes in Asaba</option>
+            <option value="Land in Lagos">Land in Lagos</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Data">Data</option>
+            <option value="Safety">Safety</option>
+            <option value="Buying">Buying</option>
+            <option value="Diaspora Safety">Diaspora Safety</option>
+            <option value="AI &amp; Property">AI &amp; Property</option>
+            <option value="Recovery">Recovery</option>
+            <option value="Documents">Documents</option>
+            <option value="Trust">Trust</option>
+          </select>
+          <a href="https://marketplace.xavorian.com/properties" class="cta-primary" style="padding:10px 18px;">Browse Homes</a>
+        </div>
+      </div>
+    </section>
+
     <header class="masthead">
       <div>
         <span class="eyebrow">The Xavorian Real Estate Journal · 66 Live Editions</span>
@@ -279,7 +323,7 @@
     
     <section class="bento" aria-label="Featured Story and Editor Picks">
       <article class="lead-card">
-        <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide"><img src="/blog-illustrations/neighborhood-corridor-map.svg" alt="Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide" /></a>
+        <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide"><img src="/api/blog-cover?title=Living%20and%20Buying%20Property%20in%20Lekki%20Phase%201%2C%20Lagos%3A%20Prices%2C%20Power%2C%20Drainage%20and%20Commute%20Guide&category=Editorial%20Guide" alt="Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide" /></a>
         <div class="lead-body">
           <span class="eyebrow">Featured Cover Story · Homes in Lagos</span>
           <h2 style="font-size:clamp(1.35rem,2.2vw,2rem);font-weight:800;margin-top:12px"><a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide">Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide</a></h2>
@@ -291,7 +335,7 @@
         <h2 style="font-size:0.85rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em">Editor's Picks &amp; Essential Playbooks</h2>
         
           <div class="pick-item">
-            <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos"><img src="/blog-illustrations/commercial-due-diligence.svg" alt="How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri" /></a>
+            <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos"><img src="/api/blog-cover?title=How%20to%20Tell%20a%20Genuine%20Distress%20Sale%20From%20a%20Scam%20in%20Abuja%2C%20Lagos%20and%20Owerri&category=Editorial%20Guide" alt="How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri" /></a>
             <div>
               <div style="font-size:0.7rem;font-weight:800;color:var(--accent);text-transform:uppercase">Investing</div>
               <h3 style="font-size:0.95rem;font-weight:800;margin-top:4px"><a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos">How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri</a></h3>
@@ -301,7 +345,7 @@
         
 
           <div class="pick-item">
-            <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria"><img src="/blog-illustrations/portal-comparison-matrix.svg" alt="Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know" /></a>
+            <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria"><img src="/api/blog-cover?title=Open%20Listing%20Portals%20vs%20Pre-Verified%20Property%20Marketplaces%20in%20Nigeria%3A%20What%20Buyers%20Need%20to%20Know&category=Editorial%20Guide" alt="Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know" /></a>
             <div>
               <div style="font-size:0.7rem;font-weight:800;color:var(--accent);text-transform:uppercase">Market Insights</div>
               <h3 style="font-size:0.95rem;font-weight:800;margin-top:4px"><a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria">Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know</a></h3>
@@ -311,7 +355,7 @@
         
 
           <div class="pick-item">
-            <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian"><img src="/blog-illustrations/agent-landlord-mandate.svg" alt="Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria" /></a>
+            <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian"><img src="/api/blog-cover?title=Why%20Verified%20Agents%20Close%20Faster%3A%20Standing%20Out%20From%20Unregistered%20Street%20Hustlers%20in%20Nigeria&category=Editorial%20Guide" alt="Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria" /></a>
             <div>
               <div style="font-size:0.7rem;font-weight:800;color:var(--accent);text-transform:uppercase">For Agents</div>
               <h3 style="font-size:0.95rem;font-weight:800;margin-top:4px"><a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian">Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria</a></h3>
@@ -322,57 +366,14 @@
       </div>
     </section>
 
-    <section class="controls" aria-label="Filter and search articles">
-      <div class="controls-top">
-        <div>
-          <h2 style="font-size:1.15rem;font-weight:800">All Published Nigerian Real Estate Articles</h2>
-          <p style="font-size:0.8rem;color:var(--muted-fg)">Full-width responsive index for fast reading on mobile, tablet, and desktop</p>
-        </div>
-        <input type="search" id="blogSearch" class="search-input" placeholder="Search Lekki, C of O, Abuja, rent, building cost..." oninput="filterBySearch(this.value)" />
-      </div>
-      <div class="pills">
-        <button type="button" class="pill active" onclick="filterByCategory('All', this)">All Articles (66)</button>
-        <button type="button" class="pill" onclick="filterByCategory('Homes in Lagos', this)">Homes in Lagos</button>
-<button type="button" class="pill" onclick="filterByCategory('Investing', this)">Investing</button>
-<button type="button" class="pill" onclick="filterByCategory('Market Insights', this)">Market Insights</button>
-<button type="button" class="pill" onclick="filterByCategory('For Agents', this)">For Agents</button>
-<button type="button" class="pill" onclick="filterByCategory('Homes in FCT', this)">Homes in FCT</button>
-<button type="button" class="pill" onclick="filterByCategory('Legal &amp; Compliance', this)">Legal &amp; Compliance</button>
-<button type="button" class="pill" onclick="filterByCategory('Renting', this)">Renting</button>
-<button type="button" class="pill" onclick="filterByCategory('Safety &amp; Escrow', this)">Safety &amp; Escrow</button>
-<button type="button" class="pill" onclick="filterByCategory('Building', this)">Building</button>
-<button type="button" class="pill" onclick="filterByCategory('Diaspora', this)">Diaspora</button>
-<button type="button" class="pill" onclick="filterByCategory('Announcement', this)">Announcement</button>
-<button type="button" class="pill" onclick="filterByCategory('Area guide', this)">Area guide</button>
-<button type="button" class="pill" onclick="filterByCategory('Money', this)">Money</button>
-<button type="button" class="pill" onclick="filterByCategory('Homes in Owerri', this)">Homes in Owerri</button>
-<button type="button" class="pill" onclick="filterByCategory('Land in Ogun', this)">Land in Ogun</button>
-<button type="button" class="pill" onclick="filterByCategory('Buying guide', this)">Buying guide</button>
-<button type="button" class="pill" onclick="filterByCategory('Land in Abuja', this)">Land in Abuja</button>
-<button type="button" class="pill" onclick="filterByCategory('Income property', this)">Income property</button>
-<button type="button" class="pill" onclick="filterByCategory('Homes in Abuja', this)">Homes in Abuja</button>
-<button type="button" class="pill" onclick="filterByCategory('Distress sales', this)">Distress sales</button>
-<button type="button" class="pill" onclick="filterByCategory('Land', this)">Land</button>
-<button type="button" class="pill" onclick="filterByCategory('Homes in Asaba', this)">Homes in Asaba</button>
-<button type="button" class="pill" onclick="filterByCategory('Land in Lagos', this)">Land in Lagos</button>
-<button type="button" class="pill" onclick="filterByCategory('Lifestyle', this)">Lifestyle</button>
-<button type="button" class="pill" onclick="filterByCategory('Data', this)">Data</button>
-<button type="button" class="pill" onclick="filterByCategory('Safety', this)">Safety</button>
-<button type="button" class="pill" onclick="filterByCategory('Buying', this)">Buying</button>
-<button type="button" class="pill" onclick="filterByCategory('Diaspora Safety', this)">Diaspora Safety</button>
-<button type="button" class="pill" onclick="filterByCategory('AI &amp; Property', this)">AI &amp; Property</button>
-<button type="button" class="pill" onclick="filterByCategory('Recovery', this)">Recovery</button>
-<button type="button" class="pill" onclick="filterByCategory('Documents', this)">Documents</button>
-<button type="button" class="pill" onclick="filterByCategory('Trust', this)">Trust</button>
-      </div>
-    </section>
+    
 
     <main class="grid" id="blogGrid">
       
     <article class="card " data-category="Homes in Lagos">
       
       <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide" class="card-media">
-        <img src="/blog-illustrations/neighborhood-corridor-map.svg" alt="Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide" loading="eager" />
+        <img src="/api/blog-cover?title=Living%20and%20Buying%20Property%20in%20Lekki%20Phase%201%2C%20Lagos%3A%20Prices%2C%20Power%2C%20Drainage%20and%20Commute%20Guide&category=Editorial%20Guide" alt="Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide" loading="eager" />
         <span class="badge">Homes in Lagos</span>
       </a>
       <div class="card-body">
@@ -394,7 +395,7 @@
     <article class="card " data-category="Investing">
       
       <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos" class="card-media">
-        <img src="/blog-illustrations/commercial-due-diligence.svg" alt="How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri" loading="eager" />
+        <img src="/api/blog-cover?title=How%20to%20Tell%20a%20Genuine%20Distress%20Sale%20From%20a%20Scam%20in%20Abuja%2C%20Lagos%20and%20Owerri&category=Editorial%20Guide" alt="How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri" loading="eager" />
         <span class="badge">Investing</span>
       </a>
       <div class="card-body">
@@ -416,7 +417,7 @@
     <article class="card " data-category="Market Insights">
       
       <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria" class="card-media">
-        <img src="/blog-illustrations/portal-comparison-matrix.svg" alt="Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know" loading="eager" />
+        <img src="/api/blog-cover?title=Open%20Listing%20Portals%20vs%20Pre-Verified%20Property%20Marketplaces%20in%20Nigeria%3A%20What%20Buyers%20Need%20to%20Know&category=Editorial%20Guide" alt="Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know" loading="eager" />
         <span class="badge">Market Insights</span>
       </a>
       <div class="card-body">
@@ -438,7 +439,7 @@
     <article class="card " data-category="For Agents">
       
       <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian" class="card-media">
-        <img src="/blog-illustrations/agent-landlord-mandate.svg" alt="Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria" loading="eager" />
+        <img src="/api/blog-cover?title=Why%20Verified%20Agents%20Close%20Faster%3A%20Standing%20Out%20From%20Unregistered%20Street%20Hustlers%20in%20Nigeria&category=Editorial%20Guide" alt="Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria" loading="eager" />
         <span class="badge">For Agents</span>
       </a>
       <div class="card-body">
@@ -482,7 +483,7 @@
     <article class="card " data-category="Legal &amp; Compliance">
       
       <a href="/blog/c-of-o-verification-step-by-step-alausa-lagos" class="card-media">
-        <img src="/blog-illustrations/title-verification-flow.svg" alt="How to Verify a Lagos Certificate of Occupancy (C of O) at Alausa Lands Bureau" loading="eager" />
+        <img src="/api/blog-cover?title=How%20to%20Verify%20a%20Lagos%20Certificate%20of%20Occupancy%20(C%20of%20O)%20at%20Alausa%20Lands%20Bureau&category=Editorial%20Guide" alt="How to Verify a Lagos Certificate of Occupancy (C of O) at Alausa Lands Bureau" loading="eager" />
         <span class="badge">Legal &amp; Compliance</span>
       </a>
       <div class="card-body">
@@ -504,7 +505,7 @@
     <article class="card " data-category="Renting">
       
       <a href="/blog/lagos-2-bedroom-flat-rent-budget-breakdown-2026" class="card-media">
-        <img src="/blog-illustrations/rent-cost-breakdown.svg" alt="What a ₦2.3m 2-Bedroom Flat in Lagos Actually Costs on Move-In Day" loading="lazy" />
+        <img src="/api/blog-cover?title=What%20a%20%E2%82%A62.3m%202-Bedroom%20Flat%20in%20Lagos%20Actually%20Costs%20on%20Move-In%20Day&category=Editorial%20Guide" alt="What a ₦2.3m 2-Bedroom Flat in Lagos Actually Costs on Move-In Day" loading="lazy" />
         <span class="badge">Renting</span>
       </a>
       <div class="card-body">
@@ -526,7 +527,7 @@
     <article class="card card-wide" data-category="Safety &amp; Escrow">
       
       <a href="/blog/ghost-listing-deposit-scam-nigeria-how-to-spot" class="card-media">
-        <img src="/blog-illustrations/scam-red-flags-radar.svg" alt="The Ghost Listing Trap: How Scammers Use Below-Market Prices to Collect Holding Deposits" loading="lazy" />
+        <img src="/api/blog-cover?title=The%20Ghost%20Listing%20Trap%3A%20How%20Scammers%20Use%20Below-Market%20Prices%20to%20Collect%20Holding%20Deposits&category=Editorial%20Guide" alt="The Ghost Listing Trap: How Scammers Use Below-Market Prices to Collect Holding Deposits" loading="lazy" />
         <span class="badge">Safety &amp; Escrow</span>
       </a>
       <div class="card-body">
@@ -548,7 +549,7 @@
     <article class="card " data-category="Building">
       
       <a href="/blog/cost-of-soil-test-and-structural-drawings-nigeria-2026" class="card-media">
-        <img src="/blog-illustrations/building-stages-roadmap.svg" alt="Soil Testing and Structural Drawings in Nigeria: Why Skipping Them Ruins Foundations" loading="lazy" />
+        <img src="/api/blog-cover?title=Soil%20Testing%20and%20Structural%20Drawings%20in%20Nigeria%3A%20Why%20Skipping%20Them%20Ruins%20Foundations&category=Editorial%20Guide" alt="Soil Testing and Structural Drawings in Nigeria: Why Skipping Them Ruins Foundations" loading="lazy" />
         <span class="badge">Building</span>
       </a>
       <div class="card-body">
@@ -570,7 +571,7 @@
     <article class="card " data-category="Diaspora">
       
       <a href="/blog/diaspora-uk-lagos-step-by-step-verification-playbook" class="card-media">
-        <img src="/blog-illustrations/diaspora-remote-buying.svg" alt="Buying Property in Lagos (Lekki, Ikeja, Epe) From the UK: Step-by-Step Verification Playbook" loading="lazy" />
+        <img src="/api/blog-cover?title=Buying%20Property%20in%20Lagos%20(Lekki%2C%20Ikeja%2C%20Epe)%20From%20the%20UK%3A%20Step-by-Step%20Verification%20Playbook&category=Editorial%20Guide" alt="Buying Property in Lagos (Lekki, Ikeja, Epe) From the UK: Step-by-Step Verification Playbook" loading="lazy" />
         <span class="badge">Diaspora</span>
       </a>
       <div class="card-body">
