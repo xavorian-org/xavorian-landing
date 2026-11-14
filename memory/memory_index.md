@@ -1,5 +1,6 @@
 # Memory Index
 
+- [2026-11-14_blog_1000_articles_scheduler_and_seo.md](./2026-11-14_blog_1000_articles_scheduler_and_seo.md): Generated and scheduled 1,000 distinct Nigerian real estate blog articles (10/day for 100 days at 09:00 WAT), synced 122 live properties into `blogHomes.ts`, added 12 labeled SVG illustrations, updated `/blog`, `/blog/[slug]`, `sitemap.ts`, `robots.txt`, `llms.txt`, and wired organic search & AI referral signup attribution.
 - [landing_page_simplification.md](./landing_page_simplification.md): Simplified the landing page copy to be more humanized, readable for a 14-year-old, removed high grammar, and removed hyphens.
 - [hero_layout_gradient_removal_and_autonomous_verification.md](./hero_layout_gradient_removal_and_autonomous_verification.md): Updated Hero section to Modal-inspired centered layout with headline, subtext, and CTAs centered, animated right-to-left trust marquee, centered SVG animation asset, zero gradients, site-wide autonomous AI verification copy, fixed OG image URLs, optimized navigation speed, and right-aligned 100% solid mobile menu drawer.
 - [opencode_config_json_syntax_fix.md](./opencode_config_json_syntax_fix.md): Fixed JSON syntax error in opencode.jsonc where `modal-damien` was placed outside the `provider` object due to a premature closing brace after `modal-group`.

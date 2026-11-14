@@ -1,12 +1,15 @@
 import type { MetadataRoute } from 'next';
 import { BASE_URL } from '@/lib/seo';
-import { BLOG_POSTS } from '@/data/blog';
+import { getReleasedBlogPosts } from '@/data/blog';
 import { GUIDES } from '@/data/guides';
 
-export const dynamic = 'force-static';
+// Revalidate every 5 minutes so each day's 10 newly published articles at 09:00 Africa/Lagos
+// automatically enter the sitemap while future scheduled drafts remain excluded.
+export const revalidate = 300;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const releasedBlogPosts = getReleasedBlogPosts(now);
 
   const staticRoutes = [
     { path: '/' },
@@ -27,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  const blogRoutes = BLOG_POSTS.map((p) => ({
+  const blogRoutes = releasedBlogPosts.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
     lastModified: new Date(p.date),
   }));
