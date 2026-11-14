@@ -11,3 +11,4 @@ Deployed Supabase Edge Functions (`site-prerender`, `dynamic-sitemap`, `property
 
 ## Verification
 - Verified scheduler pre-release hold, Day 1 release, idempotency, and missed-day catch-up; verified Next.js TypeScript and production build.
+

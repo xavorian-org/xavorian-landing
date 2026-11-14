@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xavorian Blog — Verified Houses, Land, Area Guides &amp; Real Estate Advice in Nigeria</title>
+  <meta name="description" content="Explore all Xavorian blog articles: verified houses and land for sale in Lagos, Abuja, Ogun, Asaba, Benin City, Port Harcourt, Ibadan and Owerri, plus area guides, title verification playbooks, building costs and scam-prevention guides." />
+  <link rel="canonical" href="https://www.xavorian.com/blog" />
+  <meta name="robots" content="index, follow" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #fafafa;
+      --fg: #141414;
+      --card: #ffffff;
+      --muted: #f2f2f2;
+      --muted-fg: #666666;
+      --border: #e5e5e5;
+      --accent: #7c3aed;
+      --emerald: #047857;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    /* Full-width edge-to-edge container touching all sides on mobile, tablet & desktop */
+    .shell {
+      width: 100%;
+      max-width: 1720px;
+      margin: 0 auto;
+      padding: clamp(16px, 2.5vw, 40px) clamp(16px, 3.5vw, 56px);
+    }
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 16px 24px;
+      margin-bottom: 24px;
+    }
+    .brand { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.9rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+    .masthead {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: clamp(20px, 3.5vw, 44px);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 1024px) {
+      .masthead { grid-template-columns: 8fr 4fr; align-items: center; }
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-fg);
+    }
+    .masthead h1 {
+      font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-top: 14px;
+    }
+    .masthead p {
+      color: var(--muted-fg);
+      font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+      margin-top: 12px;
+      max-width: 760px;
+    }
+    .stats-box {
+      background: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+    .stat-cell { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 8px; }
+    .stat-num { font-size: 1.2rem; font-weight: 800; }
+    .stat-lbl { font-size: 0.7rem; color: var(--muted-fg); font-weight: 600; }
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--fg);
+      color: #fff;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    /* Bento Hero */
+    .bento {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    @media (min-width: 1024px) {
+      .bento { grid-template-columns: 7fr 5fr; }
+    }
+    .lead-card, .picks-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+    }
+    .lead-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .lead-body { padding: clamp(20px, 3vw, 32px); }
+    .picks-card { padding: clamp(20px, 2.5vw, 28px); display: flex; flex-direction: column; gap: 16px; }
+    .pick-item { display: flex; gap: 14px; align-items: flex-start; padding-top: 14px; border-top: 1px solid var(--border); }
+    .pick-item:first-of-type { border-top: 0; padding-top: 0; }
+    .pick-item img { width: 104px; height: 74px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+    /* Controls */
+    .controls {
+      margin-top: 32px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+    }
+    .controls-top {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (min-width: 900px) {
+      .controls-top { flex-direction: row; align-items: center; justify-content: space-between; }
+    }
+    .search-input {
+      width: 100%;
+      max-width: 420px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 0 16px;
+      font-size: 0.9rem;
+    }
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pill {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--muted-fg);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .pill.active, .pill:hover {
+      background: var(--fg);
+      color: #fff;
+      border-color: var(--fg);
+    }
+    /* Full-width Responsive Grid: 1 col mobile, 2 cols tablet, 3 cols laptop, 4 cols widescreen */
+    .grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+      .card-wide { grid-column: span 2; }
+    }
+    @media (min-width: 1536px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.06); }
+    .card-media { position: relative; display: block; width: 100%; aspect-ratio: 16/10; background: var(--muted); overflow: hidden; }
+    .card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      background: rgba(255,255,255,0.95);
+      color: var(--fg);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .meta { font-size: 0.75rem; color: var(--muted-fg); }
+    .card-title { font-size: 1.05rem; font-weight: 800; line-height: 1.35; margin-top: 8px; }
+    .card-title a:hover { color: var(--accent); }
+    .card-excerpt { font-size: 0.85rem; color: var(--muted-fg); margin-top: 8px; flex: 1; }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: 16px;
+      font-size: 0.78rem;
+    }
+    .read-btn { font-weight: 800; color: var(--fg); }
+    .rec-strip {
+      margin-top: 10px;
+      background: var(--muted);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 0.72rem;
+      line-height: 1.35;
+    }
+    .rec-label { font-weight: 800; color: var(--accent); margin-right: 4px; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="topbar" aria-label="Primary Navigation">
+      <a href="https://www.xavorian.com" class="brand">Xavorian</a>
+      <div class="nav-links">
+        <a href="https://marketplace.xavorian.com/properties">Browse Properties</a>
+        <a href="https://www.xavorian.com/blog">Blog</a>
+        <a href="https://www.xavorian.com/guides">Guides</a>
+        <a href="https://www.xavorian.com/how-it-works">How Verification Works</a>
+      </div>
+    </nav>
+
+    <section class="controls" aria-label="Filter and search articles" style="margin-top:0;margin-bottom:20px;position:sticky;top:12px;z-index:20;">
+      <div class="controls-top" style="gap:12px;">
+        <input type="search" id="blogSearch" class="search-input" style="max-width:520px;border-radius:999px;" placeholder="Search Lekki, C of O, Abuja, rent, building cost..." oninput="filterBySearch(this.value)" />
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <select aria-label="Filter by topic" onchange="filterByCategory(this.value, this)" style="height:42px;border-radius:999px;border:1px solid var(--border);background:var(--bg);padding:0 16px;font-size:0.82rem;font-weight:700;cursor:pointer;">
+            <option value="All">All Topics</option>
+            <option value="Homes in Lagos">Homes in Lagos</option>
+            <option value="Investing">Investing</option>
+            <option value="Market Insights">Market Insights</option>
+            <option value="For Agents">For Agents</option>
+            <option value="Homes in FCT">Homes in FCT</option>
+            <option value="Legal &amp; Compliance">Legal &amp; Compliance</option>
+            <option value="Renting">Renting</option>
+            <option value="Safety &amp; Escrow">Safety &amp; Escrow</option>
+            <option value="Building">Building</option>
+            <option value="Diaspora">Diaspora</option>
+            <option value="Announcement">Announcement</option>
+            <option value="Area guide">Area guide</option>
+            <option value="Money">Money</option>
+            <option value="Homes in Owerri">Homes in Owerri</option>
+            <option value="Land in Ogun">Land in Ogun</option>
+            <option value="Buying guide">Buying guide</option>
+            <option value="Land in Abuja">Land in Abuja</option>
+            <option value="Income property">Income property</option>
+            <option value="Homes in Abuja">Homes in Abuja</option>
+            <option value="Distress sales">Distress sales</option>
+            <option value="Land">Land</option>
+            <option value="Homes in Asaba">Homes in Asaba</option>
+            <option value="Land in Lagos">Land in Lagos</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Data">Data</option>
+            <option value="Safety">Safety</option>
+            <option value="Buying">Buying</option>
+            <option value="Diaspora Safety">Diaspora Safety</option>
+            <option value="AI &amp; Property">AI &amp; Property</option>
+            <option value="Recovery">Recovery</option>
+            <option value="Documents">Documents</option>
+            <option value="Trust">Trust</option>
+          </select>
+          <a href="https://marketplace.xavorian.com/properties" class="cta-primary" style="padding:10px 18px;">Browse Homes</a>
+        </div>
+      </div>
+    </section>
+
+    <header class="masthead">
+      <div>
+        <span class="eyebrow">The Xavorian Real Estate Journal · 66 Live Editions</span>
+        <h1>Houses, land, and honest property talk across Nigeria.</h1>
+        <p>Verified homes from the Xavorian marketplace, street-by-street neighborhood guides across Lagos, Abuja, Benin City, Ogun, Asaba and Owerri, and practical playbooks on land titles, rent laws, building costs, and scam prevention.</p>
+      </div>
+      <div class="stats-box">
+        <div class="stats-grid">
+          <div class="stat-cell"><div class="stat-num">66</div><div class="stat-lbl">Live Articles</div></div>
+          <div class="stat-cell"><div class="stat-num">32</div><div class="stat-lbl">Topic Pillars</div></div>
+          <div class="stat-cell"><div class="stat-num">9am WAT</div><div class="stat-lbl">Daily Release</div></div>
+        </div>
+        <a href="https://marketplace.xavorian.com/properties" class="cta-primary">Browse Verified Properties →</a>
+      </div>
+    </header>
+
+    
+    <section class="bento" aria-label="Featured Story and Editor Picks">
+      <article class="lead-card">
+        <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide"><img src="/api/blog-cover?title=Living%20and%20Buying%20Property%20in%20Lekki%20Phase%201%2C%20Lagos%3A%20Prices%2C%20Power%2C%20Drainage%20and%20Commute%20Guide&category=Editorial%20Guide" alt="Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide" /></a>
+        <div class="lead-body">
+          <span class="eyebrow">Featured Cover Story · Homes in Lagos</span>
+          <h2 style="font-size:clamp(1.35rem,2.2vw,2rem);font-weight:800;margin-top:12px"><a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide">Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide</a></h2>
+          <p style="color:var(--muted-fg);margin-top:10px">Thinking of moving to or buying in Lekki Phase 1, Lagos? Here is what typical rents (₦10m, ₦25m (3-bed flat)), land prices (₦350m, ₦700m per plot), power supply and rainy-season drainage actually look like on the ground.</p>
+          <p style="margin-top:16px"><a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide" class="cta-primary">Read Featured Story →</a></p>
+        </div>
+      </article>
+      <div class="picks-card">
+        <h2 style="font-size:0.85rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em">Editor's Picks &amp; Essential Playbooks</h2>
+        
+          <div class="pick-item">
+            <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos"><img src="/api/blog-cover?title=How%20to%20Tell%20a%20Genuine%20Distress%20Sale%20From%20a%20Scam%20in%20Abuja%2C%20Lagos%20and%20Owerri&category=Editorial%20Guide" alt="How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri" /></a>
+            <div>
+              <div style="font-size:0.7rem;font-weight:800;color:var(--accent);text-transform:uppercase">Investing</div>
+              <h3 style="font-size:0.95rem;font-weight:800;margin-top:4px"><a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos">How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri</a></h3>
+              <div style="font-size:0.75rem;color:var(--muted-fg);margin-top:4px">4 min read</div>
+            </div>
+          </div>
+        
+
+          <div class="pick-item">
+            <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria"><img src="/api/blog-cover?title=Open%20Listing%20Portals%20vs%20Pre-Verified%20Property%20Marketplaces%20in%20Nigeria%3A%20What%20Buyers%20Need%20to%20Know&category=Editorial%20Guide" alt="Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know" /></a>
+            <div>
+              <div style="font-size:0.7rem;font-weight:800;color:var(--accent);text-transform:uppercase">Market Insights</div>
+              <h3 style="font-size:0.95rem;font-weight:800;margin-top:4px"><a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria">Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know</a></h3>
+              <div style="font-size:0.75rem;color:var(--muted-fg);margin-top:4px">4 min read</div>
+            </div>
+          </div>
+        
+
+          <div class="pick-item">
+            <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian"><img src="/api/blog-cover?title=Why%20Verified%20Agents%20Close%20Faster%3A%20Standing%20Out%20From%20Unregistered%20Street%20Hustlers%20in%20Nigeria&category=Editorial%20Guide" alt="Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria" /></a>
+            <div>
+              <div style="font-size:0.7rem;font-weight:800;color:var(--accent);text-transform:uppercase">For Agents</div>
+              <h3 style="font-size:0.95rem;font-weight:800;margin-top:4px"><a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian">Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria</a></h3>
+              <div style="font-size:0.75rem;color:var(--muted-fg);margin-top:4px">4 min read</div>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    
+
+    <main class="grid" id="blogGrid">
+      
+    <article class="card " data-category="Homes in Lagos">
+      
+      <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide" class="card-media">
+        <img src="/api/blog-cover?title=Living%20and%20Buying%20Property%20in%20Lekki%20Phase%201%2C%20Lagos%3A%20Prices%2C%20Power%2C%20Drainage%20and%20Commute%20Guide&category=Editorial%20Guide" alt="Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide" loading="eager" />
+        <span class="badge">Homes in Lagos</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide">Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide</a></h3>
+        <p class="card-excerpt">Thinking of moving to or buying in Lekki Phase 1, Lagos? Here is what typical rents (₦10m, ₦25m (3-bed flat)), land prices (₦350m, ₦700m per plot), power supply and rainy-season drainage actually look like on the ground.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos">How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Investing">
+      
+      <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos" class="card-media">
+        <img src="/api/blog-cover?title=How%20to%20Tell%20a%20Genuine%20Distress%20Sale%20From%20a%20Scam%20in%20Abuja%2C%20Lagos%20and%20Owerri&category=Editorial%20Guide" alt="How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri" loading="eager" />
+        <span class="badge">Investing</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos">How to Tell a Genuine Distress Sale From a Scam in Abuja, Lagos and Owerri</a></h3>
+        <p class="card-excerpt">A grounded guide to how to tell a genuine distress sale from a scam in abuja, lagos and owerri, backed by real listings and transaction rules on Xavorian.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/how-to-evaluate-a-genuine-distress-sale-in-abuja-and-lagos" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria">Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Market Insights">
+      
+      <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria" class="card-media">
+        <img src="/api/blog-cover?title=Open%20Listing%20Portals%20vs%20Pre-Verified%20Property%20Marketplaces%20in%20Nigeria%3A%20What%20Buyers%20Need%20to%20Know&category=Editorial%20Guide" alt="Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know" loading="eager" />
+        <span class="badge">Market Insights</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria">Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know</a></h3>
+        <p class="card-excerpt">Open Listing Portals vs Pre-Verified Property Marketplaces in Nigeria: What Buyers Need to Know. Grounded in November 2026 Nigerian property market research and Xavorian’s verification architecture.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/open-property-portals-vs-verified-marketplaces-nigeria" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian">Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="For Agents">
+      
+      <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian" class="card-media">
+        <img src="/api/blog-cover?title=Why%20Verified%20Agents%20Close%20Faster%3A%20Standing%20Out%20From%20Unregistered%20Street%20Hustlers%20in%20Nigeria&category=Editorial%20Guide" alt="Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria" loading="eager" />
+        <span class="badge">For Agents</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian">Why Verified Agents Close Faster: Standing Out From Unregistered Street Hustlers in Nigeria</a></h3>
+        <p class="card-excerpt">A practical operational guide for Nigerian real estate agents and mandate holders on why verified agents close faster: standing out from unregistered street hustlers in nigeria.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/how-verified-agents-win-serious-buyers-on-xavorian" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/verified-listing-review-shop-commercial-space-distress-sale-in-garki-fct">Inside This Shop / Commercial space in Garki, FCT Listed at ₦6bn on Xavorian</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in FCT">
+      
+      <a href="/blog/verified-listing-review-shop-commercial-space-distress-sale-in-garki-fct" class="card-media">
+        <img src="/api/blog-cover?title=Inside%20This%20Shop%20%2F%20Commercial%20space%20in%20Garki%2C%20FCT%20Listed%20at%20%E2%82%A66bn%20on%20Xavorian&category=Homes%20in%20FCT" alt="Inside This Shop / Commercial space in Garki, FCT Listed at ₦6bn on Xavorian" loading="eager" />
+        <span class="badge">Homes in FCT</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/verified-listing-review-shop-commercial-space-distress-sale-in-garki-fct">Inside This Shop / Commercial space in Garki, FCT Listed at ₦6bn on Xavorian</a></h3>
+        <p class="card-excerpt">A grounded buyer review of a live shop / commercial space in Garki, FCT asking ₦6,000,000,000 on Xavorian, including stated title (Certificate of Occupancy (C of O)) and field inspection checks.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/verified-listing-review-shop-commercial-space-distress-sale-in-garki-fct" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/c-of-o-verification-step-by-step-alausa-lagos">How to Verify a Lagos Certificate of Occupancy (C of O) at Alausa Lands Bureau</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Legal &amp; Compliance">
+      
+      <a href="/blog/c-of-o-verification-step-by-step-alausa-lagos" class="card-media">
+        <img src="/api/blog-cover?title=How%20to%20Verify%20a%20Lagos%20Certificate%20of%20Occupancy%20(C%20of%20O)%20at%20Alausa%20Lands%20Bureau&category=Editorial%20Guide" alt="How to Verify a Lagos Certificate of Occupancy (C of O) at Alausa Lands Bureau" loading="eager" />
+        <span class="badge">Legal &amp; Compliance</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/c-of-o-verification-step-by-step-alausa-lagos">How to Verify a Lagos Certificate of Occupancy (C of O) at Alausa Lands Bureau</a></h3>
+        <p class="card-excerpt">A plain-English guide to Certificate of Occupancy (C of O) in Lagos, covering what to check before money moves, registry verification steps, and how Xavorian screens title documents.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/c-of-o-verification-step-by-step-alausa-lagos" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/lagos-2-bedroom-flat-rent-budget-breakdown-2026">What a ₦2.3m 2-Bedroom Flat in Lagos Actually Costs on Move-In Day</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Renting">
+      
+      <a href="/blog/lagos-2-bedroom-flat-rent-budget-breakdown-2026" class="card-media">
+        <img src="/api/blog-cover?title=What%20a%20%E2%82%A62.3m%202-Bedroom%20Flat%20in%20Lagos%20Actually%20Costs%20on%20Move-In%20Day&category=Editorial%20Guide" alt="What a ₦2.3m 2-Bedroom Flat in Lagos Actually Costs on Move-In Day" loading="lazy" />
+        <span class="badge">Renting</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/lagos-2-bedroom-flat-rent-budget-breakdown-2026">What a ₦2.3m 2-Bedroom Flat in Lagos Actually Costs on Move-In Day</a></h3>
+        <p class="card-excerpt">Practical guidance on 2-bedroom flat move-in math in Lagos, with real Naira cost examples, legal rules, and step-by-step checks before you transfer rent.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/lagos-2-bedroom-flat-rent-budget-breakdown-2026" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/ghost-listing-deposit-scam-nigeria-how-to-spot">The Ghost Listing Trap: How Scammers Use Below-Market Prices to Collect Holding Deposits</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Safety &amp; Escrow">
+      
+      <a href="/blog/ghost-listing-deposit-scam-nigeria-how-to-spot" class="card-media">
+        <img src="/api/blog-cover?title=The%20Ghost%20Listing%20Trap%3A%20How%20Scammers%20Use%20Below-Market%20Prices%20to%20Collect%20Holding%20Deposits&category=Editorial%20Guide" alt="The Ghost Listing Trap: How Scammers Use Below-Market Prices to Collect Holding Deposits" loading="lazy" />
+        <span class="badge">Safety &amp; Escrow</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/ghost-listing-deposit-scam-nigeria-how-to-spot">The Ghost Listing Trap: How Scammers Use Below-Market Prices to Collect Holding Deposits</a></h3>
+        <p class="card-excerpt">How the ghost listing reservation scam works in Lagos &amp; Abuja, the exact warning signs to watch for, and how pre-publication verification blocks it.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/ghost-listing-deposit-scam-nigeria-how-to-spot" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/cost-of-soil-test-and-structural-drawings-nigeria-2026">Soil Testing and Structural Drawings in Nigeria: Why Skipping Them Ruins Foundations</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Building">
+      
+      <a href="/blog/cost-of-soil-test-and-structural-drawings-nigeria-2026" class="card-media">
+        <img src="/api/blog-cover?title=Soil%20Testing%20and%20Structural%20Drawings%20in%20Nigeria%3A%20Why%20Skipping%20Them%20Ruins%20Foundations&category=Editorial%20Guide" alt="Soil Testing and Structural Drawings in Nigeria: Why Skipping Them Ruins Foundations" loading="lazy" />
+        <span class="badge">Building</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/cost-of-soil-test-and-structural-drawings-nigeria-2026">Soil Testing and Structural Drawings in Nigeria: Why Skipping Them Ruins Foundations</a></h3>
+        <p class="card-excerpt">A practical breakdown of geotechnical soil test &amp; drawings in Nigeria, covering material specifications, inflation realities, and quality checks.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/cost-of-soil-test-and-structural-drawings-nigeria-2026" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/diaspora-uk-lagos-step-by-step-verification-playbook">Buying Property in Lagos (Lekki, Ikeja, Epe) From the UK: Step-by-Step Verification Playbook</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Diaspora">
+      
+      <a href="/blog/diaspora-uk-lagos-step-by-step-verification-playbook" class="card-media">
+        <img src="/api/blog-cover?title=Buying%20Property%20in%20Lagos%20(Lekki%2C%20Ikeja%2C%20Epe)%20From%20the%20UK%3A%20Step-by-Step%20Verification%20Playbook&category=Editorial%20Guide" alt="Buying Property in Lagos (Lekki, Ikeja, Epe) From the UK: Step-by-Step Verification Playbook" loading="lazy" />
+        <span class="badge">Diaspora</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 November 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/diaspora-uk-lagos-step-by-step-verification-playbook">Buying Property in Lagos (Lekki, Ikeja, Epe) From the UK: Step-by-Step Verification Playbook</a></h3>
+        <p class="card-excerpt">A practical playbook for Nigerians in UK (London, Manchester, Birmingham) buying verified family homes and C of O land in Lagos from the UK, focusing on complete remote verification workflow from initial listing check to registry search and bank-matched payment.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/diaspora-uk-lagos-step-by-step-verification-playbook" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/xavorian-is-live-find-verify-buy-rent">Xavorian is live: how to find, verify and buy or rent your next home</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Announcement">
+      
+      <div class="card-body">
+        <div class="meta">27 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/xavorian-is-live-find-verify-buy-rent">Xavorian is live: how to find, verify and buy or rent your next home</a></h3>
+        <p class="card-excerpt">We are live. Buyers, renters, agents and landlords can use Xavorian today. Here is how it works, from browsing to paying the right account.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/xavorian-is-live-find-verify-buy-rent" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/houses-for-sale-in-lagos-duplex-apartment-ikeja-lekki-gra">Houses for Sale in Lagos: Duplexes in Ikeja and Amuwo Odofin GRA, Plus a Lekki Apartment</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Lagos">
+      
+      <div class="card-body">
+        <div class="meta">26 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/houses-for-sale-in-lagos-duplex-apartment-ikeja-lekki-gra">Houses for Sale in Lagos: Duplexes in Ikeja and Amuwo Odofin GRA, Plus a Lekki Apartment</a></h3>
+        <p class="card-excerpt">Ready to move in, not to build? Two 5-bedroom duplexes and a 3-bedroom Lekki unit, all verified and live on Xavorian.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/houses-for-sale-in-lagos-duplex-apartment-ikeja-lekki-gra" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-in-moniya-iseyin-oyo-buyers-guide">Land for Sale in Moniya and Iseyin, Oyo: A Buyer's Guide to Big Acreage</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Area guide">
+      
+      <div class="card-body">
+        <div class="meta">25 October 2026 · 3 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-in-moniya-iseyin-oyo-buyers-guide">Land for Sale in Moniya and Iseyin, Oyo: A Buyer's Guide to Big Acreage</a></h3>
+        <p class="card-excerpt">Thinking of buying acres on the Moniya to Iseyin road in Oyo State? What to check, what to ask, and one verified 16 acre listing to start with.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-in-moniya-iseyin-oyo-buyers-guide" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/why-asaba-is-becoming-the-easts-favourite-address">Why Asaba Is Quietly Becoming the East's Favourite Address</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Area guide">
+      
+      <div class="card-body">
+        <div class="meta">24 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/why-asaba-is-becoming-the-easts-favourite-address">Why Asaba Is Quietly Becoming the East's Favourite Address</a></h3>
+        <p class="card-excerpt">Calm streets, a capital-city address and a short bridge to Onitsha. Why more people are buying land and houses in Asaba, Delta State.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/why-asaba-is-becoming-the-easts-favourite-address" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/mortgage-options-in-nigeria-nhf-bank-rent-to-own">Mortgage options in Nigeria: NHF, bank mortgages and rent-to-own in plain words</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Money">
+      
+      <div class="card-body">
+        <div class="meta">21 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/mortgage-options-in-nigeria-nhf-bank-rent-to-own">Mortgage options in Nigeria: NHF, bank mortgages and rent-to-own in plain words</a></h3>
+        <p class="card-excerpt">Can you really get a mortgage in Nigeria? Yes. Here is how the NHF, commercial bank mortgages and rent-to-own schemes work, in simple language.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/mortgage-options-in-nigeria-nhf-bank-rent-to-own" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/abuja-districts-explained-first-time-buyers-guide">Abuja Districts Explained: A First-Time Buyer's Guide to the City, Suburbs and Satellite Towns</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Area guide">
+      
+      <div class="card-body">
+        <div class="meta">20 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/abuja-districts-explained-first-time-buyers-guide">Abuja Districts Explained: A First-Time Buyer's Guide to the City, Suburbs and Satellite Towns</a></h3>
+        <p class="card-excerpt">Maitama or Lugbe? Gwarinpa or Karu? A plain-English guide to Abuja districts for first-time buyers, from the city centre to the satellite towns.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/abuja-districts-explained-first-time-buyers-guide" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/6-and-9-bedroom-houses-for-sale-in-new-owerri">Big Family Homes in New Owerri: A 6 Bedroom and a 9 Bedroom Duplex</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Owerri">
+      
+      <div class="card-body">
+        <div class="meta">19 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/6-and-9-bedroom-houses-for-sale-in-new-owerri">Big Family Homes in New Owerri: A 6 Bedroom and a 9 Bedroom Duplex</a></h3>
+        <p class="card-excerpt">A brand new 6 bedroom duplex in Institutional Layout and a 9 bedroom home with a library in Nekede Exclusive Garden. Big houses for sale in New Owerri.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/6-and-9-bedroom-houses-for-sale-in-new-owerri" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/cheap-land-for-sale-near-lagos-ogun-under-2-5-million">Cheap Land for Sale Near Lagos: Five Ogun C of O Plots Under ₦2.5m</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Ogun">
+      
+      <div class="card-body">
+        <div class="meta">16 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/cheap-land-for-sale-near-lagos-ogun-under-2-5-million">Cheap Land for Sale Near Lagos: Five Ogun C of O Plots Under ₦2.5m</a></h3>
+        <p class="card-excerpt">Stop saying you cannot afford land. Five verified 500sqm plots in Ogun, from Papa Ifo to Ilaro, all under ₦2.5m with a C of O.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/cheap-land-for-sale-near-lagos-ogun-under-2-5-million" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/buying-off-plan-property-in-nigeria">Buying off-plan property in Nigeria: how it works and how to protect yourself</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Buying guide">
+      
+      <div class="card-body">
+        <div class="meta">16 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/buying-off-plan-property-in-nigeria">Buying off-plan property in Nigeria: how it works and how to protect yourself</a></h3>
+        <p class="card-excerpt">Off-plan can get you a home at an early price. It can also leave you with a half-built shell. How off-plan property in Nigeria works, and how to stay safe.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/buying-off-plan-property-in-nigeria" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-and-hotel-for-sale-in-abuja-garki-katampe-wuye-utako">Prime Land and a Hotel for Sale in Abuja: Garki, Katampe, Wuye, Wuse Zone 3 and Utako</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Abuja">
+      
+      <div class="card-body">
+        <div class="meta">15 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-and-hotel-for-sale-in-abuja-garki-katampe-wuye-utako">Prime Land and a Hotel for Sale in Abuja: Garki, Katampe, Wuye, Wuse Zone 3 and Utako</a></h3>
+        <p class="card-excerpt">Five verified big-ticket Abuja listings with C of O: an 83 room Garki hotel, plus prime land in Katampe, Wuye, Wuse Zone 3 and Utako. Prices and details inside.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-and-hotel-for-sale-in-abuja-garki-katampe-wuye-utako" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/hotels-for-sale-in-nigeria-abuja-karu-income-property">Hotels for Sale in Abuja and Karu: Income Property That Works for You</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Income property">
+      
+      <div class="card-body">
+        <div class="meta">14 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/hotels-for-sale-in-nigeria-abuja-karu-income-property">Hotels for Sale in Abuja and Karu: Income Property That Works for You</a></h3>
+        <p class="card-excerpt">An 83-room Garki hotel, a 40-room property in Masaka and a 20-room hotel with a club in New Karu. Hotels and lodges as income property, explained simply.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/hotels-for-sale-in-nigeria-abuja-karu-income-property" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/property-inspection-checklist-nigeria">Property inspection checklist for Nigeria: what to check before you pay</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Renting">
+      
+      <div class="card-body">
+        <div class="meta">13 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/property-inspection-checklist-nigeria">Property inspection checklist for Nigeria: what to check before you pay</a></h3>
+        <p class="card-excerpt">Water, power, drainage, the road in rainy season, neighbours and documents. The property inspection checklist every Nigerian renter and buyer needs.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/property-inspection-checklist-nigeria" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-sagamu-shimawa-ijebu-itele-ogun">Land for Sale in Sagamu, Shimawa and Ijebu Itele: The Expressway Corridor</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Ogun">
+      
+      <div class="card-body">
+        <div class="meta">11 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-sagamu-shimawa-ijebu-itele-ogun">Land for Sale in Sagamu, Shimawa and Ijebu Itele: The Expressway Corridor</a></h3>
+        <p class="card-excerpt">Between Lagos and Ibadan, the Sagamu end is waking up. Five verified C of O plots in Sagamu, Shimawa, Ijebu Itele and Imodi.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-sagamu-shimawa-ijebu-itele-ogun" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/houses-and-hotels-for-sale-in-karu-new-karu-nasarawa">Karu and New Karu: Houses and Hotels for Sale on the Nasarawa Side of Abuja</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Abuja">
+      
+      <div class="card-body">
+        <div class="meta">10 October 2026 · 3 min read</div>
+        <h3 class="card-title"><a href="/blog/houses-and-hotels-for-sale-in-karu-new-karu-nasarawa">Karu and New Karu: Houses and Hotels for Sale on the Nasarawa Side of Abuja</a></h3>
+        <p class="card-excerpt">A new 5 bedroom bungalow in Karu for ₦100m, a 20 room hotel in New Karu and a 40 room property in Masaka. Verified listings on the Abuja-Nasarawa corridor.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/houses-and-hotels-for-sale-in-karu-new-karu-nasarawa" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/distress-sale-property-nigeria-owerri-abuja">Distress Sales in Owerri and Abuja: Priced to Move, Still Verify</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Distress sales">
+      
+      <div class="card-body">
+        <div class="meta">9 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/distress-sale-property-nigeria-owerri-abuja">Distress Sales in Owerri and Abuja: Priced to Move, Still Verify</a></h3>
+        <p class="card-excerpt">A ₦120m compound in New Owerri, plus C of O land in Utako and Wuse Zone 3. What a distress sale really means, and why you still check everything.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/distress-sale-property-nigeria-owerri-abuja" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/renting-vs-buying-a-house-in-nigeria">Renting vs buying a house in Nigeria: the honest maths</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Money">
+      
+      <div class="card-body">
+        <div class="meta">9 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/renting-vs-buying-a-house-in-nigeria">Renting vs buying a house in Nigeria: the honest maths</a></h3>
+        <p class="card-excerpt">Is renting dead money? Is buying always better? The honest way to think about renting vs buying a house in Nigeria, without fake numbers.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/renting-vs-buying-a-house-in-nigeria" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/why-ogun-land-is-the-new-lagos-land">Why Ogun Land Is the New Lagos Land: A Guide for First-Time Buyers</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Area guide">
+      
+      <div class="card-body">
+        <div class="meta">8 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/why-ogun-land-is-the-new-lagos-land">Why Ogun Land Is the New Lagos Land: A Guide for First-Time Buyers</a></h3>
+        <p class="card-excerpt">Lagos prices are high, Ogun is next door. Here is why so many Lagosians now buy land in Ogun, and how to do it without wahala.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/why-ogun-land-is-the-new-lagos-land" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-in-ifo-papa-ifo-mowe-ofada-ogun">Land for Sale in Ifo, Papa Ifo and Mowe-Ofada: Ogun Plots from ₦1.3m</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Ogun">
+      
+      <div class="card-body">
+        <div class="meta">6 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-in-ifo-papa-ifo-mowe-ofada-ogun">Land for Sale in Ifo, Papa Ifo and Mowe-Ofada: Ogun Plots from ₦1.3m</a></h3>
+        <p class="card-excerpt">Budget plots off the Lagos-Abeokuta and Lagos-Ibadan roads. Five verified listings in Ifo, Papa Ifo, Apa Ifo and Mowe-Ofada.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-in-ifo-papa-ifo-mowe-ofada-ogun" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/starting-a-short-let-business-in-lagos-and-abuja">Starting a short-let business in Lagos and Abuja: what to know first</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Money">
+      
+      <div class="card-body">
+        <div class="meta">6 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/starting-a-short-let-business-in-lagos-and-abuja">Starting a short-let business in Lagos and Abuja: what to know first</a></h3>
+        <p class="card-excerpt">Short-lets look easy on Instagram. Here is what it really takes to run one in Lagos or Abuja: rules, power, cleaning, guests and maths.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/starting-a-short-let-business-in-lagos-and-abuja" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/houses-and-land-for-sale-in-lugbe-kuje-wasa-apo-abuja">Houses and Land for Sale in Lugbe, Kuje and Wasa: More Space for Your Money in Abuja</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Abuja">
+      
+      <div class="card-body">
+        <div class="meta">6 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/houses-and-land-for-sale-in-lugbe-kuje-wasa-apo-abuja">Houses and Land for Sale in Lugbe, Kuje and Wasa: More Space for Your Money in Abuja</a></h3>
+        <p class="card-excerpt">A ₦65m 4 bedroom duplex in Lugbe, a 3 bedroom flat on Airport Road, 1,000sqm in Kuje and 50 hectares in Wasa. Verified Abuja listings with more space for less.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/houses-and-land-for-sale-in-lugbe-kuje-wasa-apo-abuja" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-in-new-owerri-and-owerri">Land for Sale in New Owerri and Owerri: From ₦18m to ₦1.6bn</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Owerri">
+      
+      <div class="card-body">
+        <div class="meta">5 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-in-new-owerri-and-owerri">Land for Sale in New Owerri and Owerri: From ₦18m to ₦1.6bn</a></h3>
+        <p class="card-excerpt">An empty C of O plot in Udenwa Estate, three gated plots you can split, and an ₦18m estate plot in Avu. Real land in Owerri, live on Xavorian.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-in-new-owerri-and-owerri" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-banking-in-nigeria-guide">Land banking in Nigeria: buying land to hold, the smart way</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Money">
+      
+      <div class="card-body">
+        <div class="meta">2 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-banking-in-nigeria-guide">Land banking in Nigeria: buying land to hold, the smart way</a></h3>
+        <p class="card-excerpt">Buy land now, sell or build later. Land banking can work well in Nigeria, but only if you pick the right corridor and the right papers.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-banking-in-nigeria-guide" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/houses-for-sale-in-new-owerri-udenwa-estate">Houses for Sale in New Owerri: Inside Udenwa Estate</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Owerri">
+      
+      <div class="card-body">
+        <div class="meta">1 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/houses-for-sale-in-new-owerri-udenwa-estate">Houses for Sale in New Owerri: Inside Udenwa Estate</a></h3>
+        <p class="card-excerpt">A corner duplex, a big-lounge bungalow and a five bedroom detached house, all in Udenwa Estate, New Owerri, all with C of O. Take the tour.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/houses-for-sale-in-new-owerri-udenwa-estate" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/duplex-for-sale-in-gwarinpa-and-lifecamp-abuja">Duplex for Sale in Gwarinpa and Lifecamp: Two Verified Family Homes in Abuja</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Abuja">
+      
+      <div class="card-body">
+        <div class="meta">1 October 2026 · 3 min read</div>
+        <h3 class="card-title"><a href="/blog/duplex-for-sale-in-gwarinpa-and-lifecamp-abuja">Duplex for Sale in Gwarinpa and Lifecamp: Two Verified Family Homes in Abuja</a></h3>
+        <p class="card-excerpt">A 6 bedroom duplex in Efab Metropolis, Gwarinpa, and a 4 bedroom terrace in Lifecamp with a shared pool. Two verified Abuja family homes, priced and explained.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/duplex-for-sale-in-gwarinpa-and-lifecamp-abuja" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-ogun-lagos-border-atan-ota-agbara">Land for Sale in Ota, Atan Ota and Agbara: Ogun Plots Close to Lagos</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Ogun">
+      
+      <div class="card-body">
+        <div class="meta">1 October 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-ogun-lagos-border-atan-ota-agbara">Land for Sale in Ota, Atan Ota and Agbara: Ogun Plots Close to Lagos</a></h3>
+        <p class="card-excerpt">Work in Lagos, own land in Ogun. Five verified plots in Ota, Atan Ota and Agbara, from ₦2m, with C of O and survey titles.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-ogun-lagos-border-atan-ota-agbara" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/omo-onile-lagos-ogun-what-the-law-says">Omo onile in Lagos and Ogun: who they are and what the law says</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Land">
+      
+      <div class="card-body">
+        <div class="meta">29 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/omo-onile-lagos-ogun-what-the-law-says">Omo onile in Lagos and Ogun: who they are and what the law says</a></h3>
+        <p class="card-excerpt">Foundation fee, roofing fee, &quot;family settlement&quot;. Who omo onile really are, what the Lagos anti-land grabbing law says, and how to protect your site.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/omo-onile-lagos-ogun-what-the-law-says" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-in-asaba-okpanam-koka">Land for Sale in Asaba: Three Plots From ₦18m to ₦155m</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Asaba">
+      
+      <div class="card-body">
+        <div class="meta">27 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-in-asaba-okpanam-koka">Land for Sale in Asaba: Three Plots From ₦18m to ₦155m</a></h3>
+        <p class="card-excerpt">Koka, Okpanam and the Okpanam-Ibusa road. Three real land listings in Asaba, from a starter plot to a big parcel on a tarred road.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-in-asaba-okpanam-koka" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-in-ikorodu-imota-lagos-mainland">Land for Sale in Ikorodu: Cheap Lagos Plots in Imota from ₦1.5m</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Lagos">
+      
+      <div class="card-body">
+        <div class="meta">26 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-in-ikorodu-imota-lagos-mainland">Land for Sale in Ikorodu: Cheap Lagos Plots in Imota from ₦1.5m</a></h3>
+        <p class="card-excerpt">Yes, there is still land in Lagos State for ₦1.5m. We look at two Imota plots in Ikorodu and one Noforija plot further east.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-in-ikorodu-imota-lagos-mainland" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/houses-for-sale-in-maitama-wuse-2-katampe-abuja">Houses for Sale in Maitama, Wuse 2 and Katampe: Where Abuja Money Lives</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Abuja">
+      
+      <div class="card-body">
+        <div class="meta">26 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/houses-for-sale-in-maitama-wuse-2-katampe-abuja">Houses for Sale in Maitama, Wuse 2 and Katampe: Where Abuja Money Lives</a></h3>
+        <p class="card-excerpt">A furnished Maitama home, a Wuse 2 redevelopment plot with C of O and a 4 bedroom in Katampe. Three verified Abuja city-centre houses, priced and explained.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/houses-for-sale-in-maitama-wuse-2-katampe-abuja" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/power-of-attorney-buying-property-in-nigeria-from-abroad">Buying property in Nigeria from abroad: power of attorney done right</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Diaspora">
+      
+      <div class="card-body">
+        <div class="meta">25 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/power-of-attorney-buying-property-in-nigeria-from-abroad">Buying property in Nigeria from abroad: power of attorney done right</a></h3>
+        <p class="card-excerpt">Living abroad and buying at home? The right power of attorney and a proper video inspection protect you better than any family promise.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/power-of-attorney-buying-property-in-nigeria-from-abroad" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/terrace-duplex-for-sale-in-asaba-shortlet-investment">Terrace Duplexes for Sale in Asaba, Built With Shortlet Money in Mind</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Homes in Asaba">
+      
+      <div class="card-body">
+        <div class="meta">22 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/terrace-duplex-for-sale-in-asaba-shortlet-investment">Terrace Duplexes for Sale in Asaba, Built With Shortlet Money in Mind</a></h3>
+        <p class="card-excerpt">A four-unit block of 3 bedroom terrace duplexes in Ogbeozoma, Asaba, with C of O and a clear shortlet angle. Here is the full walk-through.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/terrace-duplex-for-sale-in-asaba-shortlet-investment" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/building-a-house-in-nigeria-stages-and-money-traps">Building a house in Nigeria in 2026: the stages and the money traps</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Building">
+      
+      <div class="card-body">
+        <div class="meta">22 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/building-a-house-in-nigeria-stages-and-money-traps">Building a house in Nigeria in 2026: the stages and the money traps</a></h3>
+        <p class="card-excerpt">From approval to foundation to roofing to finishing. The stages of building a house in Nigeria, and where the money quietly disappears.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/building-a-house-in-nigeria-stages-and-money-traps" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/5-bedroom-houses-for-sale-in-galadimawa-abuja">Five Bedroom Houses for Sale in Galadimawa, Abuja: Four Verified Picks</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Homes in Abuja">
+      
+      <div class="card-body">
+        <div class="meta">21 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/5-bedroom-houses-for-sale-in-galadimawa-abuja">Five Bedroom Houses for Sale in Galadimawa, Abuja: Four Verified Picks</a></h3>
+        <p class="card-excerpt">Four verified 5 bedroom detached houses for sale in Galadimawa, Abuja, from ₦350,000,000 to ₦800,000,000. Watch the videos and see what each one offers.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/5-bedroom-houses-for-sale-in-galadimawa-abuja" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/land-for-sale-in-epe-lagos-lekki-epe-corridor">Land for Sale in Epe, Lagos: Five Plots on the Lekki-Epe Corridor</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land in Lagos">
+      
+      <div class="card-body">
+        <div class="meta">21 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/land-for-sale-in-epe-lagos-lekki-epe-corridor">Land for Sale in Epe, Lagos: Five Plots on the Lekki-Epe Corridor</a></h3>
+        <p class="card-excerpt">Epe is where Lagos is stretching next. Five verified plots from ₦2.5m, with C of O and survey titles, live on Xavorian now.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/land-for-sale-in-epe-lagos-lekki-epe-corridor" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-to-buy-land-in-nigeria-step-by-step">How to buy land in Nigeria: your first purchase, step by step</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Land">
+      
+      <div class="card-body">
+        <div class="meta">18 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/how-to-buy-land-in-nigeria-step-by-step">How to buy land in Nigeria: your first purchase, step by step</a></h3>
+        <p class="card-excerpt">Survey plan, charting, excision, gazette, C of O, Governor's consent. Your first land purchase in Nigeria, explained in plain words.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/how-to-buy-land-in-nigeria-step-by-step" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/rent-in-lagos-agency-fee-legal-fee-caution-fee-explained">Rent in Lagos explained: agency fee, legal fee, caution fee and service charge</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Renting">
+      
+      <div class="card-body">
+        <div class="meta">15 September 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/rent-in-lagos-agency-fee-legal-fee-caution-fee-explained">Rent in Lagos explained: agency fee, legal fee, caution fee and service charge</a></h3>
+        <p class="card-excerpt">The rent is never just the rent. Here is what every fee on a Lagos rent breakdown is for, and how to tell fair from foolishness.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Property Desk</span>
+          <a href="/blog/rent-in-lagos-agency-fee-legal-fee-caution-fee-explained" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/inside-nigerian-homes-property-styles">Inside Nigerian Homes: 8 Property Styles You'll Find on Xavorian</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Lifestyle">
+      
+      <a href="/blog/inside-nigerian-homes-property-styles" class="card-media">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&amp;q=80" alt="Inside Nigerian Homes: 8 Property Styles You'll Find on Xavorian" loading="lazy" />
+        <span class="badge">Lifestyle</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">18 August 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/inside-nigerian-homes-property-styles">Inside Nigerian Homes: 8 Property Styles You'll Find on Xavorian</a></h3>
+        <p class="card-excerpt">A visual tour through the property styles that define Nigerian real estate in 2026 — from Lekki smart apartments to classic Benin bungalows.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Editorial</span>
+          <a href="/blog/inside-nigerian-homes-property-styles" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/certificate-of-occupancy-nigeria-explained">Understanding the C of O: Certificate of Occupancy in Nigeria</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Legal &amp; Compliance">
+      
+      <a href="/blog/certificate-of-occupancy-nigeria-explained" class="card-media">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&amp;q=80" alt="Understanding the C of O: Certificate of Occupancy in Nigeria" loading="lazy" />
+        <span class="badge">Legal &amp; Compliance</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">17 August 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/certificate-of-occupancy-nigeria-explained">Understanding the C of O: Certificate of Occupancy in Nigeria</a></h3>
+        <p class="card-excerpt">What a C of O actually grants, how it differs from Governor's Consent, what it costs state by state, and how to verify one before buying.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Team</span>
+          <a href="/blog/certificate-of-occupancy-nigeria-explained" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/nigerian-property-fraud-by-the-numbers">Fraud, by the numbers: what the FBI, NIBSS and the housing ministry tell us about Nigerian property</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Data">
+      
+      <div class="card-body">
+        <div class="meta">17 August 2026 · 6 min read</div>
+        <h3 class="card-title"><a href="/blog/nigerian-property-fraud-by-the-numbers">Fraud, by the numbers: what the FBI, NIBSS and the housing ministry tell us about Nigerian property</a></h3>
+        <p class="card-excerpt">₦600 trillion in instant payments, ₦17.67 billion in bank fraud, 14.9 million unbuilt homes, and 114 million registered identities. What the verified numbers actually say about safety in Nigerian real estate.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/nigerian-property-fraud-by-the-numbers" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/what-scammers-do-with-your-listing-photos">The landlord's quiet nightmare: what scammers do with your listing photos</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Safety">
+      
+      <div class="card-body">
+        <div class="meta">17 August 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/what-scammers-do-with-your-listing-photos">The landlord's quiet nightmare: what scammers do with your listing photos</a></h3>
+        <p class="card-excerpt">You posted your house for rent. Someone else is already showing it to other people's victims. Inside the cloned-listing industry, from the landlord's side.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/what-scammers-do-with-your-listing-photos" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-to-buy-land-lagos-safely">How to Buy Land in Lagos Safely: Step by Step</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Buying">
+      
+      <a href="/blog/how-to-buy-land-lagos-safely" class="card-media">
+        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&amp;q=80" alt="How to Buy Land in Lagos Safely: Step by Step" loading="lazy" />
+        <span class="badge">Buying</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">16 August 2026 · 7 min read</div>
+        <h3 class="card-title"><a href="/blog/how-to-buy-land-lagos-safely">How to Buy Land in Lagos Safely: Step by Step</a></h3>
+        <p class="card-excerpt">From charting search at the Surveyor-General's office to Governor's Consent — the complete scam-proof process for buying Lagos land.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Team</span>
+          <a href="/blog/how-to-buy-land-lagos-safely" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/guide-renting-apartment-benin-city">Complete Guide to Renting an Apartment in Benin City</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Renting">
+      
+      <a href="/blog/guide-renting-apartment-benin-city" class="card-media">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&amp;q=80" alt="Complete Guide to Renting an Apartment in Benin City" loading="lazy" />
+        <span class="badge">Renting</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">15 August 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/guide-renting-apartment-benin-city">Complete Guide to Renting an Apartment in Benin City</a></h3>
+        <p class="card-excerpt">Budgets, agent fees, agreement clauses and a battle-tested inspection checklist — everything a tenant needs to rent safely in Benin City.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Team</span>
+          <a href="/blog/guide-renting-apartment-benin-city" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/best-areas-invest-benin-city-real-estate">Best Areas to Invest in Benin City Real Estate in 2025</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Investing">
+      
+      <a href="/blog/best-areas-invest-benin-city-real-estate" class="card-media">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&amp;q=80" alt="Best Areas to Invest in Benin City Real Estate in 2025" loading="lazy" />
+        <span class="badge">Investing</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">14 August 2026 · 6 min read</div>
+        <h3 class="card-title"><a href="/blog/best-areas-invest-benin-city-real-estate">Best Areas to Invest in Benin City Real Estate in 2025</a></h3>
+        <p class="card-excerpt">Oluku, Iguosa, Aduwawa, GRA — where Benin City land and rentals are appreciating fastest in 2026, with real price bands for every budget.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Team</span>
+          <a href="/blog/best-areas-invest-benin-city-real-estate" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/buying-property-from-abroad-diaspora-guide">Buying property from abroad without getting burned twice</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Diaspora Safety">
+      
+      <div class="card-body">
+        <div class="meta">14 August 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/buying-property-from-abroad-diaspora-guide">Buying property from abroad without getting burned twice</a></h3>
+        <p class="card-excerpt">The diaspora Nigerian is the perfect scam target: real savings, no proximity, and family in the middle. A field guide for buying safely from thousands of kilometres away.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/buying-property-from-abroad-diaspora-guide" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/real-estate-scams-nigeria-how-to-avoid">Real Estate Scams in Nigeria: How to Spot and Avoid Them</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Safety &amp; Escrow">
+      
+      <a href="/blog/real-estate-scams-nigeria-how-to-avoid" class="card-media">
+        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&amp;q=80" alt="Real Estate Scams in Nigeria: How to Spot and Avoid Them" loading="lazy" />
+        <span class="badge">Safety &amp; Escrow</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">13 August 2026 · 6 min read</div>
+        <h3 class="card-title"><a href="/blog/real-estate-scams-nigeria-how-to-avoid">Real Estate Scams in Nigeria: How to Spot and Avoid Them</a></h3>
+        <p class="card-excerpt">From double sales to omo-onile extortion — the 7 most common Nigerian property scams and the practical checks that defeat every one of them.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Team</span>
+          <a href="/blog/real-estate-scams-nigeria-how-to-avoid" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-to-verify-land-documents-nigeria">How to Verify Land Documents in Nigeria Before Buying</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Legal &amp; Compliance">
+      
+      <a href="/blog/how-to-verify-land-documents-nigeria" class="card-media">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&amp;q=80" alt="How to Verify Land Documents in Nigeria Before Buying" loading="lazy" />
+        <span class="badge">Legal &amp; Compliance</span>
+      </a>
+      <div class="card-body">
+        <div class="meta">12 August 2026 · 7 min read</div>
+        <h3 class="card-title"><a href="/blog/how-to-verify-land-documents-nigeria">How to Verify Land Documents in Nigeria Before Buying</a></h3>
+        <p class="card-excerpt">Learn the exact steps to verify a C of O, Deed of Assignment and survey plan at Nigerian land registries — and the red flags that should stop any deal.</p>
+        <div class="card-footer">
+          <span class="author">Xavorian Team</span>
+          <a href="/blog/how-to-verify-land-documents-nigeria" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/where-ai-ends-in-real-estate">AI can read a forged deed in seconds. It still cannot stand in the rain in Benin City.</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="AI &amp; Property">
+      
+      <div class="card-body">
+        <div class="meta">8 August 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/where-ai-ends-in-real-estate">AI can read a forged deed in seconds. It still cannot stand in the rain in Benin City.</a></h3>
+        <p class="card-excerpt">Artificial intelligence is quietly changing Nigerian property. What the machines are already good at — and the human things no model can do for you.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/where-ai-ends-in-real-estate" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/the-xavorian-commitment">Our commitment: we would rather reject ten listings than publish one lie</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Announcement">
+      
+      <div class="card-body">
+        <div class="meta">1 August 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/the-xavorian-commitment">Our commitment: we would rather reject ten listings than publish one lie</a></h3>
+        <p class="card-excerpt">Verification costs us supply, speed, and some days, revenue we could use. Why Xavorian keeps the gates closed anyway — and what we never promise.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/the-xavorian-commitment" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/safety-is-a-process-not-a-gut-feeling">Why safety in Nigerian real estate is a process, not a gut feeling</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Safety">
+      
+      <div class="card-body">
+        <div class="meta">24 July 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/safety-is-a-process-not-a-gut-feeling">Why safety in Nigerian real estate is a process, not a gut feeling</a></h3>
+        <p class="card-excerpt">Your instincts are honest. They are also exhausted. The buyers who do not get burned run the same boring checks every single time.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/safety-is-a-process-not-a-gut-feeling" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/what-to-do-if-you-have-been-scammed">What to do if you have been scammed: a recovery playbook</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Recovery">
+      
+      <div class="card-body">
+        <div class="meta">17 July 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/what-to-do-if-you-have-been-scammed">What to do if you have been scammed: a recovery playbook</a></h3>
+        <p class="card-excerpt">Evidence first, bank second, petitions third, civil recovery fourth. A practical sequence for the days after a property scam, and the habits that stop a second one.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/what-to-do-if-you-have-been-scammed" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/c-of-o-vs-deed-of-assignment">C of O vs deed of assignment: what each document actually proves</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Documents">
+      
+      <div class="card-body">
+        <div class="meta">3 July 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/c-of-o-vs-deed-of-assignment">C of O vs deed of assignment: what each document actually proves</a></h3>
+        <p class="card-excerpt">One is the state's word on the land, the other is the handover note between people. Here is what each proves, where governor's consent fits, and how to verify both at the lands registry.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/c-of-o-vs-deed-of-assignment" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/inspection-fee-scam-red-flag">Why the 'inspection fee' is real estate's loudest red flag</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Safety">
+      
+      <div class="card-body">
+        <div class="meta">20 June 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/inspection-fee-scam-red-flag">Why the 'inspection fee' is real estate's loudest red flag</a></h3>
+        <p class="card-excerpt">The inspection fee is small enough to pay without fear and profitable enough to build a scam business on. Here is how the script runs, what the real norm is, and how to view safely.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/inspection-fee-scam-red-flag" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-to-avoid-property-scams-nigeria">How to avoid property scams in Nigeria</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Safety">
+      
+      <div class="card-body">
+        <div class="meta">9 June 2026 · 5 min read</div>
+        <h3 class="card-title"><a href="/blog/how-to-avoid-property-scams-nigeria">How to avoid property scams in Nigeria</a></h3>
+        <p class="card-excerpt">Most Nigerian property scams fit four shapes: the Cloned Listing, the Vanishing Agent, the Forged Document and the Double Sale. Learn the shapes, then the seven questions that defuse them.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/how-to-avoid-property-scams-nigeria" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/what-verification-actually-means">What 'verified' actually means (and what it should never mean)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card card-wide" data-category="Trust">
+      
+      <div class="card-body">
+        <div class="meta">28 May 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/what-verification-actually-means">What 'verified' actually means (and what it should never mean)</a></h3>
+        <p class="card-excerpt">Verified has become a decorative word in Nigerian real estate. On Xavorian it is a checklist with a name behind it.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/what-verification-actually-means" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/how-to-spot-a-cloned-listing">How to spot a cloned listing in 60 seconds</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Safety">
+      
+      <div class="card-body">
+        <div class="meta">12 May 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/how-to-spot-a-cloned-listing">How to spot a cloned listing in 60 seconds</a></h3>
+        <p class="card-excerpt">The cloned listing is the oldest trick in the Nigerian property market — real house, fake poster. Here are the tells.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/how-to-spot-a-cloned-listing" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/why-we-built-xavorian">Why we built Xavorian</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card " data-category="Announcement">
+      
+      <div class="card-body">
+        <div class="meta">1 May 2026 · 4 min read</div>
+        <h3 class="card-title"><a href="/blog/why-we-built-xavorian">Why we built Xavorian</a></h3>
+        <p class="card-excerpt">Almost everyone who has searched for property in Nigeria has a scam story. We decided that story should stop being normal.</p>
+        <div class="card-footer">
+          <span class="author">Ezeani Chukwuebuka (Damien)</span>
+          <a href="/blog/why-we-built-xavorian" class="read-btn">Read article →</a>
+        </div>
+        
+        <div class="rec-strip">
+          <span class="rec-label">Recommended Next:</span>
+          <a href="/blog/living-and-buying-property-in-lekki-phase-1-lagos-guide">Living and Buying Property in Lekki Phase 1, Lagos: Prices, Power, Drainage and Commute Guide</a>
+        </div>
+      </div>
+    </article>
+    </main>
+  </div>
+
+  <script>
+    let activeCat = 'All';
+    let activeQuery = '';
+    function applyFilters() {
+      const cards = document.querySelectorAll('#blogGrid .card');
+      cards.forEach((c) => {
+        const cat = c.getAttribute('data-category') || '';
+        const text = c.textContent.toLowerCase();
+        const catOk = activeCat === 'All' || cat === activeCat;
+        const qOk = !activeQuery || text.includes(activeQuery);
+        c.style.display = catOk && qOk ? 'flex' : 'none';
+      });
+    }
+    function filterByCategory(cat, btn) {
+      activeCat = cat;
+      document.querySelectorAll('.pills .pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyFilters();
+    }
+    function filterBySearch(q) {
+      activeQuery = (q || '').trim().toLowerCase();
+      applyFilters();
+    }
+  </script>
+</body>
+</html>
