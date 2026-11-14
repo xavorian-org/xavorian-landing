@@ -2,30 +2,40 @@ import { MARKETPLACE_URL } from '@/data/site';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { ArrowLeft, ArrowRight, ShieldCheck, UserCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ShieldCheck, UserCircle, AlertTriangle, Info, Compass } from 'lucide-react';
 import { JsonLd, pageMetadata, BASE_URL, SITE_NAME } from '@/lib/seo';
 import { Reveal } from '@/components/Reveal';
 import { PropertyMatchForm } from '@/components/PropertyMatchForm';
-import { BLOG_POSTS, postCover as coverOf, postHomes as homesIn, type BlogPost } from '@/data/blog';
+import {
+  BLOG_POSTS,
+  getReleasedBlogPosts,
+  getReleasedPostBySlug,
+  postCover as coverOf,
+  postHomes as homesIn,
+  type BlogPost,
+} from '@/data/blog';
 import { BLOG_HOMES } from '@/data/blogHomes';
 import { HomeShowcase } from '@/components/HomeShowcase';
 
-// Unknown slugs get a real HTTP 404 instead of a 200 "soft 404"
-export const dynamicParams = false;
+// Revalidate every 5 minutes so scheduled articles unlock automatically at 09:00 Africa/Lagos each day,
+// while unreleased or unknown slugs receive a real HTTP 404 via notFound().
+export const revalidate = 300;
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
 
-const getPost = (slug: string): BlogPost | undefined => BLOG_POSTS.find((p) => p.slug === slug);
+const getPost = (slug: string): BlogPost | undefined => getReleasedPostBySlug(slug, new Date());
 
-/** Next two entries in registry order, wrapping around — never the current post. */
+/** Next two entries in released registry order, wrapping around — never the current post. */
 const getReadNext = (slug: string): BlogPost[] => {
-  const index = BLOG_POSTS.findIndex((p) => p.slug === slug);
+  const released = getReleasedBlogPosts(new Date());
+  const index = released.findIndex((p) => p.slug === slug);
   if (index === -1) return [];
   return [1, 2]
-    .map((offset) => BLOG_POSTS[(index + offset) % BLOG_POSTS.length])
-    .filter((p) => p.slug !== slug);
+    .map((offset) => released[(index + offset) % released.length])
+    .filter((p) => p && p.slug !== slug);
 };
 
 const formatDate = (date: string) =>
@@ -34,7 +44,13 @@ const formatDate = (date: string) =>
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = getPost(params.slug);
   if (!post) notFound();
-  return pageMetadata({ title: post.title, description: post.excerpt, path: `/blog/${post.slug}`, image: coverOf(post), type: 'article' });
+  return pageMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    image: coverOf(post),
+    type: 'article',
+  });
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -46,46 +62,61 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const homes = homesIn(post);
   const cover = coverOf(post);
 
-  const authorName = post.author?.name ?? 'Xavorian Team';
+  const authorName = post.author?.name ?? 'Xavorian Property Desk';
   const authorRole = post.author?.role;
   const authorTwitter = post.author?.twitter;
 
+  const jsonLdItems: Record<string, unknown>[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      dateModified: post.date,
+      ...(cover && { image: [cover.startsWith('http') ? cover : `${BASE_URL}${cover}`] }),
+      author: {
+        '@type': authorName.includes('Desk') || authorName.includes('Team') ? 'Organization' : 'Person',
+        name: authorName,
+        ...(authorRole && { jobTitle: authorRole }),
+        ...(authorTwitter && { sameAs: [`https://x.com/${authorTwitter.replace('@', '')}`] }),
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: BASE_URL,
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
+        { '@type': 'ListItem', position: 3, name: post.title, item: url },
+      ],
+    },
+  ];
+
+  if (post.faq && post.faq.length > 0) {
+    jsonLdItems.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: post.faq.map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: f.answer,
+        },
+      })),
+    });
+  }
+
   return (
     <>
-      <JsonLd
-        data={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: post.title,
-            description: post.excerpt,
-            datePublished: post.date,
-            dateModified: post.date,
-            ...(cover && { image: [cover] }),
-            author: {
-              '@type': 'Person',
-              name: authorName,
-              ...(post.author?.role && { jobTitle: post.author.role }),
-              ...(post.author?.twitter && { sameAs: [`https://x.com/${post.author.twitter.replace('@', '')}`] }),
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: SITE_NAME,
-              url: BASE_URL,
-            },
-            mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-          },
-          {
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: BASE_URL },
-              { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
-              { '@type': 'ListItem', position: 3, name: post.title, item: url },
-            ],
-          },
-        ]}
-      />
+      <JsonLd data={jsonLdItems} />
       <div className="container mx-auto py-12 sm:py-20">
         <article>
           <Reveal>
@@ -107,7 +138,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                     <div className="flex items-center gap-1.5">
                       <UserCircle className="h-3.5 w-3.5" />
                       <span className="font-medium text-foreground">{post.author.name}</span>
-                      {post.author.role && <span className="text-muted-foreground">— {post.author.role}</span>}
+                      {post.author.role && <span className="text-muted-foreground">· {post.author.role}</span>}
                     </div>
                   </>
                 )}
@@ -125,11 +156,132 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   </h2>
                 );
               }
-              const home = BLOG_HOMES[block.home];
-              return home ? <HomeShowcase key={i} home={home} /> : null;
+              if ('h3' in block) {
+                return (
+                  <h3 key={i} className="!mt-8 text-lg font-bold leading-snug tracking-tight text-foreground">
+                    {block.h3}
+                  </h3>
+                );
+              }
+              if ('list' in block) {
+                return (
+                  <ul key={i} className="my-5 list-disc space-y-2.5 pl-5 text-[15px] leading-7 text-foreground/85">
+                    {block.list.map((item, j) => (
+                      <li key={j}>{item}</li>
+                    ))}
+                  </ul>
+                );
+              }
+              if ('quote' in block) {
+                return (
+                  <blockquote key={i} className="my-6 rounded-2xl border-l-4 border-primary bg-muted/40 p-5 italic text-foreground">
+                    <p>{block.quote}</p>
+                    {block.by && <cite className="mt-2 block text-xs font-semibold not-italic text-muted-foreground">{block.by}</cite>}
+                  </blockquote>
+                );
+              }
+              if ('callout' in block) {
+                const isWarn = block.callout === 'warn';
+                return (
+                  <aside
+                    key={i}
+                    className={`my-6 rounded-2xl border p-5 ${
+                      isWarn ? 'border-amber-300/80 bg-amber-50/60' : 'border-border bg-card'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
+                      {isWarn ? (
+                        <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" aria-hidden="true" />
+                      ) : (
+                        <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                      )}
+                      <div>
+                        <p className="text-sm font-bold tracking-tight text-foreground">{block.title}</p>
+                        <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted-foreground">{block.body}</p>
+                      </div>
+                    </div>
+                  </aside>
+                );
+              }
+              if ('figure' in block) {
+                const fig = block.figure;
+                return (
+                  <figure key={i} className="my-8 overflow-hidden rounded-2xl border border-border bg-card">
+                    <div className="relative bg-muted/40">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={fig.src}
+                        alt={fig.alt}
+                        loading="lazy"
+                        className="w-full object-cover"
+                      />
+                      {fig.isIllustration && (
+                        <span className="absolute right-3 top-3 rounded-full bg-amber-100/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-900 shadow-sm">
+                          Illustration — Not a real property photo
+                        </span>
+                      )}
+                    </div>
+                    <figcaption className="border-t border-border bg-muted/30 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+                      {fig.caption}
+                    </figcaption>
+                  </figure>
+                );
+              }
+              if ('links' in block) {
+                return (
+                  <nav
+                    key={i}
+                    aria-label="Related Xavorian pages"
+                    className="my-8 rounded-2xl border border-border bg-card p-5 sm:p-6"
+                  >
+                    <p className="flex items-center gap-2 text-sm font-bold tracking-tight text-foreground">
+                      <Compass className="h-4 w-4 text-primary" aria-hidden="true" />
+                      Explore matching pages on Xavorian
+                    </p>
+                    <ul className="mt-3 divide-y divide-border">
+                      {block.links.map((lnk, j) => (
+                        <li key={j}>
+                          <Link
+                            href={lnk.href}
+                            className="group flex items-center justify-between gap-3 py-2.5 text-sm"
+                          >
+                            <span>
+                              <span className="font-semibold text-foreground group-hover:text-primary">{lnk.label}</span>
+                              {lnk.note && <span className="block text-xs text-muted-foreground">{lnk.note}</span>}
+                            </span>
+                            <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                );
+              }
+              if ('home' in block) {
+                const home = BLOG_HOMES[block.home];
+                return home ? <HomeShowcase key={i} home={home} /> : null;
+              }
+              return null;
             })}
           </div>
         </article>
+
+        {/* FAQ section when present */}
+        {post.faq && post.faq.length > 0 && (
+          <Reveal>
+            <section className="mt-14 max-w-2xl rounded-2xl border border-border bg-card p-5 sm:p-6">
+              <h2 className="text-base font-bold tracking-tight">Frequently asked questions</h2>
+              <dl className="mt-4 divide-y divide-border">
+                {post.faq.map((item, idx) => (
+                  <div key={idx} className="py-3.5 first:pt-0 last:pb-0">
+                    <dt className="text-sm font-bold text-foreground">{item.question}</dt>
+                    <dd className="mt-1.5 text-[13.5px] leading-relaxed text-muted-foreground">{item.answer}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          </Reveal>
+        )}
 
         {/* homes recap */}
         {homes.length > 1 && (
@@ -192,7 +344,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
               Tell us where and what you want. We email the one listing that fits best, twice a week at most.
             </p>
-            <PropertyMatchForm source={`landing_blog_${post.slug}`.slice(0, 40)} variant="compact" className="mt-5" />
+            <PropertyMatchForm source={`blog:${post.slug}`.slice(0, 48)} variant="compact" className="mt-5" />
           </div>
         </Reveal>
 

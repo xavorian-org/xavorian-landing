@@ -3,6 +3,7 @@
 import { useId, useMemo, useState, type FormEvent } from 'react';
 import { ArrowRight, CheckCircle2, Loader2, AlertCircle, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { getStoredLandingAttribution, classifyAcquisitionChannel } from '@/components/MarketplaceUtm';
 import {
   BUDGETS,
   CONSENT_TEXT,
@@ -74,6 +75,18 @@ export const PropertyMatchForm = ({ source = 'landing', variant = 'full', classN
     }
 
     const preset = budgetOptions.find((b) => b.value === budget);
+    let enrichedSource = source;
+    try {
+      const attr = getStoredLandingAttribution();
+      const ch = attr.x_ch || classifyAcquisitionChannel(attr);
+      const ref = attr.x_ref || attr.utm_source || '';
+      const parts = [source];
+      if (ch && ch !== 'direct') parts.push(`ch:${ch}`);
+      if (ref) parts.push(`ref:${ref}`);
+      enrichedSource = parts.join('|').slice(0, 120);
+    } catch {
+      enrichedSource = source;
+    }
     setSubmitting(true);
     try {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/subscribe_marketing_lead`, {
@@ -93,7 +106,7 @@ export const PropertyMatchForm = ({ source = 'landing', variant = 'full', classN
           p_budget_min: preset?.min ?? null,
           p_budget_max: preset?.max ?? null,
           p_consent: consent,
-          p_source: source,
+          p_source: enrichedSource,
         }),
       });
       const data = (await res.json().catch(() => null)) as { success?: boolean; message?: string } | null;

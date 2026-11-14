@@ -3,34 +3,60 @@ import { POSTS_LAGOS_OGUN } from './blog/lagosOgun';
 import { POSTS_ABUJA_NORTH } from './blog/abujaNorth';
 import { POSTS_EAST_SOUTH } from './blog/eastSouth';
 import { POSTS_GUIDES } from './blog/guides';
+import scheduled1000Raw from './blog/scheduled1000.json';
+
+export interface BlogFigure {
+  src: string;
+  alt: string;
+  caption: string;
+  isIllustration?: boolean;
+}
+
+export interface BlogLinkItem {
+  label: string;
+  href: string;
+  note?: string;
+}
 
 /**
- * A body block: a paragraph (plain string), a section heading, or a showcase of a live listing
+ * A body block: a paragraph (plain string), section headings, lists, quotes, callouts,
+ * figures with alt/caption/illustration labels, internal link cards, or a showcase of a live listing
  * from src/data/blogHomes.ts (photos, playable video, price and a link to the marketplace page).
  */
-export type BlogBlock = string | { h2: string } | { home: string };
+export type BlogBlock =
+  | string
+  | { h2: string }
+  | { h3: string }
+  | { home: string }
+  | { list: string[] }
+  | { quote: string; by?: string }
+  | { callout: 'info' | 'warn' | 'rule'; title: string; body: string }
+  | { figure: BlogFigure }
+  | { links: BlogLinkItem[] };
 
 export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
-  date: string; // ISO
+  date: string; // ISO YYYY-MM-DD
   readingTime: string;
   category: string;
   body: BlogBlock[];
   /** Optional hero/OG image URL; house posts default to their first showcased home's photo. */
   cover?: string;
+  coverImage?: string;
   author?: {
     name: string;
     role: string;
     twitter?: string;
   };
+  faq?: Array<{ question: string; answer: string }>;
+  batchDay?: number;
+  queuePosition?: number;
+  /** Scheduled release timestamp in Lagos time (ISO with +01:00, e.g. 2026-11-14T09:00:00+01:00). */
+  scheduledFor?: string;
 }
 
-/**
- * Blog registry — add an entry here and /blog/:slug renders + sitemaps
- * automatically. This is how the site scales to 40–50 pages.
- */
 const CORE_POSTS: BlogPost[] = [
   {
     slug: 'why-we-built-xavorian',
@@ -388,7 +414,7 @@ const CORE_POSTS: BlogPost[] = [
   },
 ];
 
-/** Every post, newest first. */
+/** Immediate baseline posts (49 articles), newest first. */
 export const BLOG_POSTS: BlogPost[] = [
   ...POSTS_LAGOS_OGUN,
   ...POSTS_ABUJA_NORTH,
@@ -397,14 +423,60 @@ export const BLOG_POSTS: BlogPost[] = [
   ...CORE_POSTS,
 ].sort((a, b) => b.date.localeCompare(a.date));
 
+/** 1,000 scheduled articles queued at 10 articles/day for 100 days at 09:00 Africa/Lagos (+01:00). */
+export const SCHEDULED_1000_POSTS: BlogPost[] = scheduled1000Raw as unknown as BlogPost[];
+
+/** Full registry of all 1,049 articles (49 baseline + 1,000 scheduled). */
+export const ALL_BLOG_POSTS: BlogPost[] = [...BLOG_POSTS, ...SCHEDULED_1000_POSTS];
+
+/**
+ * Returns true if a post has no future schedule lock or its 09:00 Africa/Lagos
+ * scheduled release timestamp has been reached.
+ */
+export const isPostReleased = (post: BlogPost, now: Date = new Date()): boolean => {
+  if (!post.scheduledFor) return true;
+  const targetMs = Date.parse(post.scheduledFor);
+  return Number.isFinite(targetMs) && targetMs <= now.getTime();
+};
+
+/** Returns all currently released blog posts at `now`, sorted newest first. */
+export const getReleasedBlogPosts = (now: Date = new Date()): BlogPost[] =>
+  ALL_BLOG_POSTS.filter((p) => isPostReleased(p, now)).sort((a, b) => {
+    const cmp = b.date.localeCompare(a.date);
+    if (cmp !== 0) return cmp;
+    return (b.queuePosition ?? 0) - (a.queuePosition ?? 0);
+  });
+
+/** Returns a single post by slug ONLY if it is already released at `now` (preserves drafts until 09:00 WAT). */
+export const getReleasedPostBySlug = (slug: string, now: Date = new Date()): BlogPost | undefined => {
+  const found = ALL_BLOG_POSTS.find((p) => p.slug === slug);
+  if (!found || !isPostReleased(found, now)) return undefined;
+  return found;
+};
+
 /** Plain text of a post, for excerpts and word counts. */
 export const postText = (post: BlogPost): string =>
-  post.body.map((b) => (typeof b === 'string' ? b : 'h2' in b ? b.h2 : '')).join(' ');
+  post.body
+    .map((b) => {
+      if (typeof b === 'string') return b;
+      if ('h2' in b) return b.h2;
+      if ('h3' in b) return b.h3;
+      if ('list' in b) return b.list.join(' ');
+      if ('quote' in b) return b.quote;
+      if ('callout' in b) return `${b.title} ${b.body}`;
+      return '';
+    })
+    .join(' ');
 
 /** Homes showcased in a post that exist in the listing snapshot, in order of appearance. */
 export const postHomes = (post: BlogPost) =>
   post.body.flatMap((b) => (typeof b === 'object' && 'home' in b && BLOG_HOMES[b.home] ? [BLOG_HOMES[b.home]] : []));
 
-/** Cover image: explicit cover, else the first showcased home's first photo. */
-export const postCover = (post: BlogPost): string | undefined =>
-  post.cover ?? postHomes(post).find((h) => h.images[0])?.images[0];
+/** Cover image: explicit cover/coverImage, else first figure image, else first showcased home's photo. */
+export const postCover = (post: BlogPost): string | undefined => {
+  if (post.cover) return post.cover;
+  if (post.coverImage) return post.coverImage;
+  const fig = post.body.find((b): b is { figure: BlogFigure } => typeof b === 'object' && 'figure' in b);
+  if (fig?.figure?.src) return fig.figure.src;
+  return postHomes(post).find((h) => h.images[0])?.images[0];
+};
