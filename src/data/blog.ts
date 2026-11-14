@@ -472,21 +472,41 @@ export const postText = (post: BlogPost): string =>
 export const postHomes = (post: BlogPost) =>
   post.body.flatMap((b) => (typeof b === 'object' && 'home' in b && BLOG_HOMES[b.home] ? [BLOG_HOMES[b.home]] : []));
 
-/** True when `src` is a real property photo rather than an editorial diagram/letterhead cover. */
+const HOUSE_CATEGORY_RE =
+  /^(Homes\s+in|Land\s+in|Homes\s+Spotlight|Land\s+Spotlight|Commercial\s+Property|Distress\s+sales|Income\s+property)/i;
+
+const BLOCKED_NON_HOUSE_THUMB_IDS = [
+  'b172e7ff-6b91-4216-884c-24334c8a9e79',
+  'd01f5451-7cea-4f5b-9653-07adaab8194b',
+  '4edb5a6b-cb98-457d-9f99-6b7de1ce1f15',
+];
+
+/** True when `src` is a real property photo rather than an editorial diagram/letterhead cover or car clip. */
 export const isHousePhotoCover = (src?: string): boolean =>
-  Boolean(src && !src.includes('/blog-illustrations/') && !src.includes('/api/blog-cover'));
+  Boolean(
+    src &&
+      !src.includes('/blog-illustrations/') &&
+      !src.includes('/api/blog-cover') &&
+      !BLOCKED_NON_HOUSE_THUMB_IDS.some((id) => src.includes(id))
+  );
 
 /** Builds the letterhead-style Xavorian editorial cover image URL with top-left logo, RC number, miniature homes, and title. */
 export const buildBlogCoverUrl = (post: Pick<BlogPost, 'title' | 'category'>): string =>
   `/api/blog-cover?title=${encodeURIComponent(post.title)}&category=${encodeURIComponent(post.category)}`;
 
-/** Cover image: real home photo for listing posts, or Xavorian letterhead title cover for editorial posts. */
+/** Cover image: Xavorian letterhead title cover for editorial posts; real home photo only for dedicated property spotlights. */
 export const postCover = (post: BlogPost): string => {
-  const homeImg = postHomes(post).find((h) => h.images[0])?.images[0];
-  if (homeImg) return homeImg;
+  if (post.coverImage?.startsWith('/api/blog-cover')) return post.coverImage;
+  if (post.cover?.startsWith('/api/blog-cover')) return post.cover;
   if (isHousePhotoCover(post.cover)) return post.cover as string;
   if (isHousePhotoCover(post.coverImage)) return post.coverImage as string;
-  const fig = post.body.find((b): b is { figure: BlogFigure } => typeof b === 'object' && 'figure' in b);
-  if (isHousePhotoCover(fig?.figure?.src)) return fig!.figure.src;
+
+  const isPropertySpotlight =
+    post.slug.startsWith('verified-listing-review-') || HOUSE_CATEGORY_RE.test(post.category);
+  if (isPropertySpotlight) {
+    const homeImg = postHomes(post).find((h) => isHousePhotoCover(h.images[0]))?.images[0];
+    if (homeImg) return homeImg;
+  }
+
   return buildBlogCoverUrl(post);
 };

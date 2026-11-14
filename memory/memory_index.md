@@ -1,5 +1,7 @@
 # Memory Index
 
+- [2026-11-14_blog_postcover_precedence_and_car_thumb_removal.md](./2026-11-14_blog_postcover_precedence_and_car_thumb_removal.md): Fixed `postCover(post)` letterhead precedence, blocked car/truck/palm thumbnails (`b172e7ff`, `d01f5451`, `4edb5a6b`) across `landing`, `xavorian app`, `blog-directory.html`, `scheduled1000.json`, and Supabase `public.blog_posts` (`912` letterhead covers, `144` real house photos), and moved `Featured Cover Story` pills off letterhead covers.
+
 - [2026-11-14_blog_letterhead_covers_and_top_search_filter.md](./2026-11-14_blog_letterhead_covers_and_top_search_filter.md): Created `api/blog-cover` letterhead cover generator (`RC-9912416`, wordmark, miniature homes, article title) replacing all diagram SVGs while keeping real house photos, and moved `/blog` search/filters to a compact Browse-style sticky top bar across `landing`, `xavorian app`, and Supabase `public.blog_posts`.
 
 - [2026-11-14_full_width_editorial_blog_redesign_and_recommendations.md](./2026-11-14_full_width_editorial_blog_redesign_and_recommendations.md): Redesigned `/blog` and `/blog/[slug]` with a full-width edge-to-edge (`max-w-[1720px]`) responsive layout, 12-column Bento hero, 1/2/3/4-column magazine grid, 3-rail article reader, complete crawlable HTML directory, and end-of-article "Recommended Next Article For You" spotlight + 4-card grid.

@@ -497,18 +497,31 @@ export function BlogCatalogClient({
                       loading="eager"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
-                    <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-background shadow-sm">
-                        <Sparkles className="h-3 w-3" aria-hidden="true" />
-                        Featured Cover Story
-                      </span>
-                      <span className="rounded-full bg-background/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-foreground shadow-sm">
-                        {leadPost.category}
-                      </span>
-                    </div>
+                    {leadPost.isHousePhoto && (
+                      <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-background shadow-sm">
+                          <Sparkles className="h-3 w-3" aria-hidden="true" />
+                          Featured Cover Story
+                        </span>
+                        <span className="rounded-full bg-background/95 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-foreground shadow-sm">
+                          {leadPost.category}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
                     <div>
+                      {!leadPost.isHousePhoto && (
+                        <div className="mb-3 flex flex-wrap items-center gap-2">
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-background">
+                            <Sparkles className="h-3 w-3" aria-hidden="true" />
+                            Featured Cover Story
+                          </span>
+                          <span className="rounded-full border border-border bg-muted/60 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-foreground">
+                            {leadPost.category}
+                          </span>
+                        </div>
+                      )}
                       <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                         <time dateTime={leadPost.date}>{leadPost.formattedDate}</time>
                         <span aria-hidden="true">·</span>
