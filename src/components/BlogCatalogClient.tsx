@@ -69,62 +69,62 @@ const PILLARS: {
   icon: typeof Layers;
   match: (cat: string) => boolean;
 }[] = [
-  { key: 'all', label: 'All articles', icon: Layers, match: () => true },
-  {
-    key: 'homes',
-    label: 'Houses & Homes',
-    icon: Home,
-    match: (c) => /home|distress|income|spotlight/i.test(c),
-  },
-  {
-    key: 'land',
-    label: 'Land & Plots',
-    icon: Trees,
-    match: (c) => /land/i.test(c),
-  },
-  {
-    key: 'renting',
-    label: 'Renting',
-    icon: KeyRound,
-    match: (c) => /rent/i.test(c),
-  },
-  {
-    key: 'areas',
-    label: 'Area Guides',
-    icon: MapPin,
-    match: (c) => /area|corridor|buying guide/i.test(c),
-  },
-  {
-    key: 'safety',
-    label: 'Scam Safety',
-    icon: ShieldCheck,
-    match: (c) => /safety|trust|recovery|escrow/i.test(c),
-  },
-  {
-    key: 'legal',
-    label: 'Documents & Legal',
-    icon: FileCheck2,
-    match: (c) => /document|legal|compliance|title/i.test(c),
-  },
-  {
-    key: 'money',
-    label: 'Money & Building',
-    icon: Wallet,
-    match: (c) => /money|building|invest|data|insight|ai/i.test(c),
-  },
-  {
-    key: 'diaspora',
-    label: 'Diaspora',
-    icon: Globe,
-    match: (c) => /diaspora/i.test(c),
-  },
-  {
-    key: 'agents',
-    label: 'For Agents',
-    icon: BadgeCheck,
-    match: (c) => /agent|announcement/i.test(c),
-  },
-];
+    { key: 'all', label: 'All articles', icon: Layers, match: () => true },
+    {
+      key: 'homes',
+      label: 'Houses & Homes',
+      icon: Home,
+      match: (c) => /home|distress|income|spotlight/i.test(c),
+    },
+    {
+      key: 'land',
+      label: 'Land & Plots',
+      icon: Trees,
+      match: (c) => /land/i.test(c),
+    },
+    {
+      key: 'renting',
+      label: 'Renting',
+      icon: KeyRound,
+      match: (c) => /rent/i.test(c),
+    },
+    {
+      key: 'areas',
+      label: 'Area Guides',
+      icon: MapPin,
+      match: (c) => /area|corridor|buying guide/i.test(c),
+    },
+    {
+      key: 'safety',
+      label: 'Scam Safety',
+      icon: ShieldCheck,
+      match: (c) => /safety|trust|recovery|escrow/i.test(c),
+    },
+    {
+      key: 'legal',
+      label: 'Documents & Legal',
+      icon: FileCheck2,
+      match: (c) => /document|legal|compliance|title/i.test(c),
+    },
+    {
+      key: 'money',
+      label: 'Money & Building',
+      icon: Wallet,
+      match: (c) => /money|building|invest|data|insight|ai/i.test(c),
+    },
+    {
+      key: 'diaspora',
+      label: 'Diaspora',
+      icon: Globe,
+      match: (c) => /diaspora/i.test(c),
+    },
+    {
+      key: 'agents',
+      label: 'For Agents',
+      icon: BadgeCheck,
+      match: (c) => /agent|announcement/i.test(c),
+    },
+  ];
 
 export function BlogCatalogClient({
   posts,
@@ -240,11 +240,10 @@ export function BlogCatalogClient({
                   onClick={() => setFilterOpen((o) => !o)}
                   aria-expanded={filterOpen}
                   aria-label="Open article filters"
-                  className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
-                    filterOpen || selectedCategory !== 'All' || contentFocus !== 'all' || readingFilter !== 'any'
+                  className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${filterOpen || selectedCategory !== 'All' || contentFocus !== 'all' || readingFilter !== 'any'
                       ? 'bg-violet-100 text-violet-700'
                       : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                  }`}
+                    }`}
                 >
                   <SlidersHorizontal className="h-3.5 w-3.5" />
                 </button>
@@ -406,11 +405,10 @@ export function BlogCatalogClient({
                     setSelectedCategory('All');
                     setVisibleCount(24);
                   }}
-                  className={`flex shrink-0 cursor-pointer flex-col items-center gap-1 border-b-2 pb-1.5 text-[11px] font-semibold transition-all ${
-                    isActive
+                  className={`flex shrink-0 cursor-pointer flex-col items-center gap-1 border-b-2 pb-1.5 text-[11px] font-semibold transition-all ${isActive
                       ? 'border-foreground text-foreground'
                       : 'border-transparent text-muted-foreground hover:text-foreground'
-                  }`}
+                    }`}
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                   <span className="whitespace-nowrap">{pillar.label}</span>
@@ -666,15 +664,13 @@ export function BlogCatalogClient({
                   return (
                     <article
                       key={post.slug}
-                      className={`group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/30 hover:shadow-lg ${
-                        isWideCard ? 'sm:col-span-2 lg:col-span-2' : ''
-                      }`}
+                      className={`group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-0.5 hover:border-foreground/30 hover:shadow-lg ${isWideCard ? 'sm:col-span-2 lg:col-span-2' : ''
+                        }`}
                     >
                       <Link href={`/blog/${post.slug}`} className="flex h-full flex-col">
                         <div
-                          className={`relative w-full overflow-hidden bg-[#FAF9F4] ${
-                            isWideCard ? 'aspect-[16/8]' : 'aspect-[16/10]'
-                          }`}
+                          className={`relative w-full overflow-hidden bg-[#FAF9F4] ${isWideCard ? 'aspect-[16/8]' : 'aspect-[16/10]'
+                            }`}
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
@@ -701,9 +697,8 @@ export function BlogCatalogClient({
                           </div>
 
                           <h3
-                            className={`mt-2.5 font-extrabold leading-snug tracking-tight text-foreground transition-colors group-hover:text-violet-700 ${
-                              isWideCard ? 'text-lg sm:text-xl' : 'text-base sm:text-[17px]'
-                            }`}
+                            className={`mt-2.5 font-extrabold leading-snug tracking-tight text-foreground transition-colors group-hover:text-violet-700 ${isWideCard ? 'text-lg sm:text-xl' : 'text-base sm:text-[17px]'
+                              }`}
                           >
                             {post.title}
                           </h3>

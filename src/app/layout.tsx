@@ -39,6 +39,11 @@ export const metadata: Metadata = {
     },
   },
   manifest: '/manifest.webmanifest',
+  alternates: {
+    types: {
+      'application/atom+xml': '/feed.xml',
+    },
+  },
   openGraph: {
     siteName: SITE_NAME,
     locale: 'en_NG',

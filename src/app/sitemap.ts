@@ -1,15 +1,15 @@
 import type { MetadataRoute } from 'next';
 import { BASE_URL } from '@/lib/seo';
-import { getReleasedBlogPosts } from '@/data/blog';
 import { GUIDES } from '@/data/guides';
+import { getAllPublishedBlogsForSeo } from '@/lib/publishedBlogsSync';
 
 // Revalidate every 5 minutes so each day's 10 newly published articles at 09:00 Africa/Lagos
-// automatically enter the sitemap while future scheduled drafts remain excluded.
+// and any newly published Supabase blog posts automatically enter the sitemap.
 export const revalidate = 300;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const releasedBlogPosts = getReleasedBlogPosts(now);
+  const publishedBlogs = await getAllPublishedBlogsForSeo(now);
 
   const staticRoutes = [
     { path: '/' },
@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/vision' },
     { path: '/agents' },
     { path: '/blog' },
+    { path: '/blog-directory.html' },
+    { path: '/feed.xml' },
     { path: '/guides' },
     { path: '/faq' },
     { path: '/contact' },
@@ -30,9 +32,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  const blogRoutes = releasedBlogPosts.map((p) => ({
+  const blogRoutes = publishedBlogs.map((p) => ({
     url: `${BASE_URL}/blog/${p.slug}`,
-    lastModified: new Date(p.date),
+    lastModified: new Date(p.updatedAt || p.publishedAt),
   }));
 
   const guideRoutes = GUIDES.map((g) => ({
