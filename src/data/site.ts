@@ -52,15 +52,15 @@ export const GATES = [
   {
     id: 'document',
     step: 'Gate 3',
-    name: 'Check property papers',
-    short: 'Property papers are scanned and checked',
-    body: 'We scan and check all the important property papers. Our computers help compare what the papers say to what the post says, and flag anything that looks wrong.',
+    name: 'Optional title disclosure',
+    short: 'Optional title type stated upfront',
+    body: 'Sellers can optionally state the property title type (such as C of O, Governor’s Consent, or Deed of Assignment). Xavorian does not verify or certify property documents; buyers should always run an independent state land registry search.',
   },
   {
     id: 'human',
     step: 'Gate 4',
     name: 'Automated audit & verification',
     short: 'Multi-layer automated checks before publication',
-    body: 'Our system cross-checks property details, account names and document records before any listing goes live. Only when all four gates are passed does a listing earn its verified badge.',
+    body: 'Our system cross-checks property details, location coordinates, media authenticity, and account names before any listing goes live. Only when verification checks pass does a listing earn its verified badge.',
   },
 ] as const;

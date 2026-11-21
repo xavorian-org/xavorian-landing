@@ -55,8 +55,8 @@ export const GUIDES: Guide[] = [
         body: 'The bank account receiving your money should belong to the name on the title, or a documented authorised agent. A mismatch is a reason to pause, not to negotiate.',
       },
       {
-        heading: '5. Let a platform help you check',
-        body: 'On Xavorian, listings undergo a document scan, an AI-assisted cross-check against listing claims, and an automated multi-layer audit before a listing goes live. This reduces your risk but does not replace your own lawyer’s search.',
+        heading: '5. Let a platform filter out anonymous listers',
+        body: 'On Xavorian, sellers pass government ID liveness KYC, bank-account name matching, and automated location and media checks before a listing goes live. Xavorian does not check or certify property title documents, so always engage your own lawyer for an official registry search.',
       },
     ],
     keyTakeaways: [
@@ -99,7 +99,7 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: '5. Rent where verification is the baseline',
-        body: 'On Xavorian, agents are KYC-verified and listings are document-audited with AI assist before they go live. Payments made through Xavorian go only to an account matching the verified name.',
+        body: 'On Xavorian, agents are KYC-verified and listings pass automated location, pricing, and media checks before they go live. Payments made through Xavorian go only to an account matching the verified name.',
       },
     ],
     keyTakeaways: [

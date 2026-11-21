@@ -31,8 +31,8 @@ const pillars = [
   },
   {
     icon: FileSearch,
-    title: 'We audit the paperwork',
-    body: 'Title documents are scanned and cross-checked against the listing’s claims. Beautiful forgery, meet boring algorithmic scrutiny.',
+    title: 'Optional title clarity',
+    body: 'Sellers can optionally state the property title type upfront. Xavorian does not check or certify title documents; buyers verify originals independently at the state land registry.',
   },
   {
     icon: Cpu,

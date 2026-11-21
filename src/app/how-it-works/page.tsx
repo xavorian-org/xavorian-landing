@@ -18,9 +18,9 @@ import { Reveal } from '@/components/Reveal';
 import { GATES, MARKETPLACE_URL } from '@/data/site';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'How It Works — Four Gates Between You and a Scam',
+  title: 'How It Works — Verification Between You and a Scam',
   description:
-    'Every Xavorian listing passes identity verification, bank-account matching, a document audit with AI assist and automated multi-layer verification before it goes live. Here is the full process, gate by gate.',
+    'Every Xavorian listing passes identity verification, bank-account matching, optional title disclosure, and an automated multi-layer location and media audit before it goes live. Here is the full process.',
   path: '/how-it-works',
 });
 
@@ -43,13 +43,13 @@ const gateDetails: Record<string, GateDetail> = {
   },
   document: {
     happens:
-      'Certificates of Occupancy (C of O), Deeds of Assignment, Governor’s Consent, Survey Plans, and purchase receipts are scanned and audited. Our AI assist reads registration numbers, beacon coordinates, and survey stamps, and compares them with the claims on the listing.',
-    why: 'Forged documents can look convincing on a mobile phone screen. Automated cross-checks help catch discrepancies, false beacon numbers, and unsupported claims that a quick glance can miss.',
-    fail: 'The listing is paused until the discrepancy is cleared or removed. Accounts that repeatedly submit fraudulent documents may be banned and referred to the authorities.',
+      'Sellers can optionally disclose the property’s title type (such as Certificate of Occupancy, Governor’s Consent, Deed of Assignment, or Registered Survey Plan) on the listing. Xavorian does not scan, audit, or certify title documents.',
+    why: 'Stating the claimed title type upfront helps buyers know what paperwork to ask for before scheduling an inspection or engaging a property lawyer.',
+    fail: 'Title document submission is optional; buyers should always have an independent Nigerian property lawyer verify original documents at the state land registry before paying.',
   },
   human: {
     happens:
-      'Our automated verification system cross-checks identity, bank account details, and document records before publication, and flags anything inconsistent for human review.',
+      'Our automated verification system cross-checks identity, bank account details, location coordinates, pricing sanity, and listing media before publication, and flags anything inconsistent for human review.',
     why: 'Automated checks reduce blind spots and inconsistency. They are not perfect, which is why flagged cases go to a person.',
     fail: 'The listing stays offline until the issue is cleared.',
   },
@@ -87,16 +87,16 @@ const scamMitigations = [
   {
     icon: FileWarning,
     title: 'The Beautiful Forgery',
-    scam: 'A perfectly printed C of O or Deed of Assignment with fabricated registration numbers or false survey coordinates.',
+    scam: 'A printed C of O or Deed of Assignment with fabricated registration numbers or false survey coordinates.',
     solution:
-      'Gate 3 uses AI assist and registry checks to compare registration numbers, beacon bearings, and survey stamps with the listing claims. No automated check is perfect, so have a property lawyer search the registry before you pay.',
+      'Xavorian does not certify or check property title documents. Always engage an independent property lawyer to search the official state land registry before you pay.',
   },
   {
     icon: CopyX,
     title: 'The Cloned Listing',
     scam: 'A scammer copies photos and descriptions of another agent\'s genuine listing and posts them at a discounted price.',
     solution:
-      'Gates 3 and 4 require verified title ownership documents before publication, which makes photo cloning much harder.',
+      'Gates 1, 2, and 4 require verified identity, bank-name matching, and automated media/location checks before publication, making anonymous photo cloning much harder.',
   },
 ];
 
@@ -105,7 +105,7 @@ const howToSchema = {
   '@type': 'HowTo',
   name: 'How Xavorian verifies every listing',
   description:
-    'Every listing on Xavorian passes four verification gates before it goes live: identity verification, bank-account matching, document scan with AI assist, and automated multi-layer verification.',
+    'Every listing on Xavorian passes identity verification, bank-account matching, optional title-type disclosure, and automated multi-layer location and media verification before going live.',
   totalTime: 'P3D',
   step: GATES.map((gate, i) => ({
     '@type': 'HowToStep',
@@ -142,8 +142,8 @@ export default function HowItWorksPage() {
               Platform Operational Manifesto
             </p>
             <p>
-              Every Xavorian listing must pass identity verification, bank-account matching, a document audit with AI
-              assistance, and an automated multi-layer check before it goes live.
+              Every Xavorian listing passes identity verification, bank-account matching, optional title-type disclosure,
+              and an automated multi-layer location and media check before it goes live.
             </p>
             <p>
               In a market where forged paper and untraceable strangers are common, Xavorian builds structured, automated

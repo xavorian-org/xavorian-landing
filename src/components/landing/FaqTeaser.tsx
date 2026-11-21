@@ -1,84 +1,63 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { Reveal } from '@/components/Reveal';
+import { ArrowRight, Plus } from 'lucide-react';
+import { FAQS, FAQ_ITEMS } from '@/data/faqItems';
 
-const teasers = [
-  {
-    q: 'Is Xavorian live yet?',
-    a: 'Yes. You can browse listings on the marketplace and filter by location, property type and budget.',
-  },
-  {
-    q: 'What does verification cost me as a buyer?',
-    a: 'Nothing. Verification is the price sellers pay to be trusted by you. Your side of the experience stays free to browse.',
-  },
-  {
-    q: 'How is this different from the property sites I already use?',
-    a: 'They host listings; we vet them. On Xavorian an unverified stranger literally cannot have a listing page.',
-  },
-];
-
-export const FAQ_ITEMS = [
-  {
-    '@type': 'Question',
-    name: 'Is Xavorian live yet?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Yes. You can browse property listings on the Xavorian marketplace and filter by location, property type and budget.',
-    },
-  },
-  {
-    '@type': 'Question',
-    name: 'What does verification cost a buyer?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Nothing. Verification is the price sellers pay to be trusted. Browsing verified listings is free.',
-    },
-  },
-  {
-    '@type': 'Question',
-    name: 'How is Xavorian different from other Nigerian property sites?',
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: 'Other platforms host listings; Xavorian screens them. Every listing passes identity, bank-match, document-audit, and automated verification gates before it can exist on the platform.',
-    },
-  },
-];
+export { FAQ_ITEMS };
 
 export const FaqTeaser = () => (
-  <section className="container mx-auto mt-20 sm:mt-28 lg:mt-32">
-    <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-      <Reveal>
-        <span className="eyebrow">
-          <span className="eyebrow-dot" />
-          Questions
-        </span>
-        <h2 className="mt-4 text-balance font-display text-3xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-          Asked often, answered plainly.
-        </h2>
-        <Link href="/faq" className="pressable link-underline mt-6 inline-flex items-center gap-2 text-sm font-bold text-foreground">
-          All questions
-          <ArrowRight className="size-4" data-icon="inline-end" />
-        </Link>
-      </Reveal>
+  <section
+    id="faq"
+    aria-labelledby="faq-heading"
+    className="scroll-mt-20 border-t border-[#E4E1D6] bg-[#FCFBF7] pb-16 pt-20 sm:pb-20 sm:pt-28 lg:pb-24 lg:pt-32"
+  >
+    <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
+      <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
+        {/* Left Sticky Column (Kicker-Free) */}
+        <div className="lg:col-span-4 lg:sticky lg:top-28">
+          <h2
+            id="faq-heading"
+            className="font-serif text-[2rem] font-normal not-italic leading-[1.08] tracking-[-0.018em] text-[#141414] sm:text-[2.5rem] lg:text-[3rem]"
+          >
+            Frequently asked questions.
+          </h2>
+          <p className="mt-3 text-[15px] leading-[1.65] text-[#52525B]">
+            Straight answers for Nigerian buyers, renters, diaspora investors, and real estate agents.
+          </p>
+          <Link
+            href="/faq"
+            className="mt-6 inline-flex items-center gap-2 text-[13.5px] font-semibold text-[#141414] underline decoration-[#DCD8CA] underline-offset-4 transition-colors hover:text-[#7B2276] hover:decoration-[#9C3495]"
+          >
+            View all questions
+            <ArrowRight className="size-3.5" aria-hidden="true" />
+          </Link>
+        </div>
 
-      <div className="flex flex-col">
-        {teasers.map((t, i) => (
-          <Reveal key={t.q} delay={i * 90}>
-            <details className="faq-item group border-b border-border/80 first:border-t">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-base font-bold tracking-tight text-foreground transition-all duration-300 hover:pl-1.5 hover:text-foreground sm:py-6 sm:text-lg [&::-webkit-details-marker]:hidden">
-                {t.q}
-                <span className="faq-icon flex size-8 shrink-0 items-center justify-center rounded-full border border-border bg-card text-lg font-light leading-none text-muted-foreground shadow-sm">
-                  +
-                </span>
+        {/* Right Unboxed Hairline Accordion */}
+        <div className="border-t border-[#DCD8CA] lg:col-span-8">
+          {FAQS.map((item, i) => (
+            <details
+              key={item.q}
+              open={i === 0}
+              className="faq-item group border-b border-[#DCD8CA]"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[15.5px] font-semibold tracking-[-0.01em] text-[#141414] transition-colors hover:text-[#7B2276] sm:py-6 sm:text-[16.5px] [&::-webkit-details-marker]:hidden">
+                <span>{item.q}</span>
+                <Plus
+                  className="faq-icon size-4 shrink-0 text-[#75736B]"
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
               </summary>
               <div className="smooth-details-body">
                 <div>
-                  <p className="faq-answer max-w-2xl pb-6 text-xs leading-relaxed text-muted-foreground sm:text-sm">{t.a}</p>
+                  <p className="max-w-[65ch] pb-6 pr-8 text-[14.5px] leading-[1.7] text-[#52525B]">
+                    {item.a}
+                  </p>
                 </div>
               </div>
             </details>
-          </Reveal>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>

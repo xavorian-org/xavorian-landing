@@ -1,101 +1,121 @@
-'use client';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
-import { Ghost, Camera, FileX2, Users } from 'lucide-react';
-import { Reveal } from '@/components/Reveal';
-import { useAutoCarousel } from '@/lib/use-auto-carousel';
-
-const villains = [
+const FRAUD_PATTERNS = [
   {
-    tag: 'Fraud pattern 01',
-    icon: Camera,
-    name: 'The Fake Listing',
-    story: 'A real house posted by a stranger using stolen pictures. The price is so low you feel lucky, which makes you forget to ask the right questions.',
-    tell: 'Fails when they have to show their real ID.',
+    code: '01',
+    name: 'Cloned listings and stolen photos',
+    description:
+      'A stranger copies photos of a real home in Lekki or Gwarinpa and lists it far below area comparables to rush a deposit.',
+    gateTag: 'Blocked at Gate 01 + Gate 04',
+    countermeasure:
+      'Mandatory government ID liveness removes throwaway accounts while automated media forensics and pricing checks catch recycled photos before publication.',
   },
   {
-    tag: 'Fraud pattern 02',
-    icon: Ghost,
-    name: 'The Ghost Agent',
-    story: 'They sound so nice on the phone until you pay the viewing fee. Then their number stops working, and their office never even existed.',
-    tell: 'Fails when their bank name has to match a real ID.',
+    code: '02',
+    name: 'Ghost agents and viewing-fee traps',
+    description:
+      'A caller demands an upfront inspection fee or commitment transfer into an unrelated personal account, then disappears.',
+    gateTag: 'Blocked at Gate 01 + Gate 02',
+    countermeasure:
+      'Every lister’s identity is on file and the Bank-Name-Match Rule via NIBSS and Paystack prevents payouts to unverified third-party accounts.',
   },
   {
-    tag: 'Fraud pattern 03',
-    icon: FileX2,
-    name: 'The Fake Paperwork',
-    story: 'A land document that looks perfectly real but is totally fake. It looks great on paper but has no real history.',
-    tell: 'Fails when we check the government records and read the papers.',
+    code: '03',
+    name: 'Phantom addresses and bait pricing',
+    description:
+      'Listings with nonexistent street locations, recycled stock photos, or unrealistic prices designed to lure buyers off-platform.',
+    gateTag: 'Blocked at Gate 04',
+    countermeasure:
+      'Automated geolocation validation, media checks, and pricing sanity audits filter out phantom locations and bait listings before publication.',
   },
   {
-    tag: 'Fraud pattern 04',
-    icon: Users,
-    name: 'The Double Sale',
-    story: 'The exact same piece of land sold to three different people in one month. That means three receipts, lots of crying, and a big court case.',
-    tell: 'Fails because we check who really owns it before it even goes online.',
+    code: '04',
+    name: 'Double sales and off-record diversion',
+    description:
+      'The same plot sold to multiple buyers simultaneously, or diaspora funds diverted by unverified intermediaries.',
+    gateTag: 'Mitigated by KYC + Optional 3% Protection',
+    countermeasure:
+      'Verified seller identities plus optional 3% transaction protection through licensed payment rails give buyers a milestone window to complete physical inspections and independent state registry searches.',
   },
-];
+] as const;
 
-export const Problem = () => {
-  const { ref, pauseHandlers } = useAutoCarousel<HTMLDivElement>(3000);
-
-  return (
-  <section className="container mx-auto mt-20 sm:mt-28 lg:mt-32">
-    <div className="rounded-[2rem] bg-[radial-gradient(130%_150%_at_10%_0%,#3a1280_0%,#2a1060_45%,#130722_100%)] px-6 py-14 text-white sm:px-12 sm:py-16">
-      <Reveal variant="blur" className="mx-auto max-w-3xl text-center">
-        <span className="eyebrow border-white/15 bg-white/10 text-white/70">
-          <span className="eyebrow-dot" />
-          Know the enemy
-        </span>
-        <h2 className="mt-4 text-balance font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-5xl">
-          The four main tricks behind almost every property scam in Nigeria.
-        </h2>
-        <div className="mt-4 flex flex-col gap-1.5 text-pretty text-sm leading-relaxed text-white/65 sm:text-base">
-          <p>If you have looked for a place here, you have probably seen at least one of these.</p>
-          <p>They might look different, but they all use the same tricks and have the same weak spot.</p>
+export const Problem = () => (
+  <section
+    id="fraud-patterns"
+    aria-labelledby="fraud-patterns-heading"
+    className="scroll-mt-20 border-t border-[#DCD8CA] bg-[#F3F1E9] py-20 sm:py-28 lg:py-32"
+  >
+    <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
+      {/* Kicker-free Asymmetric Editorial Header */}
+      <div className="grid gap-6 lg:grid-cols-12 lg:items-end">
+        <div className="lg:col-span-7">
+          <h2
+            id="fraud-patterns-heading"
+            className="font-serif text-[2rem] font-normal not-italic leading-[1.08] tracking-[-0.018em] text-[#141414] sm:text-[2.5rem] lg:text-[3rem]"
+          >
+            Four patterns behind Nigerian property scams, and where each one stops.
+          </h2>
         </div>
-      </Reveal>
-
-      <div className="-mx-6 mt-12 px-6 sm:mx-0 sm:px-0">
-        <div
-          ref={ref}
-          {...pauseHandlers}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:snap-none lg:gap-6 lg:overflow-visible lg:pb-0"
-        >
-        {villains.map((v, i) => (
-          <Reveal key={v.name} delay={i * 90} variant="scale" className="h-full w-[78%] shrink-0 snap-center sm:w-[46%] lg:w-auto lg:shrink">
-            <article className="group flex h-full w-full min-w-0 flex-col justify-between rounded-3xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-xl hover:shadow-black/40 sm:p-7">
-              <div>
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white/55">
-                    {v.tag}
-                  </span>
-                  <div className="flex size-10 items-center justify-center rounded-2xl bg-white text-violet-700 transition-transform group-hover:scale-105">
-                    <v.icon className="size-5" strokeWidth={2} />
-                  </div>
-                </div>
-
-                <h3 className="mt-5 text-lg font-bold tracking-tight text-white">{v.name}</h3>
-                <p className="mt-3 text-xs leading-relaxed text-white/65 sm:text-sm">{v.story}</p>
-              </div>
-
-              <div className="mt-6 border-t border-white/10 pt-4">
-                <p className="text-xs font-bold text-violet-300">
-                  {v.tell}
-                </p>
-              </div>
-            </article>
-          </Reveal>
-        ))}
+        <div className="lg:col-span-5">
+          <p className="text-[15px] leading-[1.65] text-[#52525B]">
+            Property fraud in Nigeria relies on anonymity, third-party bank transfers, and unchecked paperwork.
+            Xavorian addresses all three before a listing reaches local or diaspora buyers.
+          </p>
         </div>
       </div>
 
-      <Reveal delay={120} className="mt-10 text-center">
-        <div className="mx-auto max-w-xl flex flex-col gap-1 text-sm font-semibold text-white">
-          <p>Every scam fails when you actually check the facts.</p>
-          <p className="font-normal text-white/60">So we made checking the facts a must, not just an option.</p>
+      {/* Full-Width Architectural Two-Column Hairline Ledger */}
+      <div className="mt-12 border-t border-[#DCD8CA]">
+        <div
+          aria-hidden="true"
+          className="hidden border-b border-[#DCD8CA] py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#75736B] md:grid md:grid-cols-12"
+        >
+          <span className="col-span-1">No.</span>
+          <span className="col-span-5">The pattern on open classifieds</span>
+          <span className="col-span-6 pl-8">How Xavorian blocks it before publication</span>
         </div>
-      </Reveal>
+
+        {FRAUD_PATTERNS.map((item) => (
+          <article
+            key={item.code}
+            className="grid items-start gap-5 border-b border-[#DCD8CA] py-7 sm:py-9 md:grid-cols-12 md:gap-0"
+          >
+            <div className="md:col-span-1">
+              <span className="text-[12.5px] font-semibold tabular-nums text-[#75736B]">{item.code}</span>
+            </div>
+
+            <div className="md:col-span-5 md:pr-8">
+              <h3 className="font-sans text-[18px] font-semibold tracking-[-0.015em] text-[#141414]">
+                {item.name}
+              </h3>
+              <p className="mt-2 text-[14.5px] leading-[1.65] text-[#52525B]">{item.description}</p>
+            </div>
+
+            <div className="md:col-span-6 md:border-l md:border-[#DCD8CA] md:pl-8">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#7B2276]">
+                {item.gateTag}
+              </p>
+              <p className="mt-1.5 text-[14.5px] leading-[1.65] text-[#27272A]">{item.countermeasure}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {/* Editorial Footnote Strip */}
+      <div className="mt-7 flex flex-col gap-3 text-[13px] text-[#52525B] sm:flex-row sm:items-center sm:justify-between">
+        <p>
+          Pre-publication screening cuts anonymous fraud early; always inspect in person and verify title numbers with
+          an independent lawyer.
+        </p>
+        <Link
+          href="/guides/questions-before-inspection-fee"
+          className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-[#141414] underline decoration-[#DCD8CA] underline-offset-4 transition-colors hover:text-[#7B2276] hover:decoration-[#9C3495]"
+        >
+          Seven questions to ask before paying
+          <ArrowRight className="size-3.5" aria-hidden="true" />
+        </Link>
+      </div>
     </div>
   </section>
-  );
-};
+);

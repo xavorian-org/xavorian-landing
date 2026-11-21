@@ -16,7 +16,7 @@ import { Reveal } from '@/components/Reveal';
 export const metadata: Metadata = pageMetadata({
   title: 'For Agents — Get Verified and List on Xavorian',
   description:
-    'Join Xavorian as a verified agent. Pass identity, bank and document checks, list verified properties, and let buyers choose you with confidence.',
+    'Join Xavorian as a verified agent. Pass identity, bank, and automated listing checks, list verified properties, and let buyers choose you with confidence.',
   path: '/agents',
 });
 
@@ -39,7 +39,7 @@ const wins = [
   {
     icon: BadgeCheck,
     title: 'The badge answers first',
-    body: 'It tells every buyer your identity, bank account and documents already survived a stricter check than they could ever run themselves. Conversations start at inspection, not at suspicion.',
+    body: 'It tells every buyer your identity, bank account, and listing details passed pre-publication screening. Conversations start at inspection, not at suspicion.',
   },
   {
     icon: FileSearch,
@@ -52,8 +52,8 @@ const ladder = [
   {
     icon: BadgeCheck,
     tier: 'Tier 1 · Every agent',
-    title: 'The four gates',
-    body: 'ID and liveness check, bank-account name match, document audit per listing, automated multi-layer verification. No badge without all four.',
+    title: 'Pre-publication verification',
+    body: 'ID and liveness check, bank-account name match, optional title-type disclosure, and automated multi-layer location and media verification.',
   },
   {
     icon: MapPinned,
