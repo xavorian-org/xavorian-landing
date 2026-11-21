@@ -58,8 +58,8 @@ const pillars = [
   },
   {
     icon: FileCheck2,
-    title: 'Pillar 2: We Audit the Paperwork',
-    body: 'Title documents are scanned and cross-checked against listing claims. OCR and AI assist compare registration numbers and survey beacons to help expose forgeries.',
+    title: 'Pillar 2: Optional Title Clarity',
+    body: 'Sellers can optionally state the property title type upfront so buyers know what to verify at the state land registry with an independent lawyer before paying.',
   },
   {
     icon: Cpu,
@@ -72,8 +72,8 @@ const ladder = [
   {
     icon: BadgeCheck,
     tier: 'Tier 1 · Foundation (Live now)',
-    title: 'The four gates, for everyone',
-    body: 'The four gates for everyone: government KYC, bank-account name matching, document audits, and automated verification before publication. This is the baseline floor.',
+    title: 'Baseline verification, for everyone',
+    body: 'Baseline verification for everyone: government KYC, bank-account name matching, optional title-type disclosure, and automated location and media checks before publication.',
   },
   {
     icon: MapPinned,

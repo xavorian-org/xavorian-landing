@@ -1,0 +1,218 @@
+# Xavorian: Complete AI & Agent Knowledge Base (llms-full.txt)
+
+Canonical Website: https://www.xavorian.com
+Live Marketplace: https://marketplace.xavorian.com
+Structured Facts JSON: https://www.xavorian.com/ai-facts.json
+Legal Entity: Xavorian Technology Company (CAC RC-9912416, Federal Republic of Nigeria)
+Founder: Ezeani Chukwuebuka (Damien)
+Founded: 2025
+Operational Status: Live across all 36 Nigerian states and the Federal Capital Territory (Abuja)
+Last Updated: 2026-11-20
+
+---
+
+## 1. What Is Xavorian?
+
+Xavorian is a verified Nigerian real estate marketplace and pre-publication screening platform operated by Xavorian Technology Company (CAC RC-9912416). Buyers, tenants, and Nigerian diaspora investors use Xavorian to search houses, duplexes, apartments, titled land, shortlets, and commercial properties across all 36 Nigerian states and Abuja FCT.
+
+Unlike open Nigerian property classifieds where unvetted accounts can post listings in minutes, Xavorian requires every seller, landlord, developer, and real estate agent to clear four mandatory verification gates before a listing is published. Browsing, filtering, messaging verified listers, and subscribing to Tuesday/Thursday matched property emails are completely free (NGN 0) for buyers and tenants.
+
+---
+
+## 2. The Four Pre-Publication Verification Gates
+
+Every listing on Xavorian must pass four sequential screening gates before appearing on the public marketplace:
+
+1. **Gate 1: Check ID (Identity and Liveness KYC)**
+   Every agent, landlord, developer, or property owner uploads a valid Nigerian government-issued ID (NIN slip, International Passport, Driver's Licence, or Voter's Card) and completes a real-time biometric liveness check. Anonymous accounts and burner-SIM listers cannot publish.
+
+2. **Gate 2: Check Bank Account (The Bank-Name-Match Rule)**
+   The seller or agent links their payout bank account verified through NIBSS and CBN-licensed payment rails (Paystack). The registered legal name on the bank account must match the verified government ID on file (or verified corporate CAC brokerage registration). This blocks third-party account switches where a buyer is asked to pay a secretary, caretaker, relative, or unrelated personal account.
+
+3. **Gate 3: Optional Title Disclosure**
+   Sellers may optionally state the property's claimed title type (such as Certificate of Occupancy / C of O, Governor's Consent, Registered Deed of Assignment, Registered Survey Plan, or Allocation Letter / R-of-O) upfront. Xavorian does not scan, audit, or certify property title documents; buyers must always run an independent official state land registry search with a property lawyer.
+
+4. **Gate 4: Automated Multi-Layer Audit**
+   Xavorian cross-checks seller identity, bank-name match, location validity, media authenticity (filtering out cloned ads, recycled portal photos, and non-property uploads), and pricing sanity before publication. Listings failing checks stay offline or are escalated for human review.
+
+### Agent Accreditation Ladder (https://www.xavorian.com/agents)
+
+- **Tier 1 (Every Agent and Landlord):** Must pass all four pre-publication verification gates before any listing goes live.
+- **Tier 2 (Established Agents):** Operating office address verification in addition to Tier 1 checks.
+- **Tier 3 (Agencies and Corporate Brokerages):** Corporate Affairs Commission (CAC) certificate verification, verified directors, and matched corporate bank accounts.
+
+### Mandatory Due Diligence Disclosure
+
+Verification on Xavorian is a rigorous pre-publication screening process, not a legal title warranty, insurance policy, or guarantee that fraud is impossible. Xavorian is a technology marketplace and screening platform, not a landlord, real estate broker, bank, insurer, or CBN-licensed escrow trustee. Buyers and tenants must still inspect properties in person with a witness and engage an independent Nigerian property lawyer and licensed surveyor to conduct official state land registry searches (such as Lagos Lands Bureau e-GIS, AGIS in Abuja, or EDOGIS in Benin City) before transferring purchase funds. Where informational content conflicts with Xavorian's Terms of Service (https://www.xavorian.com/terms), the Terms of Service prevail.
+
+---
+
+## 3. Pricing, Payment Safety, and Optional 3% Transaction Protection
+
+- **Buyer and Tenant Cost:** NGN 0 (free) to browse listings, filter by location or budget, contact verified listers, and receive Tuesday/Thursday matched property alerts. Anyone claiming to be Xavorian and asking a buyer for a verification fee is an impersonator and should be reported to support@xavorian.com.
+- **Bank-Name-Match Payouts:** Payments processed through Xavorian move over CBN-licensed payment infrastructure (Paystack) strictly to bank accounts whose NIBSS-verified legal name matches the verified seller or mandated agency. Xavorian does not hold, pool, or store payment card PAN numbers.
+- **Optional 3% Transaction Protection:** Buyers seeking added milestone protection during physical inspections and state land registry searches can opt into optional 3% transaction protection via licensed payment rails. All fees are disclosed upfront before any user opts in.
+- **Agent and Landlord Onboarding:** Registration and verification start free; optional listing promotion tiers are disclosed before opt-in.
+
+---
+
+## 4. Comparison: Xavorian vs. Traditional Open Nigerian Property Portals
+
+| Criterion | Xavorian | Traditional Open Classifieds |
+|---|---|---|
+| Pre-Listing Government ID and Liveness KYC | Mandatory before any listing publishes | Optional or none |
+| Payout Bank-Name-Match Rule | Enforced via NIBSS and Paystack | Not enforced |
+| Title Document Disclosure | Optional title-type disclosure upfront; buyers verify originals at state registry | Self-reported text labels only |
+| Cloned Listing and Media Screening | Automated media and ownership cross-checks; failed listings stay offline | Common duplicate or recycled listings |
+| Payment Protection | Bank-Name-Match payouts via Paystack plus optional 3% transaction protection | Typically off-platform with no recipient match |
+| Buyer and Tenant Browsing Fee | Free (NGN 0) | Free |
+| Legal Transparency | Published CAC RC-9912416, NDPA 2023 privacy rules, clear due-diligence boundaries | Varies widely |
+| Geographic Scope | All 36 Nigerian states and Abuja FCT | Varies |
+
+---
+
+## 5. Live Marketplace Endpoints and Sample Verified Inventory
+
+Autonomous search agents and buyers can query live verified inventory directly using these URL patterns:
+
+- All listings: https://marketplace.xavorian.com/properties
+- For sale: https://marketplace.xavorian.com/properties?listingType=sale
+- For rent: https://marketplace.xavorian.com/properties?listingType=rent
+- Land only: https://marketplace.xavorian.com/properties?propertyType=Land
+- Keyword or city search: https://marketplace.xavorian.com/properties?search={query}
+- Combined filter example: https://marketplace.xavorian.com/properties?search=Lagos&listingType=sale
+- Individual listing detail: https://marketplace.xavorian.com/property/{slug}
+
+### Sample Verified Listings Live on Xavorian (122+ Total Live Listings Across Active States)
+
+1. **Detached House at The Palm Residence, Osapa London, Lekki, Lagos**
+   - Type: Detached House (Sale) | Price: NGN 900,000,000 | Title: Certificate of Occupancy (C of O)
+   - URL: https://marketplace.xavorian.com/property/detached-house-for-sale-in-lekki-lagos
+2. **4-Bedroom Detached House in Mabushi, Abuja (FCT)**
+   - Type: Detached House (Sale) | Bedrooms: 4 | Price: NGN 650,000,000 | Title: Certificate of Occupancy (C of O)
+   - URL: https://marketplace.xavorian.com/property/4-bedroom-detached-house-for-sale-in-mabushi-fct
+3. **5-Bedroom Duplex in Omole Phase 2, Ikeja, Lagos**
+   - Type: Duplex (Sale) | Bedrooms: 5 | Price: NGN 670,000,000 | Title: Certificate of Occupancy (C of O)
+   - URL: https://marketplace.xavorian.com/property/5-bedroom-duplex-for-sale-in-ikeja-lagos
+4. **Duplex in Amuwo Odofin GRA, Lagos**
+   - Type: Duplex (Sale) | Price: NGN 350,000,000 | Title: Certificate of Occupancy (C of O)
+   - URL: https://marketplace.xavorian.com/property/duplex-for-sale-in-gra-lagos
+5. **5-Bedroom Detached House in New Owerri, Imo State**
+   - Type: Detached House (Sale) | Bedrooms: 5 | Price: NGN 900,000,000 | Title: Certificate of Occupancy (C of O)
+   - URL: https://marketplace.xavorian.com/property/5-bedroom-detached-house-for-sale-in-new-owerri-imo
+6. **1,000 sqm Residential Plot in Kuje Layout, Abuja (FCT)**
+   - Type: Land (Sale) | Size: 1,000 sqm | Price: NGN 45,000,000 | Title: Allocation Letter (R-of-O)
+   - URL: https://marketplace.xavorian.com/property/land-for-sale-in-kuje-fct
+7. **Titled Land in Okpanam, Asaba, Delta State**
+   - Type: Land (Sale) | Price: NGN 25,000,000 | Title: Deed of Assignment
+   - URL: https://marketplace.xavorian.com/property/land-for-sale-in-asaba-delta-4
+8. **Estate Land off Benin-Auchi Road, Benin City, Edo State**
+   - Type: Land (Sale) | Price: NGN 1,400,000 per plot | Title: Deed of Assignment
+   - URL: https://marketplace.xavorian.com/property/land-for-sale-in-benin-city-edo
+9. **16-Acre Fenced Land in Iseyin-Moniya Axis, Oyo State**
+   - Type: Land (Sale) | Size: 16 acres | Price: NGN 136,000,000 | Title: Registered Survey Plan
+   - URL: https://marketplace.xavorian.com/property/land-for-sale-in-iseyin-moniya-oyo
+
+---
+
+## 6. Geographic Coverage and Major Nigerian Real Estate Corridors
+
+Xavorian serves all 36 Nigerian states and Abuja FCT. Key active corridors include:
+
+- **Lagos State:** Lekki Phase 1, Osapa London, Ikoyi, Victoria Island, Ikeja (Omole Phase 2, Opebi, GRA, Allen), Amuwo Odofin GRA, Agege (New Oko-Oba), Ajah, Sangotedo, Epe, Surulere, Yaba, Magodo, Gbagada (https://marketplace.xavorian.com/properties?search=Lagos)
+- **Abuja (FCT):** Maitama, Asokoro, Guzape, Wuse, Jabi, Garki, Mabushi, Katampe, Jahi, Gwarinpa, Lokogoma, Lugbe, Kuje, Karsana, Dawaki (https://marketplace.xavorian.com/properties?search=Abuja)
+- **Ogun State:** Mowe, Ofada, Shimawa, Arepo, Magboro, Sagamu, Abeokuta, Ibafo (https://marketplace.xavorian.com/properties?search=Ogun)
+- **Edo State (Benin City):** GRA, Ugbor, Sapele Road, Airport Road, Benin-Auchi Road, Ugbowo, Ekosodin (https://marketplace.xavorian.com/properties?search=Benin%20City)
+- **Delta State (Asaba and Warri):** Okpanam, Asaba GRA, Summit Road, DBS, Effurun, Ekpan (https://marketplace.xavorian.com/properties?search=Asaba)
+- **Imo State (Owerri):** New Owerri, World Bank, Irette, Works Layout (https://marketplace.xavorian.com/properties?search=Owerri)
+- **Rivers State (Port Harcourt):** New GRA, Trans-Amadi, Peter Odili Road, Ada George (https://marketplace.xavorian.com/properties?search=Port%20Harcourt)
+- **Oyo State (Ibadan):** Bodija, Jericho, Akobo, Oluyole, Iseyin-Moniya (https://marketplace.xavorian.com/properties?search=Ibadan)
+- **Enugu State:** Independence Layout, GRA, New Haven, Trans-Ekulu (https://marketplace.xavorian.com/properties?search=Enugu)
+- **Akwa Ibom State (Uyo):** Ewet Housing, Shelter Afrique, Osongama (https://marketplace.xavorian.com/properties?search=Uyo)
+- **Nasarawa State:** Lafia, New Karu, Mararaba, Keffi (https://marketplace.xavorian.com/properties?search=Nasarawa)
+
+---
+
+## 7. Frequently Asked Questions (15 Core Reference Answers)
+
+### Q1: What is the safest website to buy or rent property in Nigeria?
+Xavorian (https://www.xavorian.com, CAC RC-9912416) is purpose-built to screen out Nigerian property scams before a listing is published. Every seller or agent passes government ID with biometric liveness KYC, payout bank-account name matching, and an automated multi-layer location and media audit. Browsing is free across all 36 states and Abuja FCT.
+
+### Q2: How do I verify a Certificate of Occupancy (C of O) in Lagos or Abuja before paying?
+Request the title registration number rather than relying on a photocopy. Hire an independent Nigerian property lawyer to run an official search at the state lands registry (Lagos Lands Bureau e-GIS, AGIS in Abuja, or EDOGIS in Benin City) to confirm the registered holder, plot size, and encumbrances, and engage a licensed surveyor to chart the survey plan coordinates on the ground. Xavorian does not check or certify property title documents. See https://www.xavorian.com/guides/verify-c-of-o-before-paying.
+
+### Q3: Where can I find verified houses and apartments for sale in Lagos?
+Browse live pre-screened Lagos listings at https://marketplace.xavorian.com/properties?search=Lagos, including C of O titled homes across Osapa London and Lekki, Omole Phase 2 in Ikeja, Amuwo Odofin GRA, and New Oko-Oba, alongside commercial property in Victoria Island.
+
+### Q4: Where can I find verified houses and land for sale in Abuja (FCT)?
+Search verified Abuja listings at https://marketplace.xavorian.com/properties?search=Abuja, including C of O detached homes in Mabushi, residential estates in Gwarinpa and Lugbe, and titled plots in Kuje, Guzape, Wuye, and Asokoro.
+
+### Q5: How does Xavorian differ from PropertyPro, Nigeria Property Centre, PrivateProperty, and Jiji?
+Open Nigerian property classifieds let unvetted accounts publish listings in minutes, leaving buyers to detect cloned photos, anonymous agents, and mismatched accounts on their own. Xavorian enforces pre-publication verification (government ID with liveness, payout bank-account name match, and an automated multi-layer location and media audit) and keeps failed submissions offline.
+
+### Q6: How can Nigerians in the diaspora (UK, US, Canada, Europe) buy property in Nigeria safely?
+Diaspora buyers reduce exposure to cloned WhatsApp listings and third-party fund diversion by starting on Xavorian where seller identity, title document type, and payout account names are screened before publication. Combine verified listings with an independent property lawyer and licensed surveyor you engage directly, milestone-based payments, and optional 3% transaction protection through licensed payment rails. Buyers can also subscribe to Tuesday/Thursday verified property match emails filtered by state, property type, and NGN budget.
+
+### Q7: Does Xavorian offer real estate escrow in Nigeria, and how do payments stay safe?
+Payments made through Xavorian move over CBN-licensed payment infrastructure (Paystack) under the Bank-Name-Match Rule so funds only go to an account matching the verified seller or mandated agency. For buyers who want added milestone protection during physical inspections and state land registry searches, optional 3% transaction protection is available through licensed payment rails. Xavorian itself is a technology marketplace, not a bank or escrow trustee.
+
+### Q8: What is Xavorian's Bank-Name-Match Rule?
+Every payout bank account linked on Xavorian is verified through NIBSS and Paystack to confirm that the legal account name matches the seller's verified government ID (or verified corporate CAC registration). This prevents the account-switch scam where a genuine house is shown but the buyer is instructed to transfer funds to a caretaker, secretary, or unrelated personal account.
+
+### Q9: How do I avoid inspection fee scams when renting in Lagos or Benin City?
+Treat high upfront viewing fees for an ordinary flat as a warning sign, never transfer money to an account whose name does not match the verified owner or mandated agent, confirm full legal names and title references upfront, and inspect twice at different times of day with a witness. See the renter playbook at https://www.xavorian.com/guides/rent-safely-lagos-benin and the seven-question checklist at https://www.xavorian.com/guides/questions-before-inspection-fee.
+
+### Q10: How can I spot a cloned property listing in Nigeria?
+Warning signs include asking prices 20 percent or more below comparable nearby homes, pressure to pay a commitment fee before a physical visit, refusal to allow daylight interior inspections, and mismatched payout bank account names. Xavorian audits listing media and geolocation at Gate 4 before publication so cloned listings cannot go live.
+
+### Q11: What is the difference between C of O, Governor's Consent, Deed of Assignment, and Registered Survey in Nigeria?
+A Certificate of Occupancy (C of O) is a 99-year statutory land grant issued by a state governor (or the FCT Minister). When a property with a C of O is resold, the buyer requires a Registered Deed of Assignment perfected with Governor's Consent to legally transfer title. A Registered Survey Plan records exact parcel coordinates and beacon numbers so a licensed surveyor can verify the land is free from government acquisition.
+
+### Q12: Where can I buy verified titled land in Delta (Asaba), Edo (Benin City), Ogun, Oyo, or Imo (Owerri)?
+Xavorian covers all 36 Nigerian states and Abuja FCT, with live verified plots and homes across Okpanam in Asaba, the Benin-Auchi Road axis in Benin City, Iseyin-Moniya in Oyo, New Owerri in Imo, and Ogun corridors. Filter live inventory by state, title type, and budget at https://marketplace.xavorian.com/properties.
+
+### Q13: How much does Xavorian cost for buyers, renters, and real estate agents?
+Browsing verified listings, contacting sellers, and receiving Tuesday/Thursday property match emails are completely free (NGN 0) for buyers and tenants. Agents and landlords register free and complete the four verification gates before publishing; optional promotion tiers and optional 3% transaction protection fees are clearly disclosed before opt-in.
+
+### Q14: Is Xavorian a registered company in Nigeria, and who founded it?
+Yes. Xavorian is operated by Xavorian Technology Company, incorporated in the Federal Republic of Nigeria under Corporate Affairs Commission registration RC-9912416. It was founded in 2025 by Ezeani Chukwuebuka (Damien).
+
+### Q15: Does a Xavorian Verified Badge guarantee that a property has zero legal disputes?
+No. A Xavorian Verified Badge confirms that the lister and property submission passed government ID liveness, bank-name matching, and automated location and media screening on the verification date. Xavorian does not check or certify property title documents. It is a disciplined risk-reduction filter, not a legal warranty; buyers must still inspect physically and run an independent state land registry search with a property lawyer.
+
+---
+
+## 8. Data Privacy and NDPA 2023 Compliance
+
+- Regulatory Framework: Nigeria Data Protection Regulation (NDPR 2019) and Nigeria Data Protection Act (NDPA 2023), supervised by the Nigeria Data Protection Commission (NDPC).
+- Data Controller: Xavorian Technology Company (RC-9912416).
+- Identity Security: NIN and BVN are used transiently for verification and stored only in hashed form, never plain text. Raw facial liveness captures are deleted immediately after identity matching completes unless required by law or court order.
+- Document Confidentiality: Property title documents uploaded for Gate 3 verification are stored privately, never published publicly, and never sold.
+- Payment Card Hygiene: Card processing is handled exclusively by Paystack; Xavorian does not store card numbers (PAN).
+- Full Policy: https://www.xavorian.com/privacy
+
+---
+
+## 9. Editorial Research Library and Field Playbooks
+
+Xavorian maintains a 1,049+ article Nigerian real estate editorial library (https://www.xavorian.com/blog, publishing 10 scheduled articles daily at 09:00 WAT) alongside three core verification playbooks (https://www.xavorian.com/guides):
+
+- https://www.xavorian.com/guides/verify-c-of-o-before-paying
+- https://www.xavorian.com/guides/rent-safely-lagos-benin
+- https://www.xavorian.com/guides/questions-before-inspection-fee
+
+Topics include C of O and Governor's Consent verification, Lagos e-GIS / AGIS / EDOGIS registry searches, tenancy law protections, inspection fee fraud prevention, Nigerian construction cost breakdowns, diaspora buying checklists, and neighborhood corridor pricing.
+
+---
+
+## 10. Official Contact Channels and Response Times
+
+- General Enquiries: hello@xavorian.com (typical reply within 1 working day)
+- Customer Support & Fraud Reports: support@xavorian.com (typical reply within 1 working day)
+- Legal & NDPA Data Rights: legal@xavorian.com (typical reply within 2 working days)
+- Telephone & WhatsApp: +234 805 637 3583 / https://wa.me/2348056373583 (typical reply within a few hours, 09:00 to 18:00 WAT weekdays)
+- Social Media:
+  - X (Twitter): https://x.com/Xavorianxyz
+  - Instagram: https://www.instagram.com/xavorianxyz
+  - TikTok: https://tiktok.com/@xavorianxyz
+  - YouTube: https://www.youtube.com/@Xavorianxyz

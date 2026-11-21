@@ -47,7 +47,7 @@ const groups: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'What does verification actually include?',
-        a: 'Four gates: a government ID with a live biometric liveness check, a bank-account name match, a scanned document audit with AI assist, and an automated multi-layer verification audit before anything goes live. A listing that fails a gate is not published.',
+        a: 'Pre-publication checks include a government ID with a live biometric liveness check, a bank-account name match, optional title-type disclosure (Xavorian does not check or certify title documents), and an automated multi-layer location, pricing, and media audit before anything goes live. A listing that fails a check is not published.',
         link: { href: '/how-it-works', label: 'See the gates in detail' },
       },
       {
@@ -75,12 +75,12 @@ const groups: { title: string; items: FaqItem[] }[] = [
     items: [
       {
         q: 'I am an agent. How do I join, and what does it cost?',
-        a: 'Create an account on the marketplace to start agent onboarding. Verification includes ID and liveness checks, bank matching, document review and automated screening before listings can go live. Review the marketplace for current agent requirements and pricing.',
+        a: 'Create an account on the marketplace to start agent onboarding. Verification includes ID and liveness checks, bank matching, and automated location and media screening before listings can go live. Review the marketplace for current agent requirements and pricing.',
         link: { href: '/agents', label: 'The agent playbook' },
       },
       {
         q: 'How do verified agents benefit on Xavorian?',
-        a: 'Verified agents receive the verified badge and elevated listing placement. Many buyers prefer to deal with verified agents and listings with audited paperwork.',
+        a: 'Verified agents receive the verified badge and elevated listing placement. Many buyers prefer to deal with verified agents whose identity and bank details are verified.',
       },
     ],
   },

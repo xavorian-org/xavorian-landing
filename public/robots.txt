@@ -1,5 +1,12 @@
-# Xavorian — Nigeria's Trust Layer for Real Estate
-# https://www.xavorian.com
+# Xavorian - Nigeria's Trust Layer for Real Estate
+# Canonical site: https://www.xavorian.com
+# Live marketplace: https://marketplace.xavorian.com
+# Machine-readable summaries (for non-Google AI crawlers and agents):
+#   https://www.xavorian.com/llms.txt
+#   https://www.xavorian.com/llms-full.txt
+#   https://www.xavorian.com/ai-facts.json
+# User-triggered fetchers (Google-Agent, Google-NotebookLM, ChatGPT-User, Claude-User, Perplexity-User)
+# are welcomed on all public HTML pages, sitemaps, and JSON manifests.
 
 User-agent: *
 Allow: /
@@ -8,14 +15,34 @@ Allow: /blog/
 Allow: /guides
 Allow: /guides/
 Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-facts.json
 Allow: /sitemap.xml
+Allow: /feed.xml
 
+# Traditional & AI-integrated search crawlers
 User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+# OpenAI crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -25,25 +52,43 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+# Perplexity crawlers
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
 
+# Anthropic / Claude crawlers
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: Google-Extended
+# Additional AI search & assistant crawlers
+User-agent: Meta-ExternalAgent
 Allow: /
 
-User-agent: Applebot-Extended
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://www.xavorian.com/sitemap.xml

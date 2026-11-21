@@ -3,34 +3,49 @@
 @tailwind utilities;
 
 /* ------------------------------------------------------------------
-   Xavorian Landing — design tokens
-   White canvas · black primary · purple lives in the logo and the
-   story moments only. Calm, premium editorial style:
-   Instrument Serif for display type, system sans for UI.
+   Xavorian Editorial Design System
+   Canvas: Warm Ivory (#FCFBF7) · Gallery White: #FFFFFF · Stone: #F3F1E9
+   Editorial Ink: #141414 · Xavorian Brand Plum: #9C3495 / Deep #7B2276
+   Type: Instrument Serif (Editorial Display) + Plus Jakarta Sans (UI)
 ------------------------------------------------------------------- */
 
 :root {
-  --background: 0 0% 98%;
-  /* Xavorian App exact background shade: #FAFAFA */
+  --background: 48 56% 98%;
+  /* #FCFBF7 Warm Ivory Letterhead Paper */
   --foreground: 0 0% 8%;
-  /* Xavorian App exact foreground shade: #141414 */
+  /* #141414 Primary Editorial Ink */
   --card: 0 0% 100%;
-  /* Pure white card: #FFFFFF */
+  /* #FFFFFF Pure Gallery White */
   --card-foreground: 0 0% 8%;
+  /* #141414 */
   --primary: 0 0% 8%;
-  /* Pitch black primary elements: #141414 */
-  --primary-foreground: 0 0% 98%;
-  --accent: 262 83% 58%;
-  /* #7C3AED — brand logo accent */
+  /* #141414 */
+  --primary-foreground: 48 56% 98%;
+  /* #FCFBF7 */
+  --muted: 48 26% 93%;
+  /* #F3F1E9 Warm Recessed Stone */
+  --surface-parchment: 50 38% 97%;
+  /* #FAF9F4 Soft Parchment */
+  --ink-secondary: 240 5% 16%;
+  /* #27272A */
+  --muted-foreground: 240 5% 34%;
+  /* #52525B Editorial Prose */
+  --ink-subtle: 46 6% 44%;
+  /* #75736B Warm Stone Gray */
+  --border: 47 22% 87%;
+  /* #E4E1D6 Primary Hairline Rule */
+  --border-strong: 47 20% 83%;
+  /* #DCD8CA Stronger Architectural Rule */
+  --border-subtle: 46 24% 90%;
+  /* #EBE8DE Inner Row Rule */
+  --accent: 304 50% 41%;
+  /* #9C3495 Master Xavorian Plum */
   --accent-foreground: 0 0% 100%;
-  --muted: 0 0% 95%;
-  /* Soft off-white neutral card fill: #F2F2F2 */
-  --muted-foreground: 0 0% 40%;
-  /* Muted secondary body text: #666666 */
-  --border: 0 0% 90%;
-  /* Clean subtle border line: #E5E5E5 */
-  --ring: 0 0% 8%;
-  --success: 152 60% 36%;
+  /* #FFFFFF */
+  --ring: 303 57% 31%;
+  /* #7B2276 Deep Editorial Plum */
+  --success: 142 72% 29%;
+  /* #15803D Verified Pass Check */
 }
 
 * {
@@ -49,18 +64,20 @@ body {
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-feature-settings: 'ss01', 'cv11';
+  font-family: var(--font-sans), 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
-  background: hsl(var(--foreground) / 0.12);
+  background: rgba(156, 52, 149, 0.16);
+  color: #141414;
 }
 
-/* Stop iOS Safari auto-zoom on form focus: inputs must render at 16px on phones */
+/* Prevent iOS Safari zoom on input focus */
 @media (max-width: 640px) {
 
   input,
@@ -70,11 +87,11 @@ body {
   }
 }
 
-/* ------- motion ------- */
+/* ------- Motion ------- */
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(14px);
   }
 
   to {
@@ -84,25 +101,23 @@ body {
 }
 
 .animate-fade-up {
-  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes fade-blur {
   from {
     opacity: 0;
-    transform: translateY(18px);
-    filter: blur(8px);
+    transform: translateY(8px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
 .animate-fade-blur {
-  animation: fade-blur 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-blur 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes fade-in {
@@ -116,13 +131,13 @@ body {
 }
 
 .animate-fade-in {
-  animation: fade-in 0.8s ease-out both;
+  animation: fade-in 0.3s ease-out both;
 }
 
 @keyframes scale-in {
   from {
     opacity: 0;
-    transform: scale(0.94);
+    transform: scale(0.98);
   }
 
   to {
@@ -132,131 +147,15 @@ body {
 }
 
 .animate-scale-in {
-  animation: scale-in 0.65s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  animation: scale-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-@keyframes word-rise {
-  from {
-    opacity: 0;
-    transform: translateY(0.55em) rotate(2deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0);
-  }
-}
-
-.animate-word-rise {
-  display: inline-block;
-  animation: word-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes float-soft {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float-soft {
-  animation: float-soft 7s ease-in-out infinite;
-}
-
-@keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 hsl(var(--foreground) / 0.18);
-  }
-
-  70% {
-    box-shadow: 0 0 0 14px hsl(var(--foreground) / 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 hsl(var(--foreground) / 0);
-  }
-}
-
-.animate-pulse-ring {
-  animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* ------- trust marquee ------- */
-@keyframes marquee-x {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee-x 80s linear infinite;
-}
-.animate-marquee-rev {
-  animation: marquee-x 80s linear infinite reverse;
-}
-.marquee-mask {
-  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-}
-/* ------- hero stage: drifting sparkles around the svg ------- */
-.hero-stage {
-  position: relative;
-  isolation: isolate;
-}
-
-.hero-stage__sparkle {
-  position: absolute;
-  width: var(--s, 6px);
-  height: var(--s, 6px);
-  z-index: 1;
-  border-radius: 9999px;
-  background: hsl(var(--accent));
-  opacity: 0;
-  box-shadow: 0 0 12px 2px hsl(var(--accent) / 0.55), 0 0 3px 1px hsl(var(--accent) / 0.8);
-  animation: hero-sparkle-rise var(--d, 7s) ease-in-out var(--delay, 0s) infinite;
-}
-
-@keyframes hero-sparkle-rise {
-  0% {
-    transform: translateY(16px) scale(0.5);
-    opacity: 0;
-  }
-
-  22% {
-    opacity: 0.95;
-  }
-
-  58% {
-    opacity: 0.55;
-    transform: translateY(-56px) scale(1);
-  }
-
-  100% {
-    transform: translateY(-120px) scale(0.7);
-    opacity: 0;
-  }
-}
-
-/* ------- gate stepper line draw ------- */
-.gate-line {
-  transform-origin: top;
-  transform: scaleY(0);
-  transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
-}
-
-.gate-line--drawn {
-  transform: scaleY(1);
-}
-
-/* ------- smooth <details> open (grid-rows trick) ------- */
+/* ------- Smooth <details> Accordion ------- */
 .smooth-details>.smooth-details-body,
 .smooth-details-body {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: grid-template-rows 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .smooth-details[open]>.smooth-details-body,
@@ -269,273 +168,22 @@ details[open]>.smooth-details-body {
   overflow: hidden;
 }
 
-/* ------- FAQ accordion motion ------- */
 .faq-icon {
-  transition: transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s ease, border-color 0.2s ease;
 }
 
 .faq-item[open] .faq-icon {
-  transform: rotate(135deg);
-  background: hsl(var(--foreground));
-  color: hsl(var(--background));
+  transform: rotate(45deg);
+  color: #141414;
 }
 
-.faq-answer {
-  opacity: 0;
-  transform: translateY(-8px);
-  transition: opacity 0.38s ease-out 0.08s, transform 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
-}
-
-.faq-item[open] .faq-answer {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ------- MoneyMatch: ID ⇄ bank names draw + match seal ------- */
-.money-match .mm-card {
-  animation: mm-float 4.8s ease-in-out infinite;
-}
-
-.money-match .mm-card--bank {
-  animation-delay: -2.4s;
-}
-
-@keyframes mm-float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-.money-match .mm-line {
-  stroke-dasharray: 220;
-  stroke-dashoffset: 220;
-  animation: mm-draw 4.8s ease-in-out infinite;
-}
-
-@keyframes mm-draw {
-
-  0%,
-  12% {
-    stroke-dashoffset: 220;
-  }
-
-  42%,
-  78% {
-    stroke-dashoffset: 0;
-  }
-
-  96%,
-  100% {
-    stroke-dashoffset: -220;
-  }
-}
-
-.money-match .mm-seal {
-  transform-box: fill-box;
-  transform-origin: center;
-  opacity: 0;
-  animation: mm-seal 4.8s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
-}
-
-@keyframes mm-seal {
-
-  0%,
-  40% {
-    opacity: 0;
-    transform: scale(0.4);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.12);
-  }
-
-  56%,
-  78% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  92%,
-  100% {
-    opacity: 0;
-    transform: scale(0.4);
-  }
-}
-
-/* ------- micro press feedback (HC-standard, <100ms) ------- */
+/* ------- Pressable Micro-Feedback ------- */
 .pressable {
-  transition: transform 0.12s ease-out, box-shadow 0.18s ease-out;
+  transition: transform 0.14s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .pressable:active {
-  transform: scale(0.975);
-}
-
-/* ------- FallingDocs: documents rain down + verified stamp ------- */
-.falling-docs .fd-card {
-  opacity: 0;
-  transform: translateY(-340px);
-  animation: fd-fall 0.85s cubic-bezier(0.55, 0.06, 0.35, 1) forwards,
-    fd-settle 0.28s ease-out forwards, fd-hold 11s linear forwards;
-}
-
-.falling-docs .fd-card--1 {
-  animation-delay: 0.35s, 1.1s, 0s;
-}
-
-.falling-docs .fd-card--2 {
-  animation-delay: 0.8s, 1.55s, 0s;
-}
-
-.falling-docs .fd-card--3 {
-  animation-delay: 1.25s, 2s, 0s;
-}
-
-.falling-docs .fd-card--4 {
-  animation-delay: 1.7s, 2.45s, 0s;
-}
-
-@keyframes fd-fall {
-  0% {
-    opacity: 0;
-    transform: translateY(-340px) rotate(var(--fd-rot, -3deg));
-  }
-
-  6% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotate(var(--fd-rot, -3deg));
-  }
-}
-
-@keyframes fd-settle {
-  0% {
-    transform: translateY(0) rotate(var(--fd-rot, -3deg)) scale(1);
-  }
-
-  40% {
-    transform: translateY(2px) rotate(var(--fd-rot, -3deg)) scale(1.02, 0.94);
-  }
-
-  100% {
-    transform: translateY(0) rotate(var(--fd-rot, -3deg)) scale(1);
-  }
-}
-
-@keyframes fd-hold {
-
-  0%,
-  86% {
-    opacity: 1;
-  }
-
-  93%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.falling-docs .fd-card--1 {
-  --fd-rot: -5deg;
-}
-
-.falling-docs .fd-card--2 {
-  --fd-rot: 3deg;
-}
-
-.falling-docs .fd-card--3 {
-  --fd-rot: -2.5deg;
-}
-
-.falling-docs .fd-card--4 {
-  --fd-rot: 1.5deg;
-}
-
-.falling-docs .fd-seal {
-  transform-box: fill-box;
-  transform-origin: center;
-  opacity: 0;
-  animation: fd-stamp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.9s forwards,
-    fd-seal-hold 11s linear 0s forwards;
-}
-
-@keyframes fd-stamp {
-  0% {
-    opacity: 0;
-    transform: scale(1.9) rotate(-14deg);
-  }
-
-  60% {
-    opacity: 1;
-    transform: scale(0.92) rotate(1.5deg);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0);
-  }
-}
-
-@keyframes fd-seal-hold {
-
-  0%,
-  86% {
-    opacity: 1;
-  }
-
-  93%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.falling-docs .fd-arcs {
-  opacity: 0;
-  animation: fd-arcs-show 0.6s ease-out 0.3s forwards, fd-arcs-hold 11s linear 0s forwards;
-}
-
-@keyframes fd-arcs-show {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fd-arcs-hold {
-
-  0%,
-  24% {
-    opacity: 1;
-  }
-
-  30%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Loop the whole composition */
-.falling-docs {
-  animation: fd-cycle 11s linear infinite;
-}
-
-@keyframes fd-cycle {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
+  transform: scale(0.985);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -543,20 +191,7 @@ details[open]>.smooth-details-body {
   .animate-fade-up,
   .animate-fade-blur,
   .animate-fade-in,
-  .animate-scale-in,
-  .animate-word-rise,
-  .animate-float-soft,
-  .animate-pulse-ring,
-  .hero-stage__sparkle,
-  .money-match .mm-card,
-  .money-match .mm-line,
-  .money-match .mm-seal,
-  .faq-icon,
-  .faq-answer,
-  .falling-docs,
-  .falling-docs .fd-card,
-  .falling-docs .fd-seal,
-  .falling-docs .fd-arcs {
+  .animate-scale-in {
     animation: none !important;
   }
 
@@ -564,56 +199,32 @@ details[open]>.smooth-details-body {
     scroll-behavior: auto;
   }
 
-  .gate-line {
-    transform: scaleY(1);
-    transition: none;
-  }
-
-  .falling-docs .fd-card {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .falling-docs .fd-seal {
-    opacity: 1;
-    transform: none;
-  }
-
-  .falling-docs .fd-arcs {
-    opacity: 0;
-  }
-
-  .money-match .mm-line {
-    stroke-dashoffset: 0;
-  }
-
-  .money-match .mm-seal {
-    opacity: 1;
-    transform: none;
-  }
-
-  .smooth-details>.smooth-details-body {
-    grid-template-rows: 1fr;
+  .smooth-details>.smooth-details-body,
+  details>.smooth-details-body {
     transition: none;
   }
 }
 
-/* ------- utility ------- */
+/* ------- Subpage Editorial Utility Compatibility ------- */
 .eyebrow {
-  @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-muted px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground;
+  @apply inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-700;
 }
 
 .eyebrow-dot {
-  @apply inline-block h-1.5 w-1.5 rounded-full bg-foreground/60;
+  @apply inline-block h-px w-4 bg-brand-600;
+}
+
+.eyebrow-dark {
+  @apply inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-brand-200;
 }
 
 .link-underline {
-  @apply relative font-medium text-foreground;
+  @apply relative font-semibold text-foreground transition-colors hover:text-brand-700;
 }
 
 .link-underline::after {
   content: '';
-  @apply absolute bottom-0 left-0 h-[2px] w-0 bg-foreground transition-all duration-300 ease-out;
+  @apply absolute -bottom-0.5 left-0 h-[1.5px] w-0 bg-brand-600 transition-all duration-300 ease-out;
 }
 
 .link-underline:hover::after {
